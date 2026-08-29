@@ -1,6 +1,6 @@
 name: atlas-atlas
 version: 0.8.1
-description: Dedicated Atlas store for the atlas skill. OKF root is atlas/.
+description: Dedicated Atlas knowledge store for the atlas skill (not a skill package). OKF root is atlas/.
 author: Sergio Sisternes
 license: Apache-2.0
 dependencies:
