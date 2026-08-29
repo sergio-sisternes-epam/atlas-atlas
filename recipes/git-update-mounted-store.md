@@ -30,4 +30,4 @@ git commit
 git push
 ```
 
-The mesh row `ref` is the branch `mount` recorded. For this skill’s store, resolve prints `references/atlas` (clone root). Pages and compile live under `atlas/` inside that clone. After a submodule commit, the parent repo must record the new gitlink (`git add references/atlas`).
+The mesh row `ref` is the branch `mount` recorded. For this skill’s store, resolve prints `references/atlas`, which is also the compile/query root. After a submodule commit, the parent repo must record the new gitlink (`git add references/atlas`).
