@@ -17,5 +17,5 @@ Mount (git machine):
 atlas mount github.com/sergio-sisternes-epam/atlas-atlas --ref main
 ```
 
-Skill-level note: `../README.md`
+Skill-level note: packaging README at git root.
 ---

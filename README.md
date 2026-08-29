@@ -1,23 +1,29 @@
+---
+type: document
+title: "atlas-atlas"
+created: 2026-08-29
+description: "Dedicated Atlas store for the atlas skill. Git root is the OKF root."
+origin: internal
+sensitivity: public
+---
+
 # atlas-atlas
 
 Dedicated Atlas store for the atlas skill (extracted from `references/atlas`).
 
-This is a **knowledge store**, not a skill package. Git root holds packaging files only (`README.md`, `apm.yml`, `.gitignore`). Do not flatten store pages to the git root.
-
-OKF root is `atlas/` (`atlas/SCHEMA.json`), not the git root.
+This is a **knowledge store**, not a skill package. Git root **is** the OKF root (`SCHEMA.json`, `index.md`).
 
 ```text
 atlas auth login --host github.com
-atlas mount github.com/sergio-sisternes-epam/atlas-atlas --ref main
+atlas mount github.com/sergio-sisternes-epam/atlas-atlas --ref main --target references/atlas
 ```
 
-Default clone path: `.atlas/github.com/sergio-sisternes-epam/atlas-atlas`  
-Compile/query root: `.atlas/github.com/sergio-sisternes-epam/atlas-atlas/atlas`
+Mount path = compile/query root: `references/atlas`
 
-In this repository, compile against `./atlas` (CLI lives in the atlas skill package; it is not vendored here):
+In this repository:
 
 ```text
-atlas compile --root atlas
+atlas compile --root .
 ```
 
 ## APM
