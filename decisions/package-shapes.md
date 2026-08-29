@@ -4,7 +4,7 @@ title: "Two package shapes; this skill mounts the dedicated store at references/
 created: 2026-08-30
 status: settled
 work_id: 2026-08-29-atlas-storage-mesh-mvp
-description: "Embedded vs dedicated. Atlas skill uses dedicated atlas-atlas mounted as the references/atlas submodule; OKF root is nested atlas/."
+description: "Embedded vs dedicated. Atlas skill uses dedicated atlas-atlas mounted at references/atlas; OKF root is git root."
 origin: derived
 sensitivity: internal
 kva: alive
@@ -24,15 +24,15 @@ relates_to:
 MVP allows exactly two shapes:
 
 1. **Embedded.** Git unit is the skill or project repo. Mesh `subpath` is the OKF folder (often `references/atlas`).
-2. **Dedicated.** Git unit is the Atlas. `subpath` is empty, or a nested OKF root such as `atlas/`.
+2. **Dedicated.** Git unit is the Atlas. `subpath` is empty (OKF root = git root).
 
-This skill’s canonical store is dedicated (`github.com/sergio-sisternes-epam/atlas-atlas`) and is mounted as the `references/atlas` submodule. Compile/query root is `references/atlas/atlas` (`subpath: atlas`).
+This skill’s canonical store is dedicated (`github.com/sergio-sisternes-epam/atlas-atlas`) and is mounted at `references/atlas`. Compile/query root is `references/atlas` (`subpath` empty).
 
 APM may copy files. Mesh membership still requires `atlas mount` of a git identity.
 
 ## Rationale
 
-Process memory must be a git identity so mount, branch, and PR work. Nesting the dedicated repo under `references/atlas` keeps Cartograph and agents looking at the old skill-memory slot without flattening `atlas/` to git root.
+Process memory must be a git identity so mount, branch, and PR work. Mounting at `references/atlas` with OKF at git root means resolve path = compile path.
 
 ## Alternatives considered
 
@@ -42,4 +42,4 @@ Process memory must be a git identity so mount, branch, and PR work. Nesting the
 
 ## Consequences
 
-Agents compile with `--root references/atlas/atlas`. Updates are git commits inside the submodule, then a parent gitlink bump. There is no `atlas sync`.
+Agents compile with `--root references/atlas`. Updates are git commits inside the mount, then a parent gitlink bump if the mount is a submodule. There is no `atlas sync`.

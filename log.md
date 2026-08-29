@@ -29,3 +29,4 @@
 - 2026-08-27: Work `2026-08-27-compile-project-skill` status designed — plan persisted; implement blocked pending approval.
 - 2026-08-27: Closed work `2026-08-27-atlas-search-nav-signals` — Atlas 0.7.8 search traffic/filters merged onto 0.7.7 query harness.
 - 2026-08-30: Added `recipes/`; moved skill `references/mesh/` operator notes into this store (package shapes, git modes, git update).
+- 2026-08-30: Flattened OKF root to git root (`SCHEMA.json` / `index.md` at repo root). Mount path = compile path.
