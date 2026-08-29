@@ -47,6 +47,8 @@ implementing — CLI verbs landed. Tasks marked done. Live private-remote mount 
 
 Atlas CLI 0.8.0: `id`, `auth`, `mount`, `resolve`, `atlas-mesh.json`, compile warn on unknown `atlas://`. Memory: `autogenesis/experiences/2026-08-29-implement-storage-mesh-mvp.md`.
 
+2026-08-30: operator notes from the skill `references/mesh/` promoted into this store (`decisions/package-shapes.md`, `recipes/`).
+
 ## Related
 
 Lineage discussion hub: `work/2026-08-26-atlas-modular-graph-protocol.md`.

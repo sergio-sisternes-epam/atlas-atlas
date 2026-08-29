@@ -28,3 +28,4 @@
 - 2026-08-27: Opened draft work `2026-08-27-compile-project-skill` — discuss fabric under `autogenesis/discuss/compile-project-skill/`.
 - 2026-08-27: Work `2026-08-27-compile-project-skill` status designed — plan persisted; implement blocked pending approval.
 - 2026-08-27: Closed work `2026-08-27-atlas-search-nav-signals` — Atlas 0.7.8 search traffic/filters merged onto 0.7.7 query harness.
+- 2026-08-30: Added `recipes/`; moved skill `references/mesh/` operator notes into this store (package shapes, git modes, git update).

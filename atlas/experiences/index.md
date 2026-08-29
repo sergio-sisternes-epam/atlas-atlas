@@ -1,5 +1,6 @@
 # Experiences
 
+- [2026-08-30 first write into atlas-atlas via the references/atlas submodule](2026-08-30-first-submodule-store-write.md)
 - [Implement search nav signals + query card (0.7.8 merge)](2026-08-27-implement-atlas-search-nav-signals.md)
 - [2026-08-27 implement query-path harness and spine hubs](2026-08-27-implement-query-harness-hubs.md)
 - [2026-08-27 search self-Atlas: CLI evolution probe](2026-08-27-search-self-atlas-cli-evolution-probe.md)
