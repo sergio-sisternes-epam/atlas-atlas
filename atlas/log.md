@@ -1,0 +1,30 @@
+- 2026-08-27: Closed work `2026-08-27-atlas-query-harness-hubs` — query path + spines; Atlas 0.7.7.
+- 2026-08-27: Opened work `2026-08-27-atlas-query-harness-hubs` — query-path harness + spine hubs; plan waiting approval.
+- 2026-08-27: Added `lessons/` folder; remembered search-harness hypothesis from self-Atlas BM25 query test (work `atlas-bm25-and-live-migration-v1`).
+- 2026-08-23: Agentic integration — path modules query/remember/work; SKILL router v0.7.0; work `atlas-agentic-integration-v1` done.
+- 2026-08-23: Interim decision — prefer Atlas paths over okf-wiki for new process memory until migration.
+- 2026-08-23: Opened work `autogenesis-okf-wiki-to-atlas-migration-v1` — bootstrap autogenesis Atlas root + selective content migrate from its okf-wiki store.
+- 2026-08-23: Closed work `autogenesis-okf-wiki-to-atlas-migration-v1` — content migrated + discipline switched to Atlas-only.
+- 2026-08-23: autogenesis Atlas completed full-directory migrate + selective promote (work autogenesis-okf-wiki-to-atlas-migration-v1).
+- 2026-08-23: Opened draft work `atlas-migrate-cli-improve-v1`; recorded migration problems/fixes experience + lessons decision.
+- 2026-08-23: Design plan for `atlas-migrate-cli-improve-v1` moved into Atlas at experiences/2026-08-23-design-plan-atlas-migrate-cli-improve-v1.md; work status designed.
+- 2026-08-24: SCHEMA expanded with document type; origin/sensitivity vocabulary formalised (work_id knowledge-crawl-output-agnostic-v1).
+- 2026-08-24: remembered implement experience + work hub for knowledge-crawl-output-agnostic-v1 (document type + origin/sensitivity).
+- 2026-08-26: Opened work `2026-08-26-atlas-modular-graph-protocol`; from-conversation fabric under `autogenesis/discuss/git-mesh/`.
+- 2026-08-26: atlas 0.7.2 — recommended type protostar (work 2026-08-26-residuals-vs-protostar).
+- 2026-08-27: Opened and closed work `2026-08-27-atlas-vision-comparison` — added `atlas-project/` vision root, correct comparison, and KVA-terminated agent-memory-layer branch.
+- 2026-08-27: Opened draft work `2026-08-27-terminate-wrong-path-behaviour` — formalise terminate-wrong-path after discussion.
+- 2026-08-27: Closed work `2026-08-27-terminate-wrong-path-behaviour` — discuss path terminate + Atlas remember recipe (A+B). Atlas 0.7.3; discuss 0.3.2.
+- 2026-08-27: Opened draft work `2026-08-27-atlas-landscape-review` — on-demand landscape + symbiosis path (discussion only).
+- 2026-08-27: Sprouted root `glossary.md` (forming) for landscape labels; listed from index.md.
+- 2026-08-27: Work `2026-08-27-atlas-landscape-review` status designed — plan persisted; implement blocked.
+- 2026-08-27: Closed work `2026-08-27-atlas-landscape-review` — path landscape, glossary promote, first run. Atlas 0.7.4.
+- 2026-08-27: Opened draft work `2026-08-27-atlas-compile-type-contract` — discuss fabric under `autogenesis/discuss/compile-type-contract/`.
+- 2026-08-27: Paused that discussion; approach captured at `autogenesis/discuss/compile-type-contract/approach.md`.
+
+- 2026-08-27: Implemented work `2026-08-27-atlas-compile-type-contract` — Atlas 0.7.5 compile type-contract, init, list-type, search type filter.
+- 2026-08-27: Opened work `2026-08-27-atlas-compile-focus-lenses` — compile --type/--path lenses; plan waiting approval.
+- 2026-08-27: Closed work `2026-08-27-atlas-compile-focus-lenses` — Atlas 0.7.6 compile --type/--path; --list-type removed.
+- 2026-08-27: Opened draft work `2026-08-27-compile-project-skill` — discuss fabric under `autogenesis/discuss/compile-project-skill/`.
+- 2026-08-27: Work `2026-08-27-compile-project-skill` status designed — plan persisted; implement blocked pending approval.
+- 2026-08-27: Closed work `2026-08-27-atlas-search-nav-signals` — Atlas 0.7.8 search traffic/filters merged onto 0.7.7 query harness.
