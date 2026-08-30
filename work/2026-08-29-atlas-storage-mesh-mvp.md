@@ -49,6 +49,8 @@ Atlas CLI 0.8.0: `id`, `auth`, `mount`, `resolve`, `atlas-mesh.json`, compile wa
 
 2026-08-30: operator notes from the skill `references/mesh/` promoted into this store (`decisions/package-shapes.md`, `recipes/`).
 
+2026-08-30: live private HTTPS `submodule add` via `atlas mount` failed on `http.extraHeader`; gh credential helper is the pin (`experiences/2026-08-30-private-https-submodule-mount.md`).
+
 ## Related
 
 Lineage discussion hub: `work/2026-08-26-atlas-modular-graph-protocol.md`.
