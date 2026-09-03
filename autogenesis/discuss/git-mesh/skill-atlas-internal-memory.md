@@ -4,8 +4,8 @@ title: "Lean — skill Atlas is internal memory; mesh is distributed memory"
 created: 2026-08-29
 work_id: 2026-08-26-atlas-modular-graph-protocol
 status: in-discussion
-kva: alive
-reality: current
+kva: superseded
+reality: archive
 description: "references/atlas signals skill-internal memory. Other skills may write it. APM materialise must not destroy git provenance."
 origin: user
 sensitivity: internal
@@ -21,6 +21,8 @@ relates_to:
     kind: implements
   - path: autogenesis/discuss/git-mesh/consolidate-view.md
     kind: related
+  - path: autogenesis/discuss/skill-mount-home/exit-skill-internal-store.md
+    kind: kva_supersede
 ---
 
 ## Content

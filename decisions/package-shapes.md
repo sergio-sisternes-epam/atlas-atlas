@@ -2,9 +2,9 @@
 type: decision
 title: "Two package shapes; this skill mounts the dedicated store at references/atlas"
 created: 2026-08-30
-status: settled
+status: superseded
 work_id: 2026-08-29-atlas-storage-mesh-mvp
-description: "Embedded vs dedicated. Atlas skill uses dedicated atlas-atlas mounted at references/atlas; OKF root is git root."
+description: "Superseded 2026-09-03. Mount-at-references/atlas is dead. Successor: decisions/mount-dot-atlas-submodule.md. Two shapes (embedded vs dedicated) still hold."
 origin: derived
 sensitivity: internal
 kva: alive
@@ -16,6 +16,8 @@ relates_to:
   - path: work/mesh-mvp/f-package-shapes.md
     kind: related
   - path: recipes/git-update-mounted-store.md
+    kind: related
+  - path: decisions/mount-dot-atlas-submodule.md
     kind: related
 ---
 

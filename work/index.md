@@ -1,5 +1,6 @@
 # Work
 
+- [Skill Atlas write-home is the active git repo](2026-09-03-skill-mount-home.md) — **implementing**
 - [Import human-memory findings into Atlas write policy](2026-09-03-human-memory-model.md) — **done**
 - [Grep search + query path + B17 card](2026-08-27-atlas-search-nav-signals.md) — **done** (0.7.8)
 - [Query-path harness and spine hubs](2026-08-27-atlas-query-harness-hubs.md) — **done** (0.7.7)
