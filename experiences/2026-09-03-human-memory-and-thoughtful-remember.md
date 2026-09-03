@@ -30,4 +30,4 @@ Current-theory pages may be filed without a hold. Inventory plus remember card r
 
 ## Follow-ups
 
-Do not put this store on the atlas package allowlist. Lesson pages that this cluster relates_to still need to land on this branch.
+Lesson cluster and `lessons/index.md` are on this PR with the work hub and decision. Package remember fence is atlas PR #5. Do not put this store on the atlas package allowlist.
