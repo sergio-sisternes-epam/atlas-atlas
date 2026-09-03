@@ -4,7 +4,7 @@ title: "Atlas schema governance — overlays, schema path, claimed prefixes"
 created: 2026-09-03
 work_id: 2026-09-03-atlas-schema-governance
 status: done
-description: "Implemented Atlas 0.8.2. schema path, overlay merge, schema new|install|uninstall, write-receipt compile gates."
+description: "Shipped Atlas 0.8.5 schema path, overlay merge, schema new/install/uninstall, and write-receipt compile gates."
 origin: derived
 sensitivity: internal
 stage: implement
@@ -27,7 +27,7 @@ Add a schema activation path and CLI so skills and projects extend SCHEMA via ov
 
 ## Status
 
-done — 2026-09-03. Atlas 0.8.2.
+done — 2026-09-03. Atlas 0.8.5.
 
 ## Outcomes
 

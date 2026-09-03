@@ -10,3 +10,4 @@
 - [Add protostar to Atlas recommended types](type-vocabulary-protostar.md)
 - [Expand recommended types with document; formalise origin and sensitivity](type-vocabulary-document-and-sensitivity.md)
 - [Two package shapes; this skill mounts the dedicated store at references/atlas](package-shapes.md)
+- [Atlas splits episodic log, current-theory slots, and a transform pass](atlas-memory-layers.md)

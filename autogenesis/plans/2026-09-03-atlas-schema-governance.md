@@ -3,12 +3,12 @@ type: plan
 title: "Design — Atlas schema governance (overlays, path schema, schema new)"
 created: 2026-09-03
 work_id: 2026-09-03-atlas-schema-governance
-status: designed
+status: implemented
 change_class: new-surface
-description: "Mini-genesis design from schema-governance pins. Schema path plus CLI-only writers. Overlay merge at compile. Project schema new. Stops for approval."
+description: "Mini-genesis design from schema-governance pins. Schema path plus CLI-only writers. Overlay merge at compile. Project schema new. Approved and implemented (Atlas 0.8.5)."
 origin: derived
 sensitivity: internal
-stage: design
+stage: implement
 plan_path: autogenesis/plans/2026-09-03-atlas-schema-governance.md
 relates_to:
   - path: work/2026-09-03-atlas-schema-governance.md
@@ -160,7 +160,7 @@ One extra directory read (`schema.d/`) per compile. Merge is object-key union wi
 
 ### Stop-for-approval
 
-This path **stops for approval**. Do not implement until the operator explicitly approves this persisted plan.
+Operator approved and implement landed (Atlas 0.8.5). This section is historical: design originally stopped here.
 
 ## Catalogue Review
 
