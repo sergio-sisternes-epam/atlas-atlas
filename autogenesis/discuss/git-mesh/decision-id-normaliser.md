@@ -49,7 +49,7 @@ Input: Unicode string `s`, trimmed of leading/trailing ASCII whitespace. Empty a
 
 ### Invariants
 
-- `https://github.com/Acme/Wiki.git` = `git@github.com:Acme/Wiki.git` = `atlas://github.com/Acme/Wiki` = `github.com/Acme/Wiki` → `github.com/Acme/Wiki`
+- `https://github.com/sergio-sisternes-epam/atlas-atlas.git` = `git@github.com:sergio-sisternes-epam/atlas-atlas.git` = `atlas://github.com/sergio-sisternes-epam/atlas-atlas` = `github.com/sergio-sisternes-epam/atlas-atlas` → `github.com/sergio-sisternes-epam/atlas-atlas`
 - `https://user:x@github.com/Acme/Wiki` → same id
 - Mount dir = `.atlas/` + id (nested)
 - Function is pure: no git, no network, no auth

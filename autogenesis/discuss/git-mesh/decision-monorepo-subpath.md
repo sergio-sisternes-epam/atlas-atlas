@@ -34,6 +34,6 @@ relates_to:
 ## Alternatives considered
 
 - Put subpath in the id — rejected; breaks the two-segment normaliser.
-- Several roots per clone in MVP — rejected; `atlas://host/org/repo/page` would be ambiguous.
+- Several roots per clone in MVP — rejected; `atlas://github.com/sergio-sisternes-epam/atlas-atlas/page` would be ambiguous.
 - `#fragment` as subpath — rejected here; that is the next gap (`atlas://` vs Markdown `#`).
 ---

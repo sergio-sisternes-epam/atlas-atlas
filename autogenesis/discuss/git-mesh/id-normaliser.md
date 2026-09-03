@@ -44,7 +44,7 @@ Examples:
 |---------|-----|
 | `https://github.com/Acme/Wiki.git` | `github.com/Acme/Wiki` |
 | `git@github.com:Acme/Wiki.git` | `github.com/Acme/Wiki` |
-| `atlas://github.com/Acme/Wiki/decisions/x.md` | id `github.com/Acme/Wiki` + in-store path |
+| `atlas://github.com/sergio-sisternes-epam/atlas-atlas/decisions/x.md` | id `github.com/sergio-sisternes-epam/atlas-atlas` + in-store path |
 | `https://user:pat@github.com/Acme/Wiki` | `github.com/Acme/Wiki` (userinfo dropped) |
 
 Same id → same `.atlas/github.com/Acme/Wiki/` folder.

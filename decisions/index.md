@@ -1,5 +1,6 @@
 # Decisions
 
+- [Use an APM-authored panel review instead of customizing Copilot Code Review](panel-review-apm-over-copilot-code-review.md)
 - [Successor name is Atlas](atlas-name.md)
 - [Atlas is a storage and behavioural protocol](atlas-is-storage-behaviour-protocol.md)
 - [Microsoft products realize the Atlas blueprint](microsoft-products-realize-blueprint.md)

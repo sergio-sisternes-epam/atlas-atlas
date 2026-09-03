@@ -29,7 +29,7 @@ relates_to:
 
 ## Content
 
-Making the primary atlas-id a full git URL gives uniqueness and provenance, but produces noisy references such as `atlas://https://github.com/org/my-atlas/path/to/page.md`.
+Making the primary atlas-id a full git URL gives uniqueness and provenance, but produces a noisy double-scheme reference: `atlas:` + `//https://host/org/repo/path/to/page.md`.
 
 Scheme-free host/path is the current lean. Aliases dropped for MVP (`drop-aliases-mvp.md`).
 

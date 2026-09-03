@@ -29,7 +29,7 @@ relates_to:
 
 User lean 2026-08-29 on contradiction 2:
 
-- **Do not bake authentication into Markdown links.** A link in an OKF page may be a valid pointer (`https://github.com/org/repo/...`, `atlas://github.com/org/repo/...`, scheme-free host/path). That string locates knowledge. It is not a credential and not “the” clone protocol for this machine.
+- **Do not bake authentication into Markdown links.** A link in an OKF page may be a valid pointer (`https://github.com/sergio-sisternes-epam/atlas-atlas/...`, `atlas://github.com/sergio-sisternes-epam/atlas-atlas/...`, scheme-free host/path). That string locates knowledge. It is not a credential and not “the” clone protocol for this machine.
 - **Authentication is an alias** the user registers with something like `atlas auth` against a git remote (host, and maybe org).
 - Atlas owns a **translation engine**: pointer in MD / mesh id → resolved auth alias → *this process’s* authenticated git remote (HTTPS+token, SSH, …).
 

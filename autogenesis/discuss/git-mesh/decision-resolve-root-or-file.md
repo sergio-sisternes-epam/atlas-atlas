@@ -25,8 +25,8 @@ relates_to:
 
 `atlas resolve` is one command. What it prints depends on the pointer.
 
-- Pointer is only an atlas-id (`github.com/org/repo` or `atlas://github.com/org/repo` with no further path) → the **mount root**, which is the git working copy: `.atlas/host/org/repo/`. That is the folder for ordinary git.
-- Pointer includes an in-store path (`atlas://github.com/org/repo/decisions/foo.md`) → that **file**: mount root + mesh `subpath` + in-store path.
+- Pointer is only an atlas-id (`github.com/sergio-sisternes-epam/atlas-atlas` or `atlas://github.com/sergio-sisternes-epam/atlas-atlas` with no further path) → the **mount root**, which is the git working copy: `.atlas/host/org/repo/`. That is the folder for ordinary git.
+- Pointer includes an in-store path (`atlas://github.com/sergio-sisternes-epam/atlas-atlas/decisions/foo.md`) → that **file**: mount root + mesh `subpath` + in-store path.
 - Not mounted → hard fail (already pinned).
 
 The mesh still records the default ref for the first `mount` and for remount-when-empty. Updates after that are git in the directory `resolve` returned for the id.
