@@ -23,7 +23,7 @@ relates_to:
 
 ## Content
 
-`atlas://host/…/page.md#heading` is a normal URI. Extraction is two stages.
+`atlas://github.com/sergio-sisternes-epam/atlas-atlas/page.md#heading` is a normal URI. Extraction is two stages.
 
 1. Generic URI parse (scheme, host, path segments, fragment). Not an Atlas regex.
 2. Decide how many path segments belong to the id.

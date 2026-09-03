@@ -25,7 +25,7 @@ relates_to:
 
 Same Atlas root: ordinary relative Markdown / `relates_to` paths, as OKF already does.
 
-Another Atlas: `atlas://<host>/<org>/<repo>/<in-store-path>`
+Another Atlas: `atlas://github.com/sergio-sisternes-epam/atlas-atlas/<in-store-path>`
 
 The in-store path is relative to that store’s Atlas root (`mount + subpath`), not to the git root.
 

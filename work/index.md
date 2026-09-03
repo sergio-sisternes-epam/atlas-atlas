@@ -20,5 +20,6 @@
 - [Atlas compile as schema + page-contract gate](2026-08-27-atlas-compile-type-contract.md) — **done** (0.7.5)
 - [Compile focus lenses](2026-08-27-atlas-compile-focus-lenses.md) — **done** (0.7.6)
 - [Compile project Atlas — skill / path / recipe](2026-08-27-compile-project-skill.md) — **designed** (waiting approval)
+- [APM-authored Copilot panel-review skill](2026-09-03-pr-panel-review.md) — **done**
 
 - [Epic — storage-mesh remainders](2026-08-29-atlas-storage-mesh-remainders.md) — **designed** ([children](remainders/))
