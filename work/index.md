@@ -15,6 +15,7 @@
 - [Atlas modular graph protocol — git storage mesh](2026-08-26-atlas-modular-graph-protocol.md) — **implementing** (discussion fabric)
 - [Epic — Atlas storage-mesh MVP](2026-08-29-atlas-storage-mesh-mvp.md) — **reopened** ([children](mesh-mvp/))
 - [Epic — close storage-mesh MVP gaps](2026-08-29-atlas-storage-mesh-gap-close.md) — **designed**
+- [Atlas schema governance — overlays and schema path](2026-09-03-atlas-schema-governance.md) — **done** (0.8.2)
 - [Atlas compile as schema + page-contract gate](2026-08-27-atlas-compile-type-contract.md) — **done** (0.7.5)
 - [Compile focus lenses](2026-08-27-atlas-compile-focus-lenses.md) — **done** (0.7.6)
 - [Compile project Atlas — skill / path / recipe](2026-08-27-compile-project-skill.md) — **designed** (waiting approval)

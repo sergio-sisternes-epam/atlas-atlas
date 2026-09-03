@@ -1,5 +1,7 @@
 # Experiences
 
+- [2026-09-03 implement Atlas schema governance 0.8.2](2026-09-03-implement-atlas-schema-governance.md)
+
 - [2026-08-30 private HTTPS submodule mount: GitHub rejects extraHeader](2026-08-30-private-https-submodule-mount.md)
 - [2026-08-30 first write into atlas-atlas via the references/atlas submodule](2026-08-30-first-submodule-store-write.md)
 - [Implement search nav signals + query card (0.7.8 merge)](2026-08-27-implement-atlas-search-nav-signals.md)
