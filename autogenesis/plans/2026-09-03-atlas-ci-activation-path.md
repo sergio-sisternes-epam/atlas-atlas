@@ -107,7 +107,7 @@ Implement lives on the **Atlas skill package** (path module + templates). Runtim
 | **M3 Gate** | Unfocused `atlas compile --root <root> --json`. No `--path`. No `--type`. |
 | **M4 Exit** | Pipeline fails iff compile exit ≥ 2. Exit 1 is success + evidence. |
 | **M5 Pin** | Atlas CLI from an immutable ref (tag or SHA). |
-| **M6 Acquire** | Adapter obtains that CLI before the gate. Failure to obtain → job fail, not skip. |
+| **M6 Acquire** | Adapter obtains and installs that CLI from an exact dependency lock shipped with the pinned source before the gate. Failure → job fail, not skip. |
 | **M7 Triggers** | At least: pull requests and pushes to the default branch. |
 | **M8 Privilege** | Compile job is read-only on the mount. |
 | **M9 Evidence** | Compile JSON in logs and a retained artifact. |
@@ -168,7 +168,7 @@ Implement lives on the **Atlas skill package** (path module + templates). Runtim
 
 - [ ] C1. CLI source is the Atlas skill (`scripts/atlas.py`).
 - [ ] C2. Ref is a tag or SHA (not `main`/`master`).
-- [ ] C3. Dependencies installed (`jsonschema>=4.0`, `click>=8.0`).
+- [ ] C3. Dependencies installed from an exact lock shipped with the pinned CLI.
 - [ ] C4. Acquire failure fails the job.
 - [ ] C5. Private CLI source: token documented **or** CLI is public.
 - [ ] C6. Acquire path is outside the compile root (GitHub: `$RUNNER_TEMP/atlas-cli`).
