@@ -1,5 +1,6 @@
 # Autogenesis plans
 
+- [2026-09-03-atlas-ci-activation-path](2026-09-03-atlas-ci-activation-path.md) — implemented (0.8.5)
 - [2026-08-29-atlas-storage-mesh-gap-close](2026-08-29-atlas-storage-mesh-gap-close.md) — designed, waiting approval
 
 - [2026-08-29-atlas-storage-mesh-mvp](2026-08-29-atlas-storage-mesh-mvp.md) — designed, waiting approval

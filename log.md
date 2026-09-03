@@ -1,3 +1,5 @@
+- 2026-09-03: Closed work `2026-09-03-atlas-ci-activation-path` — Atlas 0.8.5 path ci, canonical merge gate, GitHub Actions adapters, and conformance checklist.
+- 2026-09-03: Opened work `2026-09-03-atlas-ci-activation-path` — path ci canonical CI/CD for SCHEMA.json mounts; plan waiting approval.
 - 2026-08-27: Closed work `2026-08-27-atlas-query-harness-hubs` — query path + spines; Atlas 0.7.7.
 - 2026-08-27: Opened work `2026-08-27-atlas-query-harness-hubs` — query-path harness + spine hubs; plan waiting approval.
 - 2026-08-27: Added `lessons/` folder; remembered search-harness hypothesis from self-Atlas BM25 query test (work `atlas-bm25-and-live-migration-v1`).
