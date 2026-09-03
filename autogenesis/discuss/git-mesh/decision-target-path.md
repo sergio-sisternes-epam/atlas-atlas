@@ -4,9 +4,9 @@ title: "Default mount is .atlas/; references/atlas stays skill-internal"
 created: 2026-08-29
 work_id: 2026-08-26-atlas-modular-graph-protocol
 status: settled
-kva: alive
-reality: current
-description: "Contradiction 5 pinned. No --target-skill. Generic --target path only."
+kva: superseded
+reality: archive
+description: "Superseded 2026-09-03. Clause 3 (skill-internal references/atlas store) is dead. Successor: decision-mount-dot-atlas-only.md."
 origin: user
 sensitivity: internal
 stage: discussion
@@ -21,6 +21,10 @@ relates_to:
     kind: related
   - path: work/2026-08-26-atlas-modular-graph-protocol.md
     kind: implements
+  - path: autogenesis/discuss/skill-mount-home/exit-skill-internal-store.md
+    kind: kva_supersede
+  - path: autogenesis/discuss/git-mesh/decision-mount-dot-atlas-only.md
+    kind: contradicts
 ---
 
 ## Decision

@@ -1,0 +1,22 @@
+# Skill mount home
+
+- [hub.md](hub.md) — discussion_root
+- [global-skill-out-of-repo.md](global-skill-out-of-repo.md) — opening claim (alternative)
+- [pin-objective.md](pin-objective.md) — locked objective
+- [pin-both-write-homes.md](pin-both-write-homes.md) — both skill-internal and project write-homes
+- [pin-pointer-not-store.md](pin-pointer-not-store.md) — skill path is pointer plus mount-if-missing
+- [pin-no-git-refuse.md](pin-no-git-refuse.md) — no git repo, refuse to persist
+- [pin-dot-atlas-encoded-id.md](pin-dot-atlas-encoded-id.md) — `.atlas/<encoded-id>/`
+- [current-reality.md](current-reality.md) — locked pins for this orbit
+- [p-pointer-artefact.md](p-pointer-artefact.md) — pointer artefact (answered)
+- [pin-pointer-file.md](pin-pointer-file.md) — pointer is a file; `--root` must fail
+- [clarify-pointer-activation-path.md](clarify-pointer-activation-path.md) — activation-path markdown
+- [pin-pointer-atlas-md.md](pin-pointer-atlas-md.md) — path is references/atlas.md
+- [pin-activation-covers-write.md](pin-activation-covers-write.md) — mount, query, and persist on the mount
+- [exit-skill-internal-store.md](exit-skill-internal-store.md) — exit reason for git-mesh clause 3
+- [p-package-shapes-mount.md](p-package-shapes-mount.md) — forming: package-shapes still uses skill references/atlas
+- [implications-dot-atlas-only.md](implications-dot-atlas-only.md) — git-mesh implications of the change
+- [q-skill-atlas-reference.md](q-skill-atlas-reference.md) — consuming skill must name atlas_id
+- [pin-stamp-skill-enter.md](pin-stamp-skill-enter.md) — init and migrate stamp SKILL.md Enter
+- [p-enter-card-shape.md](p-enter-card-shape.md) — alive pin: exact five-field card; no registry row
+- [p-supersede-git-mesh-target.md](p-supersede-git-mesh-target.md) — forming: supersede git-mesh later

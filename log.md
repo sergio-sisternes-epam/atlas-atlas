@@ -32,8 +32,10 @@
 - 2026-08-27: Closed work `2026-08-27-atlas-search-nav-signals` — Atlas 0.7.8 search traffic/filters merged onto 0.7.7 query harness.
 - 2026-08-30: Added `recipes/`; moved skill `references/mesh/` operator notes into this store (package shapes, git modes, git update).
 - 2026-08-30: Flattened OKF root to git root (`SCHEMA.json` / `index.md` at repo root). Mount path = compile path.
-
 - 2026-09-03: Opened work `2026-09-03-pr-panel-review` — Copilot PR panel-review skill design; plan waiting approval.
 
 - 2026-09-03: Closed work `2026-09-03-pr-panel-review` — Copilot skill `.github/skills/code-review` shipped.
 - 2026-09-03: Reconciled work `2026-09-03-pr-panel-review` — direct CCR attempt superseded; APM `panel-review` decision and final implementation memory added.
+- 2026-09-03: Opened discuss fabric `autogenesis/discuss/skill-mount-home/` — skill Atlas write-home when the skill is global.
+- 2026-09-03: Superseded `autogenesis/discuss/git-mesh/decision-target-path.md`; living pin `decision-mount-dot-atlas-only.md`.
+- 2026-09-03: Opened work `2026-09-03-skill-mount-home`. Dedicated mount is `.atlas/<id>/` submodule; `decisions/package-shapes.md` superseded by `decisions/mount-dot-atlas-submodule.md`.

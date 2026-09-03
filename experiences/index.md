@@ -1,5 +1,7 @@
 # Experiences
 
+- [2026-09-03 Autogenesis consult — write-home impact](2026-09-03-autogenesis-mount-impact.md)
+- [2026-09-03 implement skill write-home (.atlas submodule)](2026-09-03-implement-skill-mount-home.md)
 - [2026-09-03 human-memory cluster and thoughtful remember fence](2026-09-03-human-memory-and-thoughtful-remember.md)
 - [Implement Atlas path ci and GitHub Actions adapters (0.8.6)](2026-09-03-implement-atlas-ci-activation-path.md)
 - [Pivot Atlas panel review from CCR customization to APM](2026-09-03-pivot-panel-review-to-apm.md)

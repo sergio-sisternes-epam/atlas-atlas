@@ -14,6 +14,10 @@ relates_to:
     kind: follows
   - path: decisions/package-shapes.md
     kind: related
+  - path: decisions/mount-dot-atlas-submodule.md
+    kind: related
+  - path: work/2026-09-03-skill-mount-home.md
+    kind: implements
   - path: recipes/capabilities-by-git-mode.md
     kind: related
 ---
@@ -30,4 +34,4 @@ git commit
 git push
 ```
 
-The mesh row `ref` is the branch `mount` recorded. For this skill’s store, resolve prints `references/atlas`, which is also the compile/query root. After a submodule commit, the parent repo must record the new gitlink (`git add references/atlas`).
+The mesh row `ref` is the branch `mount` recorded. Resolve prints `<git-root>/.atlas/<encoded-id>/`, which is the compile/query root and a parent git submodule. After a store commit and push, the parent records the new gitlink (`git add .atlas/<encoded-id>`). There is still no `atlas sync`.
