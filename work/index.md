@@ -1,7 +1,7 @@
 # Work
 
 - [Import human-memory findings into Atlas write policy](2026-09-03-human-memory-model.md) — **done**
-- [Atlas path ci — canonical CI/CD for SCHEMA.json mounts](2026-09-03-atlas-ci-activation-path.md) — **done** (0.8.5)
+- [Atlas path ci — canonical CI/CD for SCHEMA.json mounts](2026-09-03-atlas-ci-activation-path.md) — **done** (0.8.6)
 - [Grep search + query path + B17 card](2026-08-27-atlas-search-nav-signals.md) — **done** (0.7.8)
 - [Query-path harness and spine hubs](2026-08-27-atlas-query-harness-hubs.md) — **done** (0.7.7)
 - [On-demand landscape review and symbiosis path](2026-08-27-atlas-landscape-review.md) — **done**

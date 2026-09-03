@@ -1,7 +1,7 @@
 # Experiences
 
 - [2026-09-03 human-memory cluster and thoughtful remember fence](2026-09-03-human-memory-and-thoughtful-remember.md)
-- [Implement Atlas path ci and GitHub Actions adapters (0.8.5)](2026-09-03-implement-atlas-ci-activation-path.md)
+- [Implement Atlas path ci and GitHub Actions adapters (0.8.6)](2026-09-03-implement-atlas-ci-activation-path.md)
 - [2026-08-30 private HTTPS submodule mount: GitHub rejects extraHeader](2026-08-30-private-https-submodule-mount.md)
 - [2026-08-30 first write into atlas-atlas via the references/atlas submodule](2026-08-30-first-submodule-store-write.md)
 - [Implement search nav signals + query card (0.7.8 merge)](2026-08-27-implement-atlas-search-nav-signals.md)
