@@ -1,6 +1,6 @@
 ---
 type: experience
-title: "Implement Atlas path ci and GitHub Actions adapters (0.8.6)"
+title: "Implement Atlas path ci and GitHub Actions adapters (0.8.13)"
 created: 2026-09-03
 work_id: 2026-09-03-atlas-ci-activation-path
 status: closed
@@ -27,7 +27,7 @@ cross-repository authentication, and workspace pollution.
 
 ## What happened
 
-Atlas 0.8.6 adds path `ci` with a platform-neutral model and a checklist that
+Atlas 0.8.13 adds path `ci` with a platform-neutral model and a checklist that
 grades setups as missing, partial, incorrect, or correct. The approved v1.1
 gate passes compile exit 0 and warning-only exit 1, retains JSON evidence, and
 fails critical exit 2 or abnormal execution.

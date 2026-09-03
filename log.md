@@ -1,4 +1,4 @@
-- 2026-09-03: Closed work `2026-09-03-atlas-ci-activation-path` — Atlas 0.8.6 path ci, canonical merge gate, GitHub Actions adapters, and conformance checklist.
+- 2026-09-03: Closed work `2026-09-03-atlas-ci-activation-path` — Atlas 0.8.13 path ci, canonical merge gate, GitHub Actions adapters, and conformance checklist.
 - 2026-09-03: Opened work `2026-09-03-atlas-ci-activation-path` — path ci canonical CI/CD for SCHEMA.json mounts; plan waiting approval.
 - 2026-08-27: Closed work `2026-08-27-atlas-query-harness-hubs` — query path + spines; Atlas 0.7.7.
 - 2026-08-27: Opened work `2026-08-27-atlas-query-harness-hubs` — query-path harness + spine hubs; plan waiting approval.

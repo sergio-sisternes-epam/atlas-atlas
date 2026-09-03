@@ -272,7 +272,7 @@ Smokes: not-path-compile; focused-compile-forbidden-in-ci; exit-2-fails-exit-1-d
 - Checklist distinguishes missing / partial / incorrect / correct.
 - `path: compile` unchanged.
 - Atlas skill package CI (pytest) is not this adapter.
-- Version bump 0.8.6 (0.8.5 was occupied by schema governance on rebase).
+- Version bump 0.8.13 (0.8.12 was occupied by active-repository mounts on rebase).
 
 ## Genesis Artifacts
 

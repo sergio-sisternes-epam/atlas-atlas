@@ -27,7 +27,7 @@ Out of scope: Atlas skill package tests; path `compile` session discipline; othe
 
 ## Status
 
-done — 2026-09-03. Shipped in Atlas skill 0.8.6.
+done — 2026-09-03. Shipped in Atlas skill 0.8.13.
 
 ## Outcomes
 
