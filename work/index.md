@@ -1,5 +1,6 @@
 # Work
 
+- [Import human-memory findings into Atlas write policy](2026-09-03-human-memory-model.md) — **done**
 - [Grep search + query path + B17 card](2026-08-27-atlas-search-nav-signals.md) — **done** (0.7.8)
 - [Query-path harness and spine hubs](2026-08-27-atlas-query-harness-hubs.md) — **done** (0.7.7)
 - [On-demand landscape review and symbiosis path](2026-08-27-atlas-landscape-review.md) — **done**
