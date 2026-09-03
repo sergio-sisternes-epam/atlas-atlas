@@ -6,7 +6,7 @@ status: open
 work_id: 2026-09-03-human-memory-model
 kva: forming
 growth: true
-star_kind: hypothesis
+star_kind: probe
 origin: third-party
 sensitivity: public
 description: "Small mismatch interferes with the original; large mismatch more often stores a separate version."
