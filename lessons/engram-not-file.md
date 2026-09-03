@@ -8,7 +8,7 @@ description: "An engram is a cell and synapse pattern that can be re-expressed. 
 origin: third-party
 sensitivity: public
 sources:
-  - uri: https://www.uclahealth.org/news/release/lost-memories-might-be-able-to-be-restored-new-ucla-study-indicate
+  - uri: https://newsroom.ucla.edu/releases/lost-memories-might-be-able-to-be-restored-new-ucla-study-indicates
     note: "Glanzman — long-term memory not stored as the encoding-day synapse set"
   - uri: https://www.wired.com/story/the-molecular-bond-that-helps-secure-your-memories/
     note: "KIBRA–PKMζ partnership; Crick molecular-turnover problem"

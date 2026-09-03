@@ -28,7 +28,7 @@ relates_to:
 
 ## Scope
 
-Persist the 2026-09-03 think-challenge findings on human memory as claim-bearing Atlas pages with source URIs. Derive one write-policy decision for Atlas: episodic log stays append-only; current-theory slots may supersede; compile/dream transforms and demotes. Do not revive the blockchain analogy as the living frame.
+Persist the 2026-09-03 think-challenge findings on human memory as claim-bearing Atlas pages with source URIs. Derive one write-policy decision for Atlas: episodic log stays append-only; current-theory slots may supersede; the compile/dream pass transforms and demotes. Do not revive the blockchain analogy as the living frame.
 
 ## Status
 
