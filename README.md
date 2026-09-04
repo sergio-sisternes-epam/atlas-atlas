@@ -17,7 +17,9 @@ vendored CLI, or submodules.
 
 ## Mount
 
-Authenticate GitHub access, then mount the private store from a repository:
+Authenticate GitHub access, then mount the store. The GitHub repository is
+currently private; page-level `sensitivity` metadata remains independent of
+repository visibility.
 
 ```text
 python3 <atlas-v0.8.13>/scripts/atlas.py auth login --host github.com

@@ -63,7 +63,14 @@ jobs:
             --root "$ROOT" --json > atlas-compile.json
           status=$?
           set -e
-          python3 -m json.tool atlas-compile.json >/dev/null
+          if ! python3 -m json.tool atlas-compile.json >/dev/null; then
+            echo "::error::Atlas compile did not produce valid JSON evidence"
+            cat atlas-compile.json
+            if [ "$status" -ge 2 ]; then
+              exit "$status"
+            fi
+            exit 2
+          fi
           cat atlas-compile.json
           echo "compile_exit=$status" >> "$GITHUB_OUTPUT"
           if [ "$status" -ge 2 ]; then
