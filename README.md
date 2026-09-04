@@ -44,6 +44,24 @@ CI runs the same unfocused compile for every pull request and push to `main`.
 Exit `0` passes, exit `1` passes with warnings retained, and exit `2` fails.
 The JSON result is printed and uploaded as the `atlas-compile-json` artifact.
 
+### Warning baseline
+
+Atlas v0.8.13 currently reports six non-critical `atlas_uri_unmounted`
+warnings for illustrative identifiers in the git-mesh design record:
+
+- `autogenesis/discuss/git-mesh/monorepo-subpath.md`
+- `autogenesis/discuss/git-mesh/decision-resolve-root-or-file.md`
+- `autogenesis/discuss/git-mesh/atlas-uri-vs-hash.md`
+- `autogenesis/discuss/git-mesh/id-normaliser.md`
+- `autogenesis/discuss/git-mesh/uri-id-extract.md`
+- `autogenesis/discuss/git-mesh/tension-url-as-id.md`
+
+These examples intentionally use placeholder Atlas URIs that are not mounted in
+this store. The Atlas compile contract accepts them as warnings; critical
+findings and non-empty staging remain blocking. Any new warning, changed
+warning identifier, or warning on another page must be reviewed and explicitly
+dispositioned rather than silently added to this baseline.
+
 ## CI credential
 
 The workflow downloads the CLI at the exact v0.8.13 commit from the private
