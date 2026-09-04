@@ -11,25 +11,40 @@ sensitivity: public
 
 Dedicated Atlas store for the atlas skill (extracted from `references/atlas`).
 
-This is a **knowledge store**, not a skill package. Git root **is** the OKF root (`SCHEMA.json`, `index.md`).
+This is a **knowledge store**, not an APM or skill package. Git root **is** the
+OKF root (`SCHEMA.json`, `index.md`). The store has no package dependencies,
+vendored CLI, or submodules.
+
+## Mount
+
+Authenticate GitHub access, then mount the private store from a repository:
 
 ```text
-atlas auth login --host github.com
-atlas mount github.com/sergio-sisternes-epam/atlas-atlas --ref main --target references/atlas
+python3 <atlas-v0.8.13>/scripts/atlas.py auth login --host github.com
+python3 <atlas-v0.8.13>/scripts/atlas.py mount \
+  github.com/sergio-sisternes-epam/atlas-atlas --ref main
 ```
 
-Mount path = compile/query root: `references/atlas`
+The default mount and compile/query root is
+`.atlas/github.com/sergio-sisternes-epam/atlas-atlas`. Use `--target` only when
+the consuming repository needs a different submodule path.
 
-In this repository:
+## Compile
+
+Atlas is released separately. Validate this store with Atlas v0.8.13, whose tag
+resolves to commit `9c09edcfd88afbad674d877e4f3b038c8c55c33c`:
 
 ```text
-atlas compile --root .
+python3 <atlas-v0.8.13>/scripts/atlas.py compile --root . --json
 ```
 
-## APM
+CI runs the same unfocused compile for every pull request and push to `main`.
+Exit `0` passes, exit `1` passes with warnings retained, and exit `2` fails.
+The JSON result is printed and uploaded as the `atlas-compile-json` artifact.
 
-```text
-apm install sergio-sisternes-epam/atlas-atlas
-```
+## CI credential
 
-Store package depends on `sergio-sisternes-epam/okf` and `sergio-sisternes-epam/atlas`.
+The workflow downloads the CLI at the exact v0.8.13 commit from the private
+`sergio-sisternes-epam/atlas` repository. Configure the repository Actions
+secret `ATLAS_CLI_TOKEN` with read-only contents access to that repository.
+The token is used only for CLI acquisition.
