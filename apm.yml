@@ -1,9 +1,0 @@
-name: atlas-atlas
-version: 0.8.1
-description: Dedicated Atlas knowledge store for the atlas skill (not a skill package). OKF root is git root.
-author: Sergio Sisternes
-license: Apache-2.0
-dependencies:
-  apm:
-    - sergio-sisternes-epam/okf
-    - sergio-sisternes-epam/atlas
