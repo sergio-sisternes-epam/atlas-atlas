@@ -11,7 +11,7 @@ description: "auth.json consumed by mount, jsonschema declared, headless guard, 
 plan_path: autogenesis/plans/2026-08-29-atlas-storage-mesh-remainders.md
 catalogue_review: n/a
 catalogue_review_rationale: "No new topology; wiring leftovers and store hygiene."
-behavioural_contract: deferred: agent-spec after approval if mount-auth wiring is treated as new behaviour
+behavioural_contract: "deferred: agent-spec after approval if mount-auth wiring is treated as new behaviour"
 relates_to:
   - path: work/2026-08-29-atlas-storage-mesh-remainders.md
     kind: implements

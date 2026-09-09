@@ -1,5 +1,9 @@
 # Experiences
 
+- [2026-09-09 product KPI bench: ranked fast path vs grep vs tgrep](2026-09-09-smr-fast-path-product-bench.md)
+- [2026-09-09 probe: cheap fingerprint plus published FTS5](2026-09-09-smr-fast-path-probe.md)
+- [2026-09-09 KPI bench: grep vs scan vs FTS5 vs tgrep](2026-09-09-smr-kpi-bench.md)
+- [2026-09-09 implement configurable Semantic Memory Recall](2026-09-09-implement-smr-configurable-recall.md)
 - [2026-09-03 Autogenesis consult — write-home impact](2026-09-03-autogenesis-mount-impact.md)
 - [2026-09-03 implement skill write-home (.atlas submodule)](2026-09-03-implement-skill-mount-home.md)
 - [2026-09-03 human-memory cluster and thoughtful remember fence](2026-09-03-human-memory-and-thoughtful-remember.md)

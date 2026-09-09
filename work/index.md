@@ -1,5 +1,6 @@
 # Work
 
+- [Configurable Semantic Memory Recall with skill-owned organisation](2026-09-09-atlas-smr-configurable-recall.md) - **implemented** (0.10.0)
 - [Skill Atlas write-home is the active git repo](2026-09-03-skill-mount-home.md) — **implementing**
 - [Import human-memory findings into Atlas write policy](2026-09-03-human-memory-model.md) — **done**
 - [Atlas path ci — canonical CI/CD for SCHEMA.json mounts](2026-09-03-atlas-ci-activation-path.md) — **done** (0.8.13)

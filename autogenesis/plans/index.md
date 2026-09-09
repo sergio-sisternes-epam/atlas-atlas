@@ -1,5 +1,6 @@
 # Autogenesis plans
 
+- [2026-09-09-atlas-smr-configurable-recall](2026-09-09-atlas-smr-configurable-recall.md) — approved, implementing
 - [2026-09-03-atlas-ci-activation-path](2026-09-03-atlas-ci-activation-path.md) — implemented (0.8.13)
 - [2026-09-03-pr-panel-review](2026-09-03-pr-panel-review.md) — superseded after the direct CCR attempt; final direction is APM `panel-review`
 - [2026-08-29-atlas-storage-mesh-gap-close](2026-08-29-atlas-storage-mesh-gap-close.md) — designed, waiting approval

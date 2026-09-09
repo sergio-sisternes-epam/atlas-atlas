@@ -6,3 +6,4 @@
 - [compile-type-contract](compile-type-contract/) — schema + page-contract compile gate (`2026-08-27-atlas-compile-type-contract`)
 - [compile-project-skill](compile-project-skill/) — how agents compile a project Atlas (`2026-08-27-compile-project-skill`)
 - [skill-mount-home](skill-mount-home/) — skill Atlas write-home when the skill is global versus in-repo
+- [recall-architecture](recall-architecture/) - Wider Recall architecture discussion, with tgrep as an optional component.
