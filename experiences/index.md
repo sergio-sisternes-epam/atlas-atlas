@@ -1,5 +1,6 @@
 # Experiences
 
+- [2026-09-10 implement shared vs dedicated store strategy](2026-09-10-implement-atlas-store-modes.md)
 - [2026-09-09 product KPI bench: ranked fast path vs grep vs tgrep](2026-09-09-smr-fast-path-product-bench.md)
 - [2026-09-09 probe: cheap fingerprint plus published FTS5](2026-09-09-smr-fast-path-probe.md)
 - [2026-09-09 KPI bench: grep vs scan vs FTS5 vs tgrep](2026-09-09-smr-kpi-bench.md)

@@ -1,5 +1,6 @@
 # Discuss fabric
 
+- [store-modes](store-modes/) — Embedded atlas branch vs Dedicated store repo (`2026-09-10-atlas-store-modes`)
 - [git-mesh](git-mesh/) — storage-mesh composition over git (`2026-08-26-atlas-modular-graph-protocol`)
 - [terminate-wrong-path](terminate-wrong-path/) — KVA terminate after a wrong discussion frame (`2026-08-27-terminate-wrong-path-behaviour`)
 - [landscape-review](landscape-review/) — on-demand comparison and symbiosis path (`2026-08-27-atlas-landscape-review`)

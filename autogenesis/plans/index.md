@@ -1,7 +1,7 @@
 # Autogenesis plans
 
 - [2026-09-10-skill-help-pilot](2026-09-10-skill-help-pilot.md) - designed; approval pending; experience and future extraction linked
-
+- [2026-09-10-atlas-store-modes](2026-09-10-atlas-store-modes.md) — implemented (#20)
 - [2026-09-09-atlas-smr-configurable-recall](2026-09-09-atlas-smr-configurable-recall.md) — approved, implementing
 - [2026-09-03-atlas-ci-activation-path](2026-09-03-atlas-ci-activation-path.md) — implemented (0.8.13)
 - [2026-09-03-pr-panel-review](2026-09-03-pr-panel-review.md) — superseded after the direct CCR attempt; final direction is APM `panel-review`
