@@ -16,7 +16,7 @@ relates_to:
     kind: derived_from
   - path: atlas-project/landscape/graph-json-challenge.md
     kind: related
-  - path: decisions/cartograph-fork-in-atlas.md
+  - path: autogenesis/work/2026-09-10-skill-help-pilot-cartograph.md
     kind: related
   - path: work/2026-08-27-atlas-landscape-review.md
     kind: implements
@@ -40,3 +40,8 @@ Steal the overlay protocol, not the product. Each row may become its own work hu
 ## Open question
 
 Which single spike first: EXTRACTED/INFERRED on compile output, or `built_from` freshness on Cartograph?
+
+The Cartograph context link now points to the current standalone package.
+Its earlier in-Atlas location is retained in the
+[historical exit record](../../decisions/cartograph-fork-in-atlas-exit.md).
+This navigation update does not approve or implement any of the ideas above.

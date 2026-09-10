@@ -4,7 +4,8 @@
 - [Successor name is Atlas](atlas-name.md)
 - [Atlas is a storage and behavioural protocol](atlas-is-storage-behaviour-protocol.md)
 - [Microsoft products realize the Atlas blueprint](microsoft-products-realize-blueprint.md)
-- [Cartograph lives only in the Atlas skill](cartograph-fork-in-atlas.md)
+- [Cartograph lives only in the Atlas skill](cartograph-fork-in-atlas.md) - Superseded historical location; do not use for current setup.
+- [Cartograph location exit record](cartograph-fork-in-atlas-exit.md) - Formal reason and links to the standalone package guidance.
 - [Migrate CLI lessons from autogenesis full-store migration](migrate-cli-lessons-from-autogenesis.md)
 - [Interim: prefer Atlas over okf-wiki for process memory](prefer-atlas-over-okf-wiki-interim.md)
 - [Atlas recommended types align with agentic memory roles](type-vocabulary.md)

@@ -43,3 +43,7 @@
 - 2026-09-03: Opened work `2026-09-03-skill-mount-home`. Dedicated mount is `.atlas/<id>/` submodule; `decisions/package-shapes.md` superseded by `decisions/mount-dot-atlas-submodule.md`.
 - 2026-09-09: Opened `autogenesis/discuss/recall-architecture/`; user selected wider Recall scope with tgrep as one component. Architecture remains forming; no implementation approval.
 - 2026-09-09: Opened draft work `2026-09-09-atlas-smr-configurable-recall`; linked the SMR/SMO discussion and accepted JSON configuration decision. Formal design and implementation approval remain pending.
+- 2026-09-10: Opened `autogenesis/work/2026-09-10-skill-help-pilot.md`; recorded Atlas-first scope and bundled help with optional enrichment. Candidate behaviour remains discussion-only.
+- 2026-09-10: Advanced `2026-09-10-skill-help-pilot` to designed, approval pending; linked formal plan, walkthrough experience, confirmed decisions and observed lessons. Future pattern extraction remains forming.
+- 2026-09-10: Added `help/` with Cartograph overview, Canvas-menu opening and scoped APM installation; connected the Cartograph Atlas with reciprocal graph links and preserved the older Build-fork decision as superseded. Runtime activation remains design-only.
+- 2026-09-10: Completed the user-requested retirement of the old in-Atlas Cartograph location with an alive exit-reason document and a `kva_supersede` edge. Historical content is retained; current standalone-package guidance remains the successor.

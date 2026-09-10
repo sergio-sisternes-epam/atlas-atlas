@@ -2,10 +2,15 @@
 type: decision
 title: "Cartograph lives only in the Atlas skill"
 created: 2026-08-23
-status: accepted
+status: settled
+kva: superseded
 work_id: okf-wiki-karpathy-realign-simplify-compose-migrate-v1
-description: "The star-map viewer is an Atlas-owned fork of okf-wiki graph-viewer. Hosts import it; they must not keep a second Atlas source tree."
+description: "Historical Build-fork location, superseded by the standalone Cartograph package. Do not use for current Copilot setup."
 relates_to:
+  - path: decisions/cartograph-fork-in-atlas-exit.md
+    kind: kva_supersede
+  - path: autogenesis/work/2026-09-10-skill-help-pilot-cartograph.md
+    kind: related
   - path: work/okf-wiki-karpathy-realign-simplify-compose-migrate-v1.md
     kind: implements
   - path: experiences/2026-08-23-cartograph-atlas-port.md
@@ -15,6 +20,12 @@ relates_to:
 ---
 
 ## Decision
+
+Historical decision from 2026-08-23, preserved below. For present-day GitHub
+Copilot setup use the [standalone Cartograph package memory](../autogenesis/work/2026-09-10-skill-help-pilot-cartograph.md)
+and its linked help. The original Build-only location and command are not
+current Copilot installation instructions. The [exit record](cartograph-fork-in-atlas-exit.md)
+explains why this memory must not be used as current guidance.
 
 Cartograph source lives only under `atlas/addons/cartograph/`. It is a fork of `okf-wiki/addons/graph-viewer`, not a shared package. Grok Build hosts **import** `@atlas/cartograph`; they do not duplicate Atlas or viewer code.
 

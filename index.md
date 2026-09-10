@@ -4,6 +4,7 @@ Process memory for the **Atlas** skill (successor to okf-wiki operational layer)
 
 ## Folders
 
+- [help/](help/) - Source-backed visualiser onboarding and GitHub Copilot Canvas instructions.
 - [glossary.md](glossary.md) — living labels for landscape write-back
 - [experiences/](experiences/) — implement and design session experiences
 - [lessons/](lessons/) — distilled do / avoid
