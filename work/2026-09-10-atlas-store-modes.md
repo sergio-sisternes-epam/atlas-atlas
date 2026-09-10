@@ -16,6 +16,8 @@ relates_to:
     kind: related
   - path: experiences/2026-09-10-implement-atlas-store-modes.md
     kind: records
+  - path: experiences/2026-09-10-release-atlas-0.11.0.md
+    kind: records
   - path: autogenesis/discuss/store-modes/pin-identity-consumer-repo.md
     kind: related
   - path: autogenesis/discuss/store-modes/pin-naming-two-axes.md
@@ -85,4 +87,4 @@ Opened 2026-09-10. Discussion pins recorded. Design implemented. Closed after At
 
 ## Outcomes
 
-Shared vs dedicated storage strategy is live: `atlas store init` / `store rehost`, mesh `strategy`, GitHub `atlas` ruleset driver, path init default shared, path migrate `migrate_mode`. CLI `atlas migrate` remains staging import.
+Shared vs dedicated storage strategy is live: `atlas store init` / `store rehost`, mesh `strategy`, GitHub `atlas` ruleset driver, path init default shared, path migrate `migrate_mode`. CLI `atlas migrate` remains staging import. Released as Atlas **v0.11.0** (`1c5a415`) and pinned in `sergio-sisternes-epam/apm-marketplace`.
