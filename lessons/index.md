@@ -2,6 +2,8 @@
 
 Distilled do / avoid pages.
 
+- [Register atlas-marketplace as name atlas; install pkg@atlas](2026-09-10-register-marketplace-as-atlas.md)
+- [APM 0.30.0 lockfiles record git coordinates for marketplace plugins](2026-09-10-apm-lockfile-marketplace-git-coords.md)
 - [Do not set git http.extraHeader Authorization for GitHub HTTPS](2026-08-30-github-rejects-git-extraheader.md)
 - [Search harness and hubs before BM25 (hypothesis)](2026-08-27-search-harness-before-bm25.md)
 - [After fast path, opt into atlas:ranked; grep stays the basic default](2026-09-09-opt-in-ranked-after-fast-path.md)

@@ -50,6 +50,7 @@ Bounded extra tokens for Atlas path `query` (second search only). Do not treat t
 
 | Query token | Add (at most these) |
 |---|---|
+| marketplace | atlas-marketplace, pkg@atlas, apm marketplace add |
 | bm25 | FTS5, `.atlas-index`, search_engine, answerability, sqlite-vec |
 | cli surface | validate, compile, search, migrate, promote, init |
 | query path | rewrite, glossary, spine, type: |
