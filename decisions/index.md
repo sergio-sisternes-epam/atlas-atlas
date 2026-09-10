@@ -1,5 +1,6 @@
 # Decisions
 
+- [Atlas catalog is atlas-marketplace with name atlas](atlas-marketplace-identity.md)
 - [Use an APM-authored panel review instead of customizing Copilot Code Review](panel-review-apm-over-copilot-code-review.md)
 - [Successor name is Atlas](atlas-name.md)
 - [Atlas is a storage and behavioural protocol](atlas-is-storage-behaviour-protocol.md)

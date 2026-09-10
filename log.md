@@ -1,3 +1,4 @@
+- 2026-09-10: Opened and closed work `2026-09-10-atlas-marketplace-rename` — GitHub marketplace rename to atlas-marketplace; catalog name `atlas`; republish pins.
 - 2026-09-10: Closed work `2026-09-10-atlas-store-modes` — shared vs dedicated store strategy shipped on Atlas #20.
 - 2026-09-10: Work `2026-09-10-atlas-store-modes` status designed — plan waiting approval.
 - 2026-09-10: Opened work `2026-09-10-atlas-store-modes` — discussion fabric under `autogenesis/discuss/store-modes/`.

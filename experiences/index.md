@@ -1,5 +1,6 @@
 # Experiences
 
+- [2026-09-10 rename apm-marketplace to atlas-marketplace and republish](2026-09-10-atlas-marketplace-rename.md)
 - [2026-09-10 release Atlas 0.11.0 and marketplace pin](2026-09-10-release-atlas-0.11.0.md)
 - [2026-09-10 implement shared vs dedicated store strategy](2026-09-10-implement-atlas-store-modes.md)
 - [2026-09-09 product KPI bench: ranked fast path vs grep vs tgrep](2026-09-09-smr-fast-path-product-bench.md)
