@@ -1,3 +1,10 @@
+- 2026-09-10: Closed work `2026-09-10-atlas-store-modes` — shared vs dedicated store strategy shipped on Atlas #20.
+- 2026-09-10: Work `2026-09-10-atlas-store-modes` status designed — plan waiting approval.
+- 2026-09-10: Opened work `2026-09-10-atlas-store-modes` — discussion fabric under `autogenesis/discuss/store-modes/`.
+- 2026-09-09: Implemented work `2026-09-09-atlas-smr-configurable-recall` — SCHEMA 2.0 SMR opt-in, configure path, gated tgrep; Atlas 0.9.1 Unreleased.
+- 2026-09-09: Work `2026-09-09-atlas-smr-configurable-recall` status implementing — approved SMR plan persisted under Autogenesis space.
+- 2026-09-03: Closed work `2026-09-03-atlas-ci-activation-path` — Atlas 0.8.13 path ci, canonical merge gate, GitHub Actions adapters, and conformance checklist.
+- 2026-09-03: Opened work `2026-09-03-atlas-ci-activation-path` — path ci canonical CI/CD for SCHEMA.json mounts; plan waiting approval.
 - 2026-08-27: Closed work `2026-08-27-atlas-query-harness-hubs` — query path + spines; Atlas 0.7.7.
 - 2026-08-27: Opened work `2026-08-27-atlas-query-harness-hubs` — query-path harness + spine hubs; plan waiting approval.
 - 2026-08-27: Added `lessons/` folder; remembered search-harness hypothesis from self-Atlas BM25 query test (work `atlas-bm25-and-live-migration-v1`).
@@ -30,3 +37,12 @@
 - 2026-08-27: Closed work `2026-08-27-atlas-search-nav-signals` — Atlas 0.7.8 search traffic/filters merged onto 0.7.7 query harness.
 - 2026-08-30: Added `recipes/`; moved skill `references/mesh/` operator notes into this store (package shapes, git modes, git update).
 - 2026-08-30: Flattened OKF root to git root (`SCHEMA.json` / `index.md` at repo root). Mount path = compile path.
+- 2026-09-03: Opened work `2026-09-03-pr-panel-review` — Copilot PR panel-review skill design; plan waiting approval.
+
+- 2026-09-03: Closed work `2026-09-03-pr-panel-review` — Copilot skill `.github/skills/code-review` shipped.
+- 2026-09-03: Reconciled work `2026-09-03-pr-panel-review` — direct CCR attempt superseded; APM `panel-review` decision and final implementation memory added.
+- 2026-09-03: Opened discuss fabric `autogenesis/discuss/skill-mount-home/` — skill Atlas write-home when the skill is global.
+- 2026-09-03: Superseded `autogenesis/discuss/git-mesh/decision-target-path.md`; living pin `decision-mount-dot-atlas-only.md`.
+- 2026-09-03: Opened work `2026-09-03-skill-mount-home`. Dedicated mount is `.atlas/<id>/` submodule; `decisions/package-shapes.md` superseded by `decisions/mount-dot-atlas-submodule.md`.
+- 2026-09-09: Opened `autogenesis/discuss/recall-architecture/`; user selected wider Recall scope with tgrep as one component. Architecture remains forming; no implementation approval.
+- 2026-09-09: Opened draft work `2026-09-09-atlas-smr-configurable-recall`; linked the SMR/SMO discussion and accepted JSON configuration decision. Formal design and implementation approval remain pending.

@@ -1,6 +1,10 @@
 # Work
 
+- [Two Atlas store modes — shared branch and dedicated repo](2026-09-10-atlas-store-modes.md) — **done** (#20)
+- [Configurable Semantic Memory Recall with skill-owned organisation](2026-09-09-atlas-smr-configurable-recall.md) - **implemented** (0.10.0)
+- [Skill Atlas write-home is the active git repo](2026-09-03-skill-mount-home.md) — **implementing**
 - [Import human-memory findings into Atlas write policy](2026-09-03-human-memory-model.md) — **done**
+- [Atlas path ci — canonical CI/CD for SCHEMA.json mounts](2026-09-03-atlas-ci-activation-path.md) — **done** (0.8.13)
 - [Grep search + query path + B17 card](2026-08-27-atlas-search-nav-signals.md) — **done** (0.7.8)
 - [Query-path harness and spine hubs](2026-08-27-atlas-query-harness-hubs.md) — **done** (0.7.7)
 - [On-demand landscape review and symbiosis path](2026-08-27-atlas-landscape-review.md) — **done**
@@ -19,5 +23,6 @@
 - [Atlas compile as schema + page-contract gate](2026-08-27-atlas-compile-type-contract.md) — **done** (0.7.5)
 - [Compile focus lenses](2026-08-27-atlas-compile-focus-lenses.md) — **done** (0.7.6)
 - [Compile project Atlas — skill / path / recipe](2026-08-27-compile-project-skill.md) — **designed** (waiting approval)
+- [APM-authored Copilot panel-review skill](2026-09-03-pr-panel-review.md) — **done**
 
 - [Epic — storage-mesh remainders](2026-08-29-atlas-storage-mesh-remainders.md) — **designed** ([children](remainders/))

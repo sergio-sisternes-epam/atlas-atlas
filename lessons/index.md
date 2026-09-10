@@ -4,6 +4,9 @@ Distilled do / avoid pages.
 
 - [Do not set git http.extraHeader Authorization for GitHub HTTPS](2026-08-30-github-rejects-git-extraheader.md)
 - [Search harness and hubs before BM25 (hypothesis)](2026-08-27-search-harness-before-bm25.md)
+- [After fast path, opt into atlas:ranked; grep stays the basic default](2026-09-09-opt-in-ranked-after-fast-path.md)
+- [Search KPIs: grep for speed on small stores; SMR for follow-up tokens](2026-09-09-search-kpis-speed-tokens-accuracy.md) (superseded)
+- [SMR speed win is published FTS5 plus cheap freshness, not tgrep](2026-09-09-smr-fast-path-published-fts5.md)
 - [Memory identity is a reactivable pattern, not a byte-stable file](engram-not-file.md)
 - [Complementary learning systems — fast episode store plus slow schema store](complementary-learning-systems.md)
 - [Consolidation transforms a memory; it does not only copy it](consolidation-transforms.md)

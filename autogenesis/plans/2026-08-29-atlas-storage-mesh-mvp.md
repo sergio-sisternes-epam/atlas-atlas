@@ -10,7 +10,7 @@ kva: alive
 description: "Implement the pinned git storage mesh including atlas-mesh.json, mount --ref, and in-mount auth."
 plan_path: autogenesis/plans/2026-08-29-atlas-storage-mesh-mvp.md
 catalogue_review: in-scope
-behavioural_contract: deferred: agent-spec specify after plan approval; Gherkin not authored here
+behavioural_contract: "deferred: agent-spec specify after plan approval; Gherkin not authored here"
 relates_to:
   - path: work/2026-08-29-atlas-storage-mesh-mvp.md
     kind: implements

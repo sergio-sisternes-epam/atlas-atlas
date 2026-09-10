@@ -20,6 +20,8 @@ relates_to:
     kind: related
   - path: autogenesis/discuss/git-mesh/implementation-as-built.md
     kind: related
+  - path: autogenesis/discuss/git-mesh/decision-mount-dot-atlas-only.md
+    kind: related
   - path: work/2026-08-29-atlas-storage-mesh-mvp.md
     kind: related
 ---
@@ -33,4 +35,5 @@ relates_to:
 5. Project catalogue is `atlas-mesh.json`. In-store mesh fragments (`mesh.fragment.json`) still exist for compile composition; they are a different file.
 6. Product pins live under `autogenesis/discuss/git-mesh/decision-*.md`. Implement as-built: `implementation-as-built.md`.
 7. Implement work_id: `2026-08-29-atlas-storage-mesh-mvp`. Discussion lineage: `2026-08-26-atlas-modular-graph-protocol`.
+8. Skill-internal store at `<skill>/references/atlas` is superseded (2026-09-03). Living pin: `decision-mount-dot-atlas-only.md`. Activation path is `references/atlas.md`; mounts live under the active repo’s `.atlas/<encoded-id>/`.
 ---

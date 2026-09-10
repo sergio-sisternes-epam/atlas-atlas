@@ -10,7 +10,7 @@ kva: alive
 description: "Finish the approved mesh pins that 0.8.0 left partial. No new product scope."
 plan_path: autogenesis/plans/2026-08-29-atlas-storage-mesh-gap-close.md
 catalogue_review: in-scope
-behavioural_contract: deferred: specify after this plan is approved
+behavioural_contract: "deferred: specify after this plan is approved"
 relates_to:
   - path: work/2026-08-29-atlas-storage-mesh-gap-close.md
     kind: implements
