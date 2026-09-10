@@ -1,0 +1,27 @@
+# Store modes discussion
+
+- [hub.md](hub.md) — discussion_root
+- [pin-identity-consumer-repo.md](pin-identity-consumer-repo.md) — living pin: shared identity
+- [pin-naming-two-axes.md](pin-naming-two-axes.md) — living pin: Embedded vs dedicated/shared
+- [p-identity.md](p-identity.md) — parked: identity question answered
+- [p-name-collision.md](p-name-collision.md) — parked: naming answered
+- [pin-git-common-github-adds.md](pin-git-common-github-adds.md) — living pin: git common, GitHub adds protection
+- [p-github-driver.md](p-github-driver.md) — parked: driver split answered
+- [pin-self-hosted-warn.md](pin-self-hosted-warn.md) — living pin: self-hosted warns
+- [p-self-hosted-protection.md](p-self-hosted-protection.md) — parked: floor answered
+- [setup-path-orbit.md](setup-path-orbit.md) — current_branch: setup path
+- [pin-setup-extend-init.md](pin-setup-extend-init.md) — living pin: extend init
+- [pin-mesh-strategy-field.md](pin-mesh-strategy-field.md) — living pin: mesh strategy field
+- [pin-shared-bootstrap.md](pin-shared-bootstrap.md) — living pin: empty atlas bootstrap
+- [pin-existing-atlas-branch.md](pin-existing-atlas-branch.md) — living pin: reuse or fail closed
+- [p-existing-atlas-branch.md](p-existing-atlas-branch.md) — parked: existing branch answered
+- [p-setup-path.md](p-setup-path.md) — forming: setup activation path
+- [migrate-path-orbit.md](migrate-path-orbit.md) — current_branch: migrate path
+- [pin-migrate-one-path.md](pin-migrate-one-path.md) — living pin: one migrate path
+- [pin-migrate-preserve-history.md](pin-migrate-preserve-history.md) — living pin: preserve history
+- [pin-migrate-both-directions.md](pin-migrate-both-directions.md) — living pin: both directions
+- [pin-migrate-github-driver.md](pin-migrate-github-driver.md) — living pin: driver on migrate to shared
+- [p-migrate-github-driver.md](p-migrate-github-driver.md) — parked: driver leftover answered
+- [p-migrate-path.md](p-migrate-path.md) — forming: migrate activation path
+- [pin-default-shared.md](pin-default-shared.md) — living pin: new consumers default shared
+- [p-default-embedded.md](p-default-embedded.md) — parked: default remapped to shared

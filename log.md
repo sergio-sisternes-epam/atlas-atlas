@@ -1,3 +1,6 @@
+- 2026-09-10: Closed work `2026-09-10-atlas-store-modes` — shared vs dedicated store strategy shipped on Atlas #20.
+- 2026-09-10: Work `2026-09-10-atlas-store-modes` status designed — plan waiting approval.
+- 2026-09-10: Opened work `2026-09-10-atlas-store-modes` — discussion fabric under `autogenesis/discuss/store-modes/`.
 - 2026-09-09: Implemented work `2026-09-09-atlas-smr-configurable-recall` — SCHEMA 2.0 SMR opt-in, configure path, gated tgrep; Atlas 0.9.1 Unreleased.
 - 2026-09-09: Work `2026-09-09-atlas-smr-configurable-recall` status implementing — approved SMR plan persisted under Autogenesis space.
 - 2026-09-03: Closed work `2026-09-03-atlas-ci-activation-path` — Atlas 0.8.13 path ci, canonical merge gate, GitHub Actions adapters, and conformance checklist.
