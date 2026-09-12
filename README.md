@@ -68,3 +68,9 @@ The workflow downloads the CLI at the exact v0.8.13 commit from the private
 `sergio-sisternes-epam/atlas` repository. Configure the repository Actions
 secret `ATLAS_CLI_TOKEN` with read-only contents access to that repository.
 The token is used only for CLI acquisition.
+
+## License
+
+Copyright (c) 2026 Sergio Sisternes. All rights reserved. The source may be
+publicly readable, but it is proprietary and is not open source. See
+[`LICENSE`](LICENSE).
