@@ -1,5 +1,6 @@
 # Experiences
 
+- [2026-09-14 Copilot SHA refs; pin tags; marketplace PR 34](2026-09-14-copilot-sha-ref-install.md)
 - [2026-09-10 atlas-cartograph 0.4.1 declares atlas@atlas](2026-09-10-atlas-cartograph-0.4.1-atlas-dep.md)
 - [2026-09-10 rename apm-marketplace to atlas-marketplace and republish](2026-09-10-atlas-marketplace-rename.md)
 - [2026-09-10 release Atlas 0.11.0 and marketplace pin](2026-09-10-release-atlas-0.11.0.md)
