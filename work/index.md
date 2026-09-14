@@ -1,5 +1,6 @@
 # Work
 
+- [Pin atlas-marketplace catalog refs to cloneable release tags](2026-09-14-copilot-sha-ref-install.md) — **done** ([issue 33](https://github.com/sergio-sisternes-epam/atlas-marketplace/issues/33), [PR 34](https://github.com/sergio-sisternes-epam/atlas-marketplace/pull/34))
 - [Atlas marketplace rename and catalog republish](2026-09-10-atlas-marketplace-rename.md) — **done**
 - [Two Atlas store modes — shared branch and dedicated repo](2026-09-10-atlas-store-modes.md) — **done** (#20)
 - [Configurable Semantic Memory Recall with skill-owned organisation](2026-09-09-atlas-smr-configurable-recall.md) - **implemented** (0.10.0)

@@ -2,6 +2,7 @@
 
 Distilled do / avoid pages.
 
+- [Catalog ref must be a cloneable release tag, not a commit SHA](2026-09-14-catalog-ref-must-be-cloneable-tag.md)
 - [Register atlas-marketplace as name atlas; install pkg@atlas](2026-09-10-register-marketplace-as-atlas.md)
 - [APM 0.30.0 lockfiles record git coordinates for marketplace plugins](2026-09-10-apm-lockfile-marketplace-git-coords.md)
 - [Do not set git http.extraHeader Authorization for GitHub HTTPS](2026-08-30-github-rejects-git-extraheader.md)
