@@ -1,5 +1,6 @@
 # Autogenesis plans
 
+- [2026-09-18-index-md-semantic-memory](2026-09-18-index-md-semantic-memory.md) — approved; folder index.md as STM, two-layer query
 - [2026-09-10-atlas-store-modes](2026-09-10-atlas-store-modes.md) — implemented (#20)
 - [2026-09-09-atlas-smr-configurable-recall](2026-09-09-atlas-smr-configurable-recall.md) — approved, implementing
 - [2026-09-03-atlas-ci-activation-path](2026-09-03-atlas-ci-activation-path.md) — implemented (0.8.13)
