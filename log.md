@@ -49,3 +49,5 @@
 - 2026-09-03: Opened work `2026-09-03-skill-mount-home`. Dedicated mount is `.atlas/<id>/` submodule; `decisions/package-shapes.md` superseded by `decisions/mount-dot-atlas-submodule.md`.
 - 2026-09-09: Opened `autogenesis/discuss/recall-architecture/`; user selected wider Recall scope with tgrep as one component. Architecture remains forming; no implementation approval.
 - 2026-09-09: Opened draft work `2026-09-09-atlas-smr-configurable-recall`; linked the SMR/SMO discussion and accepted JSON configuration decision. Formal design and implementation approval remain pending.
+
+- 2026-09-27: note git-backed-versions discuss orbit (project pointer; fabric on discuss-atlas)

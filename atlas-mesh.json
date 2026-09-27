@@ -5,6 +5,11 @@
       "id": "github.com/sergio-sisternes-epam/atlas-atlas",
       "ref": "main",
       "path": "."
+    },
+    {
+      "id": "github.com/sergio-sisternes-epam/discuss-atlas",
+      "ref": "main",
+      "path": "../discuss-atlas"
     }
   ]
 }
