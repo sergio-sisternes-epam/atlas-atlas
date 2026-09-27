@@ -13,6 +13,8 @@ sensitivity: internal
 relates_to:
   - path: work/2026-09-27-git-backed-versions.md
     kind: implements
+  - path: autogenesis/discuss/git-backed-versions/pin-ref-edges-not-compiled.md
+    kind: related
   - path: autogenesis/discuss/git-backed-versions/open-pointer-shape.md
     kind: derived_from
   - path: autogenesis/discuss/git-backed-versions/open-pointer-shape.md
@@ -56,7 +58,7 @@ Closest to **URI / ref form** and **summary-plus-fields**, not same-path stub. T
 
 1. Is `ref` on each `relates_to` item (preferred reading), or a page-level field?
 2. Allowed values: full commit SHA only, or also tags / branch names (branches move — usually wrong for scars)?
-3. Does compile warn, ignore, or optionally fetch blobs for `ref`-qualified edges?
+3. Compile for `ref` edges — pinned: not compiled for now (see pin-ref-edges-not-compiled.md).
 4. Keep the word `ref`, or rename relation field to avoid mount-card collision?
 
 
@@ -84,4 +86,4 @@ Not page-level `ref:` next to `title` — that would collide harder with mount/m
 
 ## Outcome
 
-Forming pin candidate for pointer shape. Awaiting grain and naming confirmation.
+Edge-level `ref` confirmed by user. Compile: `ref` edges are not resolved for now (pin-ref-edges-not-compiled.md). Naming collision with mount `ref` still noted, not blocking.

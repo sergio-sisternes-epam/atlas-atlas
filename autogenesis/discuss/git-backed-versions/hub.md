@@ -19,6 +19,10 @@ relates_to:
     kind: related
   - path: autogenesis/discuss/git-backed-versions/open-pointer-shape.md
     kind: related
+  - path: autogenesis/discuss/git-backed-versions/pin-ref-edges-not-compiled.md
+    kind: related
+  - path: autogenesis/discuss/git-backed-versions/pin-candidate-frontmatter-ref.md
+    kind: related
   - path: glossary.md
     kind: related
 ---

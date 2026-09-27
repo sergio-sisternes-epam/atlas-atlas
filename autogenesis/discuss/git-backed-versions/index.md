@@ -10,3 +10,4 @@ Store: atlas-atlas (project Discuss orbit).
 - [Rationale — tip consolidates; Git history retains detail](rationale-consolidation-like-memory.md)
 - [Open — pointer shape](open-pointer-shape.md)
 - [Pin candidate — front-matter `ref`](pin-candidate-frontmatter-ref.md)
+- [Pin — ref edges not compiled](pin-ref-edges-not-compiled.md)
