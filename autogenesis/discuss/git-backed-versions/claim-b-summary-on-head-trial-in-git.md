@@ -3,16 +3,22 @@ type: experience
 title: "Claim B refined — terminate summary on HEAD; trial body in Git"
 created: "2026-09-27"
 work_id: "2026-09-27-git-backed-versions"
-status: in-discussion
-kva: forming
+status: accepted
+kva: alive
 reality: current
-description: "Engaged refinement of claim B. What must stay on the active branch is the summarised KVA terminate memory, not the full trial. Point at the old path/commit so detailed experiences remain traversable at higher recall cost."
-tags: [claim-b, kva, git, prune, summary, forming]
+description: "Accepted Claim B. Tip keeps terminate summary; whole failed path leaves tip; inbound rewrite; relates_to.ref for history. Durable decision + GitHub atlas#37."
+tags: [claim-b, kva, git, prune, summary, accepted]
 origin: user
 sensitivity: internal
 relates_to:
   - path: work/2026-09-27-git-backed-versions.md
     kind: implements
+  - path: autogenesis/discuss/git-backed-versions/decision-claim-b-tip-summary-git-history.md
+    kind: related
+  - path: autogenesis/discuss/git-backed-versions/decision-relates-to-ref-time-travel.md
+    kind: related
+  - path: autogenesis/discuss/git-backed-versions/constellation-2026-09-27-git-backed-versions.md
+    kind: related
   - path: autogenesis/discuss/git-backed-versions/pin-rewrite-inbound-links-to-summary.md
     kind: related
   - path: autogenesis/discuss/git-backed-versions/rationale-consolidation-like-memory.md
@@ -29,6 +35,8 @@ relates_to:
     kind: follows
   - path: autogenesis/discuss/git-backed-versions/hub.md
     kind: related
+  - path: autogenesis/discuss/git-backed-versions/decision-claim-a-living-version-hints.md
+    kind: related
 ---
 
 ## Context
@@ -37,15 +45,19 @@ Sergio refined claim B (2026-09-27): the important thing is the summarised memor
 
 ## What happened
 
-### Pin candidate (forming)
+### Pins (accepted → durable decision)
 
 On HEAD after a KVA terminate:
 
 1. **Keep** a terminate summary node (exit reason / what we learned / why the frame died). That is the cheap, live memory.
-2. **Remove** (or never promote) the full trial body from the active branch tip.
-3. **Retain** a git-ref / path pointer from that summary to the pre-prune location so detailed pages remain reachable via history (`git show`, path@commit, or equivalent Atlas recall), at higher cost than ordinary search.
+2. **Remove** the whole failed path from the active tip (exclusive-to-frame pages).
+3. **Rewrite** inbound tip links that pointed at deleted pages onto that one summary.
+4. **Retain** `relates_to` + optional `ref` from the summary into the pre-prune commit (not compiled for now).
+5. **Delete** = tip + default-search exclusion; Git retains bytes.
 
-This is not “delete the scar.” It is “keep the scar thin on HEAD; put the transcript in Git.”
+Durable memory: [decision-claim-b-tip-summary-git-history.md](decision-claim-b-tip-summary-git-history.md).  
+Implement issue: [atlas#37](https://github.com/sergio-sisternes-epam/atlas/issues/37).  
+Shared capability: [decision-relates-to-ref-time-travel.md](decision-relates-to-ref-time-travel.md).
 
 ### Implications
 
@@ -54,16 +66,17 @@ This is not “delete the scar.” It is “keep the scar thin on HEAD; put the 
 - Detail recall is an explicit, costlier step (history walk), not ambient graph noise.
 - Reactivation of a killed frame still looks like a *new* forming page derived from the summary stub, with optional restore of trial pages from the pointed commit — not an unmute of the deleted trial in place.
 
-### Support
+### Closed opens on this node
 
-Consolidation rationale: tip synthesises; Git history retains detail at higher cost (rationale-consolidation-like-memory.md).
+- Pointer shape → front-matter `ref` (open-pointer-shape superseded).
+- How much leaves tip → whole failed path (open-how-much-leaves-tip superseded).
 
-### Still open on this node
+### Still open adjacent
 
-- Exact pointer shape — now on open-pointer-shape.md.
-- Whether “full trial” means every counter page, or only the terminated thesis body — now on open-how-much-leaves-tip.md.
-- How recall APIs surface “expensive history” vs tip search.
+- Measure names for aggressive prune (open-aggressive-terminate-then-measure.md).
+- Recall UX polish; optional later compile of `ref`.
+- Multiverse shared-page edge cases.
 
 ## Outcome
 
-Claim B is sharper. Next: pin pointer shape, or take claim A in parallel.
+Claim B **accepted/pinned**. Implement on #37. Checkpoint: constellation-2026-09-27-git-backed-versions.md.

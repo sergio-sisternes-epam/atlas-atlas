@@ -3,14 +3,18 @@ type: experience
 title: "Open — pointer shape for pruned trial fabric"
 created: "2026-09-27"
 work_id: "2026-09-27-git-backed-versions"
-status: in-discussion
-kva: forming
+status: superseded
+kva: surviving
 reality: current
-description: "Next open point under claim B. What mechanical form links the terminate summary on HEAD to the full trial retained in Git history."
-tags: [pointer, git, claim-b, open, forming]
+description: "Superseded. Pointer shape absorbed into front-matter ref + not-compiled pins and Claim B decision."
+tags: [pointer, git, claim-b, superseded]
 origin: derived
 sensitivity: internal
 relates_to:
+  - path: autogenesis/discuss/git-backed-versions/decision-claim-b-tip-summary-git-history.md
+    kind: related
+  - path: autogenesis/discuss/git-backed-versions/constellation-2026-09-27-git-backed-versions.md
+    kind: related
   - path: work/2026-09-27-git-backed-versions.md
     kind: implements
   - path: autogenesis/discuss/git-backed-versions/pin-candidate-frontmatter-ref.md
@@ -53,4 +57,4 @@ Claim B refined: keep KVA terminate summary on HEAD; shed full trial from the ac
 
 ## Outcome
 
-Engaged: user proposes front-matter `ref` on off-tip links → pin-candidate-frontmatter-ref.md. Other shapes still available as counters/alternatives.
+**Superseded / absorbed.** Front-matter `ref` + not-compiled pins closed this open. See decision-claim-b-tip-summary-git-history.md, pin-candidate-frontmatter-ref.md, pin-ref-edges-not-compiled.md, and constellation-2026-09-27-git-backed-versions.md.

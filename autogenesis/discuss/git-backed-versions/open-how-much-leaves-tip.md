@@ -3,14 +3,18 @@ type: experience
 title: "Open — how much of the trial leaves tip"
 created: "2026-09-27"
 work_id: "2026-09-27-git-backed-versions"
-status: in-discussion
-kva: forming
+status: superseded
+kva: surviving
 reality: current
-description: "Next open under claim B. After KVA terminate, which pages leave the active tip versus stay as live scar or living thesis. Pointer shape (edge ref, not compiled) is already pinned for off-tip targets."
-tags: [prune, subgraph, claim-b, open, forming]
+description: "Superseded. Absorbed into pin-drop-whole-failed-path and Claim B decision: whole failed path leaves tip."
+tags: [prune, subgraph, claim-b, superseded]
 origin: derived
 sensitivity: internal
 relates_to:
+  - path: autogenesis/discuss/git-backed-versions/decision-claim-b-tip-summary-git-history.md
+    kind: related
+  - path: autogenesis/discuss/git-backed-versions/constellation-2026-09-27-git-backed-versions.md
+    kind: related
   - path: work/2026-09-27-git-backed-versions.md
     kind: implements
   - path: autogenesis/discuss/git-backed-versions/pin-drop-whole-failed-path.md
@@ -57,4 +61,4 @@ Next open: **how much** of the trial fabric leaves the active tip.
 
 ## Outcome
 
-Pinned: whole failed path leaves tip; small summary stays; explore via ref → pin-drop-whole-failed-path.md.
+**Superseded / absorbed.** Whole failed path leaves tip (pin-drop-whole-failed-path.md). See decision-claim-b-tip-summary-git-history.md and constellation-2026-09-27-git-backed-versions.md.

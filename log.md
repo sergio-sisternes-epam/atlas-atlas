@@ -74,3 +74,4 @@
 - 2026-09-27: engage claim A — version hints on living pages via ref
 
 - 2026-09-27: think-challenge current-vs-history (KCS/ES/IESG grounded)
+- 2026-09-27: constellation checkpoint + durable Claim A/B and relates_to.ref decisions on git-backed-versions orbit (atlas#37 / #38); no origin push for atlas-atlas
