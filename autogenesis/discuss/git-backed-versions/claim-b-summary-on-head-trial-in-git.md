@@ -13,6 +13,8 @@ sensitivity: internal
 relates_to:
   - path: work/2026-09-27-git-backed-versions.md
     kind: implements
+  - path: autogenesis/discuss/git-backed-versions/rationale-consolidation-like-memory.md
+    kind: related
   - path: autogenesis/discuss/git-backed-versions/thesis-git-is-durability-live-tree-may-prune.md
     kind: derived_from
   - path: autogenesis/discuss/git-backed-versions/thesis-git-is-durability-live-tree-may-prune.md
@@ -43,6 +45,10 @@ This is not “delete the scar.” It is “keep the scar thin on HEAD; put the 
 - Default search / compile live graph stays small.
 - Detail recall is an explicit, costlier step (history walk), not ambient graph noise.
 - Reactivation of a killed frame still looks like a *new* forming page derived from the summary stub, with optional restore of trial pages from the pointed commit — not an unmute of the deleted trial in place.
+
+### Support
+
+Consolidation rationale: tip synthesises; Git history retains detail at higher cost (rationale-consolidation-like-memory.md).
 
 ### Still open on this node
 

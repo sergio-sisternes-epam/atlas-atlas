@@ -54,3 +54,5 @@
 - 2026-09-27: relocate git-backed-versions discuss orbit onto atlas-atlas; discuss-atlas unmounted from steward host
 
 - 2026-09-27: refine claim B — terminate summary on HEAD; trial body in Git via path/commit pointer
+
+- 2026-09-27: rationale — tip consolidation vs Git history as retained dimension
