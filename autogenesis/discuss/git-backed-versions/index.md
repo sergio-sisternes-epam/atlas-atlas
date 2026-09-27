@@ -17,3 +17,5 @@ Store: atlas-atlas (project Discuss orbit).
 - [Pin — one summary stand-in](pin-single-summary-stand-in.md)
 - [Claim A — version hints on living pages](claim-a-version-hints-on-living-pages.md)
 - [Think-challenge — current vs history](challenge-current-vs-history.md)
+- [Pin — delete means tip/search exclusion](pin-delete-means-tip-search-exclusion.md)
+- [Open — aggressive terminate then measure](open-aggressive-terminate-then-measure.md)

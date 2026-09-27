@@ -3,7 +3,7 @@ type: experience
 title: "Think-challenge — current state vs full history (keep tip vs prune+ref)"
 created: "2026-09-27"
 work_id: "2026-09-27-git-backed-versions"
-status: probed
+status: responded
 kva: forming
 reality: current
 description: "Grounded counters to the keep-all-on-tip vs terminate-and-git-ref choice for evolving memories (e.g. SSH key lineage). Search-backed challenge, not invent."
@@ -20,6 +20,8 @@ relates_to:
   - path: autogenesis/discuss/git-backed-versions/pin-single-summary-stand-in.md
     kind: related
   - path: autogenesis/discuss/git-backed-versions/thesis-git-is-durability-live-tree-may-prune.md
+    kind: related
+  - path: autogenesis/discuss/git-backed-versions/pin-delete-means-tip-search-exclusion.md
     kind: related
 ---
 
@@ -49,4 +51,18 @@ The dual need (handy current + recoverable why) stands. Neither “keep all live
 
 ## Outcome
 
-Probe did not kill the dual-need thesis. It kills naive option 1 (visible tip clutter) and naive option 2 (delete without searchable exclusion discipline and without why on tip).
+Dual need stands. After user response: option 2 with “delete = tip/search exclusion + git retention + tip stand-in” is the working model. Naive option 1 remains rejected. Aggressive prune starts with measurement TBD. Space/time traversal complements tip; it must not replace the tip projection.
+
+## User response (2026-09-27)
+
+1. **Delete = tip/search exclusion, not shred.** Git retains past memories; tip stays a contained healthy graph; history walks recover the trail. Dissolves naive reading of counter 1 (physical delete).
+
+2. **Aggressive KVA terminate first, then measure.** Accepts counter 2’s balance warning; starts aggressive and tunes from evidence. Open: name the measures (tip size, wrong current-state hits, forced history walks for “now”).
+
+3. **Stale-but-searchable tip is the current problem.** Affirms counter 3 as the live pain driving prune+stand-in over keep-all-live.
+
+4. **Space/time graph is the answer to counter 4.** Enabling git version traversal so agents walk space *and* time deliberately — tip remains the cheap “now” projection; `ref` walks are as-of/why, not a substitute for maintaining tip.
+
+### Hardened framing after response
+
+Tip = current searchable projection. Terminate = remove from that projection (bytes leave tip; recoverable in git). Stand-in + `ref` = gateway into space/time. Supersede ≠ terminate.

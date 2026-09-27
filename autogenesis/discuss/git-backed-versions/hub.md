@@ -21,6 +21,10 @@ relates_to:
     kind: related
   - path: autogenesis/discuss/git-backed-versions/challenge-current-vs-history.md
     kind: related
+  - path: autogenesis/discuss/git-backed-versions/open-aggressive-terminate-then-measure.md
+    kind: related
+  - path: autogenesis/discuss/git-backed-versions/pin-delete-means-tip-search-exclusion.md
+    kind: related
   - path: autogenesis/discuss/git-backed-versions/claim-b-summary-on-head-trial-in-git.md
     kind: related
   - path: autogenesis/discuss/git-backed-versions/rationale-consolidation-like-memory.md
