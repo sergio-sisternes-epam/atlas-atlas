@@ -13,6 +13,8 @@ sensitivity: internal
 relates_to:
   - path: work/2026-09-27-git-backed-versions.md
     kind: implements
+  - path: autogenesis/discuss/git-backed-versions/pin-drop-whole-failed-path.md
+    kind: related
   - path: autogenesis/discuss/git-backed-versions/claim-b-summary-on-head-trial-in-git.md
     kind: derived_from
   - path: autogenesis/discuss/git-backed-versions/claim-b-summary-on-head-trial-in-git.md
@@ -55,4 +57,4 @@ Next open: **how much** of the trial fabric leaves the active tip.
 
 ## Outcome
 
-Forming. Awaiting which grain (or hybrid) to take.
+Pinned: whole failed path leaves tip; small summary stays; explore via ref → pin-drop-whole-failed-path.md.

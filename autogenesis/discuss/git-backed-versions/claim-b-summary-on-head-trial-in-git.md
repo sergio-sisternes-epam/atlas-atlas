@@ -19,6 +19,8 @@ relates_to:
     kind: related
   - path: autogenesis/discuss/git-backed-versions/open-how-much-leaves-tip.md
     kind: related
+  - path: autogenesis/discuss/git-backed-versions/pin-drop-whole-failed-path.md
+    kind: related
   - path: autogenesis/discuss/git-backed-versions/thesis-git-is-durability-live-tree-may-prune.md
     kind: derived_from
   - path: autogenesis/discuss/git-backed-versions/thesis-git-is-durability-live-tree-may-prune.md
