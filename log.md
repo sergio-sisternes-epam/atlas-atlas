@@ -51,3 +51,4 @@
 - 2026-09-09: Opened draft work `2026-09-09-atlas-smr-configurable-recall`; linked the SMR/SMO discussion and accepted JSON configuration decision. Formal design and implementation approval remain pending.
 
 - 2026-09-27: note git-backed-versions discuss orbit (project pointer; fabric on discuss-atlas)
+- 2026-09-27: relocate git-backed-versions discuss orbit onto atlas-atlas; discuss-atlas unmounted from steward host

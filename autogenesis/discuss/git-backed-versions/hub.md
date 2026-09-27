@@ -1,12 +1,14 @@
 ---
 type: experience
-title: "Hub — Atlas git-backed version links (project side)"
+title: "Hub — git-backed version links and live-tree pruning"
 created: "2026-09-27"
 work_id: "2026-09-27-git-backed-versions"
 status: in-discussion
 kva: alive
-description: "Project-side pointer for the discuss orbit on git-ref relationships and pruning terminated notes from HEAD. Primary fabric lives in discuss-atlas."
-origin: derived
+reality: current
+description: "discussion_root on atlas-atlas. Once Git is engaged, the live Atlas tree need not keep every past page immutable on HEAD. Explore git-ref relationships for prior versions and for KVA-terminated cleanup."
+tags: [hub, discussion-root, git, kva, versions]
+origin: user
 sensitivity: internal
 relates_to:
   - path: work/2026-09-27-git-backed-versions.md
@@ -17,12 +19,29 @@ relates_to:
 
 ## Context
 
-Sergio authorised mounting atlas-atlas and remembering project notes for this discussion. The live Discuss graph is on discuss-atlas at `git-backed-versions/hub.md` (atlas id `github.com/sergio-sisternes-epam/discuss-atlas`).
+Subject: Atlas support for git-ref relationships to past versions of the same page, and using those refs to delete KVA-terminated notes from the live tree while keeping a pointer to the pre-delete commit.
 
-## Claim (forming)
+Objective: Decide whether (and how) Atlas should treat Git history as the durability layer for superseded or terminated knowledge, so HEAD stays navigable without pretending pages are file-immutable.
 
-Once an Atlas store is Git-backed, HEAD need not keep every historical page body. Atlas should be able to (1) relate a living page to prior git versions with small hints, and (2) remove KVA-terminated pages from the live tree while pinning a pointer to the pre-delete commit.
+This page is `discussion_root`. It does not move. Store for this orbit: atlas-atlas (not discuss-atlas).
+
+## What happened
+
+2026-09-27 — Sergio opened this orbit and directed that the fabric live on atlas-atlas. An accidental first pin on discuss-atlas was reverted and that store was unmounted from the steward host. Index-improvement PR work on Atlas was acknowledged and set aside.
+
+## Settled adjacent (not this orbit)
+
+- Discuss process elsewhere still says exit stubs are not deleted by default.
+- Prior discuss probe: reactivation is a new ref, not an in-place unmute.
+
+## Batch on the hub (not yet engaged 1-by-1)
+
+1. Claim A — alive pages may relate to prior git versions of themselves (hints / small pointers).
+2. Claim B — terminated notes may leave HEAD, with a thin pointer pinned to the pre-delete commit.
+3. Counter — path stability / broken `atlas://` links if the file disappears from HEAD.
+4. Counter — scar readability if only a SHA remains and the exit-reason body is gone from HEAD.
+5. Probe — cheapest shape of the pointer (stub page at same path vs frontmatter-only edge vs `path@commit` URI).
 
 ## Outcome
 
-Forming. Discussion continues in discuss-atlas. No implement authority from this page.
+Orbit open. Forming thesis follows this hub.

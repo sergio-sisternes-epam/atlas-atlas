@@ -19,4 +19,4 @@ Process memory for the **Atlas** skill (successor to okf-wiki operational layer)
 - work_id: `okf-wiki-karpathy-realign-simplify-compose-migrate-v1`
 - plan: `artifacts/autogenesis-plans/2026-08-23-atlas-reboot-okf-wiki-v1.md`
 
-- [Git-backed versions discussion](autogenesis/discuss/git-backed-versions/hub.md) — forming; primary fabric on discuss-atlas
+- [Git-backed versions discussion](autogenesis/discuss/git-backed-versions/hub.md) — forming; fabric on atlas-atlas
