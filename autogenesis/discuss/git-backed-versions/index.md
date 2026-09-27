@@ -9,3 +9,4 @@ Store: atlas-atlas (project Discuss orbit).
 - [Claim B — summary on HEAD; trial in Git](claim-b-summary-on-head-trial-in-git.md)
 - [Rationale — tip consolidates; Git history retains detail](rationale-consolidation-like-memory.md)
 - [Open — pointer shape](open-pointer-shape.md)
+- [Pin candidate — front-matter `ref`](pin-candidate-frontmatter-ref.md)

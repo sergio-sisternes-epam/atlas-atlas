@@ -58,3 +58,5 @@
 - 2026-09-27: rationale — tip consolidation vs Git history as retained dimension
 
 - 2026-09-27: open pointer-shape node under claim B
+
+- 2026-09-27: pin candidate — front-matter ref for off-tip relates_to

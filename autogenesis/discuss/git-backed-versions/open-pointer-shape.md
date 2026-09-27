@@ -13,6 +13,8 @@ sensitivity: internal
 relates_to:
   - path: work/2026-09-27-git-backed-versions.md
     kind: implements
+  - path: autogenesis/discuss/git-backed-versions/pin-candidate-frontmatter-ref.md
+    kind: related
   - path: autogenesis/discuss/git-backed-versions/claim-b-summary-on-head-trial-in-git.md
     kind: derived_from
   - path: autogenesis/discuss/git-backed-versions/claim-b-summary-on-head-trial-in-git.md
@@ -51,4 +53,4 @@ Claim B refined: keep KVA terminate summary on HEAD; shed full trial from the ac
 
 ## Outcome
 
-Forming. Awaiting which shape (or hybrid) to take 1-by-1.
+Engaged: user proposes front-matter `ref` on off-tip links → pin-candidate-frontmatter-ref.md. Other shapes still available as counters/alternatives.
