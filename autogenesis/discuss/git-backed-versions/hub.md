@@ -17,6 +17,8 @@ relates_to:
     kind: related
   - path: autogenesis/discuss/git-backed-versions/rationale-consolidation-like-memory.md
     kind: related
+  - path: autogenesis/discuss/git-backed-versions/open-pointer-shape.md
+    kind: related
   - path: glossary.md
     kind: related
 ---
@@ -44,7 +46,7 @@ This page is `discussion_root`. It does not move. Store for this orbit: atlas-at
 2. Claim B — engaged: keep KVA terminate *summary* on HEAD; shed full trial from active branch; point at old path/commit for costly detail recall → claim-b-summary-on-head-trial-in-git.md
 3. Counter — path stability / broken `atlas://` links if the file disappears from HEAD.
 4. Counter — scar readability if only a SHA remains and the exit-reason body is gone from HEAD.
-5. Probe — cheapest shape of the pointer (stub page at same path vs frontmatter-only edge vs `path@commit` URI).
+5. Probe — pointer shape — engaged → open-pointer-shape.md
 
 ## Outcome
 

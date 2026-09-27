@@ -15,6 +15,8 @@ relates_to:
     kind: implements
   - path: autogenesis/discuss/git-backed-versions/rationale-consolidation-like-memory.md
     kind: related
+  - path: autogenesis/discuss/git-backed-versions/open-pointer-shape.md
+    kind: related
   - path: autogenesis/discuss/git-backed-versions/thesis-git-is-durability-live-tree-may-prune.md
     kind: derived_from
   - path: autogenesis/discuss/git-backed-versions/thesis-git-is-durability-live-tree-may-prune.md
@@ -52,7 +54,7 @@ Consolidation rationale: tip synthesises; Git history retains detail at higher c
 
 ### Still open on this node
 
-- Exact pointer shape (same-path stub vs summary-with-`prior_path@commit` field vs URI form).
+- Exact pointer shape — now on open-pointer-shape.md.
 - Whether “full trial” means every counter page, or only the terminated thesis body.
 - How recall APIs surface “expensive history” vs tip search.
 

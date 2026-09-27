@@ -56,3 +56,5 @@
 - 2026-09-27: refine claim B — terminate summary on HEAD; trial body in Git via path/commit pointer
 
 - 2026-09-27: rationale — tip consolidation vs Git history as retained dimension
+
+- 2026-09-27: open pointer-shape node under claim B
