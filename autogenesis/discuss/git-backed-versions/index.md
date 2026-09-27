@@ -16,3 +16,4 @@ Store: atlas-atlas (project Discuss orbit).
 - [Pin — rewrite inbound links to summary](pin-rewrite-inbound-links-to-summary.md)
 - [Pin — one summary stand-in](pin-single-summary-stand-in.md)
 - [Claim A — version hints on living pages](claim-a-version-hints-on-living-pages.md)
+- [Think-challenge — current vs history](challenge-current-vs-history.md)
