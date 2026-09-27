@@ -15,6 +15,8 @@ relates_to:
     kind: implements
   - path: autogenesis/discuss/git-backed-versions/claim-b-summary-on-head-trial-in-git.md
     kind: related
+  - path: autogenesis/discuss/git-backed-versions/claim-a-version-hints-on-living-pages.md
+    kind: related
   - path: autogenesis/discuss/git-backed-versions/hub.md
     kind: derived_from
   - path: autogenesis/discuss/git-backed-versions/hub.md

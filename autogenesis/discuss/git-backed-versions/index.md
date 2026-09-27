@@ -15,3 +15,4 @@ Store: atlas-atlas (project Discuss orbit).
 - [Pin — drop whole failed path](pin-drop-whole-failed-path.md)
 - [Pin — rewrite inbound links to summary](pin-rewrite-inbound-links-to-summary.md)
 - [Pin — one summary stand-in](pin-single-summary-stand-in.md)
+- [Claim A — version hints on living pages](claim-a-version-hints-on-living-pages.md)

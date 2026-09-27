@@ -70,3 +70,5 @@
 - 2026-09-27: pin — rewrite inbound tip links onto terminate summary
 
 - 2026-09-27: pin — one tip summary stand-in; inbound links retarget there; history only via summary ref edges
+
+- 2026-09-27: engage claim A — version hints on living pages via ref
