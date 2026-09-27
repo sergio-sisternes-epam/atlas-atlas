@@ -13,6 +13,8 @@ sensitivity: internal
 relates_to:
   - path: work/2026-09-27-git-backed-versions.md
     kind: implements
+  - path: autogenesis/discuss/git-backed-versions/claim-b-summary-on-head-trial-in-git.md
+    kind: related
   - path: autogenesis/discuss/git-backed-versions/hub.md
     kind: derived_from
   - path: autogenesis/discuss/git-backed-versions/hub.md
@@ -29,7 +31,7 @@ User claim (2026-09-27): once Git is engaged, it makes no sense that memories be
 
 **A — Version hints on living pages.** An alive (or forming) page may declare a relationship to one or more prior git versions of itself (or of a named path), carrying a small human hint about what changed. Durability of the old bytes is Git’s job. The live page carries navigation, not a full archive copy.
 
-**B — Prune terminated from HEAD.** A KVA-terminated note need not remain as a full page in HEAD forever. After a recorded terminate ramp, Atlas may delete the page from the live tree and leave a thin pointer (stub or edge) that names the git commit immediately before deletion and the path that held the KVA entrypoint. Live complexity falls. History remains recoverable via Git.
+**B — Prune terminated from HEAD (refined).** Keep the KVA *terminate summary* on the active branch. Remove the full trial body from tip. Point from the summary to the old path (and commit) so detailed experiences stay traversable at higher recall cost. Live complexity falls without losing history.
 
 ### Tension with current discuss defaults
 
@@ -44,4 +46,4 @@ Discuss process elsewhere: do not delete exit stubs; do not flip terminated back
 
 ## Outcome
 
-Forming. Needs a pin on whether A and B are one design or two ships, and which pointer shape is the cheapest probe.
+Forming. Claim B refined: summary stays on HEAD; full trial may leave the active branch behind a git/path pointer (see claim-b-summary-on-head-trial-in-git.md). Still needs pointer shape and whether A ships with B.

@@ -13,6 +13,8 @@ sensitivity: internal
 relates_to:
   - path: work/2026-09-27-git-backed-versions.md
     kind: implements
+  - path: autogenesis/discuss/git-backed-versions/claim-b-summary-on-head-trial-in-git.md
+    kind: related
   - path: glossary.md
     kind: related
 ---
@@ -37,7 +39,7 @@ This page is `discussion_root`. It does not move. Store for this orbit: atlas-at
 ## Batch on the hub (not yet engaged 1-by-1)
 
 1. Claim A — alive pages may relate to prior git versions of themselves (hints / small pointers).
-2. Claim B — terminated notes may leave HEAD, with a thin pointer pinned to the pre-delete commit.
+2. Claim B — engaged: keep KVA terminate *summary* on HEAD; shed full trial from active branch; point at old path/commit for costly detail recall → claim-b-summary-on-head-trial-in-git.md
 3. Counter — path stability / broken `atlas://` links if the file disappears from HEAD.
 4. Counter — scar readability if only a SHA remains and the exit-reason body is gone from HEAD.
 5. Probe — cheapest shape of the pointer (stub page at same path vs frontmatter-only edge vs `path@commit` URI).
