@@ -21,6 +21,8 @@ relates_to:
     kind: related
   - path: autogenesis/discuss/git-backed-versions/pin-ref-edges-not-compiled.md
     kind: related
+  - path: autogenesis/discuss/git-backed-versions/open-how-much-leaves-tip.md
+    kind: related
   - path: autogenesis/discuss/git-backed-versions/pin-candidate-frontmatter-ref.md
     kind: related
   - path: glossary.md

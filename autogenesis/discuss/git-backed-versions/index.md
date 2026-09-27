@@ -11,3 +11,4 @@ Store: atlas-atlas (project Discuss orbit).
 - [Open — pointer shape](open-pointer-shape.md)
 - [Pin candidate — front-matter `ref`](pin-candidate-frontmatter-ref.md)
 - [Pin — ref edges not compiled](pin-ref-edges-not-compiled.md)
+- [Open — how much leaves tip](open-how-much-leaves-tip.md)

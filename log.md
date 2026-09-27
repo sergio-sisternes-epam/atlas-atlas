@@ -62,3 +62,5 @@
 - 2026-09-27: pin candidate — front-matter ref for off-tip relates_to
 
 - 2026-09-27: pin — relates_to with ref not compiled for now
+
+- 2026-09-27: open — how much of the trial leaves tip

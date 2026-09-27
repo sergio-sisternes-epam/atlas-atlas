@@ -17,6 +17,8 @@ relates_to:
     kind: related
   - path: autogenesis/discuss/git-backed-versions/open-pointer-shape.md
     kind: related
+  - path: autogenesis/discuss/git-backed-versions/open-how-much-leaves-tip.md
+    kind: related
   - path: autogenesis/discuss/git-backed-versions/thesis-git-is-durability-live-tree-may-prune.md
     kind: derived_from
   - path: autogenesis/discuss/git-backed-versions/thesis-git-is-durability-live-tree-may-prune.md
@@ -55,7 +57,7 @@ Consolidation rationale: tip synthesises; Git history retains detail at higher c
 ### Still open on this node
 
 - Exact pointer shape — now on open-pointer-shape.md.
-- Whether “full trial” means every counter page, or only the terminated thesis body.
+- Whether “full trial” means every counter page, or only the terminated thesis body — now on open-how-much-leaves-tip.md.
 - How recall APIs surface “expensive history” vs tip search.
 
 ## Outcome
