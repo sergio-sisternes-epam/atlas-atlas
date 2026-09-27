@@ -29,3 +29,5 @@
 - [APM-authored Copilot panel-review skill](2026-09-03-pr-panel-review.md) — **done**
 
 - [Epic — storage-mesh remainders](2026-08-29-atlas-storage-mesh-remainders.md) — **designed** ([children](remainders/))
+
+- [2026-09-27 git-backed versions](2026-09-27-git-backed-versions.md)

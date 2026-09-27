@@ -49,3 +49,29 @@
 - 2026-09-03: Opened work `2026-09-03-skill-mount-home`. Dedicated mount is `.atlas/<id>/` submodule; `decisions/package-shapes.md` superseded by `decisions/mount-dot-atlas-submodule.md`.
 - 2026-09-09: Opened `autogenesis/discuss/recall-architecture/`; user selected wider Recall scope with tgrep as one component. Architecture remains forming; no implementation approval.
 - 2026-09-09: Opened draft work `2026-09-09-atlas-smr-configurable-recall`; linked the SMR/SMO discussion and accepted JSON configuration decision. Formal design and implementation approval remain pending.
+
+- 2026-09-27: note git-backed-versions discuss orbit (project pointer; fabric on discuss-atlas)
+- 2026-09-27: relocate git-backed-versions discuss orbit onto atlas-atlas; discuss-atlas unmounted from steward host
+
+- 2026-09-27: refine claim B — terminate summary on HEAD; trial body in Git via path/commit pointer
+
+- 2026-09-27: rationale — tip consolidation vs Git history as retained dimension
+
+- 2026-09-27: open pointer-shape node under claim B
+
+- 2026-09-27: pin candidate — front-matter ref for off-tip relates_to
+
+- 2026-09-27: pin — relates_to with ref not compiled for now
+
+- 2026-09-27: open — how much of the trial leaves tip
+
+- 2026-09-27: pin — drop whole failed path; summary on tip; ref for later
+
+- 2026-09-27: pin — rewrite inbound tip links onto terminate summary
+
+- 2026-09-27: pin — one tip summary stand-in; inbound links retarget there; history only via summary ref edges
+
+- 2026-09-27: engage claim A — version hints on living pages via ref
+
+- 2026-09-27: think-challenge current-vs-history (KCS/ES/IESG grounded)
+- 2026-09-27: constellation checkpoint + durable Claim A/B and relates_to.ref decisions on git-backed-versions orbit (atlas#37 / #38); no origin push for atlas-atlas
