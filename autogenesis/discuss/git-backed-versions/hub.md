@@ -13,6 +13,8 @@ sensitivity: internal
 relates_to:
   - path: work/2026-09-27-git-backed-versions.md
     kind: implements
+  - path: autogenesis/discuss/git-backed-versions/pin-rewrite-inbound-links-to-summary.md
+    kind: related
   - path: autogenesis/discuss/git-backed-versions/claim-b-summary-on-head-trial-in-git.md
     kind: related
   - path: autogenesis/discuss/git-backed-versions/rationale-consolidation-like-memory.md

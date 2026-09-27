@@ -13,6 +13,8 @@ sensitivity: internal
 relates_to:
   - path: work/2026-09-27-git-backed-versions.md
     kind: implements
+  - path: autogenesis/discuss/git-backed-versions/pin-rewrite-inbound-links-to-summary.md
+    kind: related
   - path: autogenesis/discuss/git-backed-versions/open-how-much-leaves-tip.md
     kind: derived_from
   - path: autogenesis/discuss/git-backed-versions/open-how-much-leaves-tip.md
@@ -36,6 +38,10 @@ Sergio (2026-09-27), in plain terms: drop the whole failed path. Keep a small su
 1. **Leave tip:** the entire failed path (killed thesis and the pages that existed only for that failed frame — counters, probes, exclusive side notes).
 2. **Stay on tip:** a small summary node — what the experience was, what we learned or decided, and why the path ended.
 3. **Bridge:** from that summary, `relates_to` entries with `ref` pointing at the old paths at the pre-prune commit (not compiled for now).
+
+### Follow-up pin
+
+Living tip edges that pointed at killed pages must be rewritten to the summary (pin-rewrite-inbound-links-to-summary.md).
 
 ### Not this pin
 

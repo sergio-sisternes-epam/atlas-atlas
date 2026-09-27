@@ -13,3 +13,4 @@ Store: atlas-atlas (project Discuss orbit).
 - [Pin — ref edges not compiled](pin-ref-edges-not-compiled.md)
 - [Open — how much leaves tip](open-how-much-leaves-tip.md)
 - [Pin — drop whole failed path](pin-drop-whole-failed-path.md)
+- [Pin — rewrite inbound links to summary](pin-rewrite-inbound-links-to-summary.md)
