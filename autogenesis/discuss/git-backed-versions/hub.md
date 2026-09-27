@@ -15,6 +15,8 @@ relates_to:
     kind: implements
   - path: autogenesis/discuss/git-backed-versions/pin-rewrite-inbound-links-to-summary.md
     kind: related
+  - path: autogenesis/discuss/git-backed-versions/pin-single-summary-stand-in.md
+    kind: related
   - path: autogenesis/discuss/git-backed-versions/claim-b-summary-on-head-trial-in-git.md
     kind: related
   - path: autogenesis/discuss/git-backed-versions/rationale-consolidation-like-memory.md

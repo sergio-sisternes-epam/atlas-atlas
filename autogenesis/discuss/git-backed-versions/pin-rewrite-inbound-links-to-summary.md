@@ -13,6 +13,8 @@ sensitivity: internal
 relates_to:
   - path: work/2026-09-27-git-backed-versions.md
     kind: implements
+  - path: autogenesis/discuss/git-backed-versions/pin-single-summary-stand-in.md
+    kind: related
   - path: autogenesis/discuss/git-backed-versions/pin-drop-whole-failed-path.md
     kind: derived_from
   - path: autogenesis/discuss/git-backed-versions/pin-drop-whole-failed-path.md
@@ -39,9 +41,9 @@ When prune removes the whole failed path from tip:
 2. Rewrite those edges so `path` becomes the terminate-summary page that remains on tip.
 3. Tip compile stays green: no living edge should still name a path that left HEAD.
 
-### Optional detail (not yet pinned)
+### Optional detail — closed
 
-Whether each rewritten edge also keeps a `ref` (and maybe the old path in a second field or comment) so the *original* target remains recoverable in history. User’s words require retargeting to the summary; they do not yet require preserving the old path on every inbound rewrite. The summary itself already carries `ref` into the failed path.
+Do **not** put `ref` on every inbound rewrite. Tip edges only retarget to the summary. History lives on the summary’s own `ref` edges (pin-single-summary-stand-in.md).
 
 ### Why
 
@@ -49,4 +51,4 @@ Otherwise tip would keep dangling tip links after prune, or compile would fail. 
 
 ## Outcome
 
-Inbound tip-link rewrite onto the summary is required on prune. Optional `ref` on those rewritten edges still open if needed.
+Inbound tip-link rewrite onto the summary is required. No `ref` on those rewritten edges. History gateway is the summary alone.

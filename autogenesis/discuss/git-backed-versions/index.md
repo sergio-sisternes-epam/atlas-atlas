@@ -14,3 +14,4 @@ Store: atlas-atlas (project Discuss orbit).
 - [Open — how much leaves tip](open-how-much-leaves-tip.md)
 - [Pin — drop whole failed path](pin-drop-whole-failed-path.md)
 - [Pin — rewrite inbound links to summary](pin-rewrite-inbound-links-to-summary.md)
+- [Pin — one summary stand-in](pin-single-summary-stand-in.md)

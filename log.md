@@ -68,3 +68,5 @@
 - 2026-09-27: pin — drop whole failed path; summary on tip; ref for later
 
 - 2026-09-27: pin — rewrite inbound tip links onto terminate summary
+
+- 2026-09-27: pin — one tip summary stand-in; inbound links retarget there; history only via summary ref edges
