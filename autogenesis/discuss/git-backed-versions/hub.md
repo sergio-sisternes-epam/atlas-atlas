@@ -87,4 +87,4 @@ This page is `discussion_root`. It does not move. Store for this orbit: atlas-at
 
 ## Outcome
 
-Orbit checkpointed. Standing: thesis + Claim B pins + dual need + aggressive-then-measure. Still open: Claim A grain, measure names, recall UX, optional ref compile, multiverse shared-page edges.
+Checkpointed and work hub closed 2026-09-27. Implementation: atlas #37 (Claim B), #38 (Claim A). Discussion fabric remains for history; no further discuss pins expected unless issues send questions back.
