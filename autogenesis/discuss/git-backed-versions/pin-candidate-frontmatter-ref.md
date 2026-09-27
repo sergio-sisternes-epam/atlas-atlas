@@ -59,6 +59,29 @@ Closest to **URI / ref form** and **summary-plus-fields**, not same-path stub. T
 3. Does compile warn, ignore, or optionally fetch blobs for `ref`-qualified edges?
 4. Keep the word `ref`, or rename relation field to avoid mount-card collision?
 
+
+### Worked example in current `relates_to` list shape
+
+Today SCHEMA says authoritative links are `relates_to: [{path, kind}]`. Tip edges stay that shape. Off-tip edges add optional `ref` on the **same list item**.
+
+```yaml
+relates_to:
+  # Tip (unchanged)
+  - path: work/2026-09-27-git-backed-versions.md
+    kind: implements
+  - path: autogenesis/discuss/git-backed-versions/hub.md
+    kind: related
+
+  # Off-tip: trial page removed from HEAD; still addressable in history
+  - path: autogenesis/discuss/git-backed-versions/old-trial-counter.md
+    kind: derived_from
+    ref: 8ab638c1f0e2a9b4c5d6e7f8091a2b3c4d5e6f70
+```
+
+Reading: missing `ref` ⇒ resolve `path` on the active tip (compile today). Present `ref` ⇒ resolve `path` at that Git revision; do not require the file on HEAD.
+
+Not page-level `ref:` next to `title` — that would collide harder with mount/mesh `ref` and would not scale when one summary links several historical paths at different commits.
+
 ## Outcome
 
 Forming pin candidate for pointer shape. Awaiting grain and naming confirmation.
