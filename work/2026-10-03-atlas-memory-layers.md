@@ -16,6 +16,8 @@ relates_to:
     kind: related
   - path: experiences/2026-10-03-implement-atlas-memory-layers.md
     kind: related
+  - path: decisions/2026-10-04-recall-renames-query-path-and-search.md
+    kind: related
 ---
 
 ## Scope
@@ -30,3 +32,4 @@ Design how Atlas moves from a document store toward a memory: page, gist, and fr
 
 - Plan: `autogenesis/plans/2026-10-03-atlas-memory-layers.md`.
 - Approval ref t205u. Pull request https://github.com/sergio-sisternes-epam/atlas/pull/42 (`e16aa31edaa537215fcf2cc0510e19d08125858e`). Tests and subject compile recorded on the experience.
+- 2026-10-04: Sergio decided to rename path `query` and the search step to `recall`. Recorded only; not implemented. `decisions/2026-10-04-recall-renames-query-path-and-search.md`.
