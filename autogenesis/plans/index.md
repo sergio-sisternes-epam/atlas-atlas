@@ -1,5 +1,6 @@
 # Autogenesis plans
 
+- [2026-10-03-atlas-memory-layers](2026-10-03-atlas-memory-layers.md) — implemented; memory layers page, gist, frame; Atlas #42
 - [2026-09-18-index-md-semantic-memory](2026-09-18-index-md-semantic-memory.md) — approved; folder index.md as STM, two-layer query
 - [2026-09-10-atlas-store-modes](2026-09-10-atlas-store-modes.md) — implemented (#20)
 - [2026-09-09-atlas-smr-configurable-recall](2026-09-09-atlas-smr-configurable-recall.md) — approved, implementing

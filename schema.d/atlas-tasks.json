@@ -1,0 +1,14 @@
+{
+  "contribution_id": "atlas-tasks",
+  "claimed_folders": [
+    "tasks"
+  ],
+  "templates": {
+    "by_type": {}
+  },
+  "atlas_tasks": {
+    "extends_core_type": "task",
+    "extension_mode": "skill-enforced-frontmatter",
+    "note": "Atlas SCHEMA forbids overlay redeclaration of core templates.by_type.task (overlay_core_type). This overlay claims tasks/ and documents the task extension contract; skills enforce task_* / assignees / parent / sub_tasks / relates_to (dependency/blocks) fields on type:task pointer pages. task_id is the full atlas://<atlas_id>/tasks/<ULID> composite; pointer files live at tasks/<ULID>.md. Blocked is derived from kind:dependency edges, not a stored status. No depends_on field (v0.4.0). No kebab task_id / display_slug (v0.5.0 hard cut). Hierarchy (parent/sub_tasks) same-Atlas only; dependency/blocks may cross Atlases via atlas:// with fail-closed resolve. Hard cut at v0.3.0: no todo/ claim and no todo_id/todo_status read shim."
+  }
+}
