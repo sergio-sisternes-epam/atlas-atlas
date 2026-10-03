@@ -1,3 +1,4 @@
+- 2026-10-03: Closed work `2026-10-03-atlas-memory-layers` — page, gist, and frame on Atlas 0.13.0, pull request 42. Subject compile exit 0 at rung info.
 - 2026-09-18: Opened work `2026-09-18-index-md-semantic-memory` — folder index.md as STM / two-layer query. Fabric under `autogenesis/discuss/index-memory/`. Plan approved. Atlas #36.
 - 2026-09-14: Opened and closed work `2026-09-14-copilot-sha-ref-install` — catalog refs are cloneable tags; atlas-marketplace issue 33 / merged PR 34.
 - 2026-09-10: Opened and closed work `2026-09-10-atlas-marketplace-rename` — GitHub marketplace rename to atlas-marketplace; catalog name `atlas`; republish pins.

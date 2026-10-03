@@ -1,5 +1,6 @@
 # Experiences
 
+- [Implement Atlas memory layers (0.13.0)](2026-10-03-implement-atlas-memory-layers.md)
 - [2026-09-14 Copilot SHA refs; pin tags; marketplace PR 34](2026-09-14-copilot-sha-ref-install.md)
 - [2026-09-10 atlas-cartograph 0.4.1 declares atlas@atlas](2026-09-10-atlas-cartograph-0.4.1-atlas-dep.md)
 - [2026-09-10 rename apm-marketplace to atlas-marketplace and republish](2026-09-10-atlas-marketplace-rename.md)
