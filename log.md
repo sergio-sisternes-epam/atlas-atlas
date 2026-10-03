@@ -1,3 +1,5 @@
+- 2026-10-04: Opened work `2026-10-04-atlas-recall-rename` — design plan to rename path query and the search step to recall. Not implemented. approval_ref t226u.
+- 2026-10-03: Closed work `2026-10-03-atlas-memory-layers` — page, gist, and frame on Atlas 0.13.0, pull request 42. Subject compile exit 0 at rung info.
 - 2026-09-18: Opened work `2026-09-18-index-md-semantic-memory` — folder index.md as STM / two-layer query. Fabric under `autogenesis/discuss/index-memory/`. Plan approved. Atlas #36.
 - 2026-09-14: Opened and closed work `2026-09-14-copilot-sha-ref-install` — catalog refs are cloneable tags; atlas-marketplace issue 33 / merged PR 34.
 - 2026-09-10: Opened and closed work `2026-09-10-atlas-marketplace-rename` — GitHub marketplace rename to atlas-marketplace; catalog name `atlas`; republish pins.
@@ -77,3 +79,4 @@
 - 2026-09-27: constellation checkpoint + durable Claim A/B and relates_to.ref decisions on git-backed-versions orbit (atlas#37 / #38); no origin push for atlas-atlas
 
 - 2026-09-27: close work 2026-09-27-git-backed-versions (checkpoint + GH #37/#38)
+- 2026-10-04: closed work 2026-10-04-atlas-recall-rename (recall rename implement).

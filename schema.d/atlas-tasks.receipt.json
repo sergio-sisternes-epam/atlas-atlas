@@ -1,0 +1,7 @@
+{
+  "id": "atlas-tasks",
+  "written": [
+    "schema.d/atlas-tasks.json",
+    "schema.d/atlas-tasks.receipt.json"
+  ]
+}
