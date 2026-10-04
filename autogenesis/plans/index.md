@@ -1,3 +1,4 @@
+- [2026-10-04-atlas-operator-skills](2026-10-04-atlas-operator-skills.md) - approved; four operator paths, not separate packages
 # Autogenesis plans
 
 - [2026-09-10-skill-help-pilot](2026-09-10-skill-help-pilot.md) - designed; approval pending; experience and future extraction linked

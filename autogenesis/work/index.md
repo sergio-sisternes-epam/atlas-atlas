@@ -1,3 +1,4 @@
+- [Operator skills](2026-10-04-atlas-operator-skills.md) - Four thin paths inside atlas; implementation in the product repo.
 # Autogenesis work
 
 - [Skill help pilot](2026-09-10-skill-help-pilot.md) - Formal design and memory cluster; implementation approval pending.
