@@ -3,9 +3,9 @@ type: work
 title: Operator-chosen four-layer migration
 created: 2026-10-04
 work_id: 2026-10-04-four-layer-migration
-status: implementing
+status: done
 kva: alive
-stage: implementing
+stage: done
 plan_path: autogenesis/plans/2026-10-04-four-layer-migration.md
 origin: derived
 sensitivity: internal
@@ -13,6 +13,8 @@ description: Canonical work node for the operator-chosen four-layer migration. D
 relates_to:
   - path: autogenesis/plans/2026-10-04-four-layer-migration.md
     kind: related
+  - path: autogenesis/experiences/2026-10-04-four-layer-migration.md
+    kind: records
 ---
 
 ## Scope
@@ -21,7 +23,7 @@ Design an operator-chosen migration of a whole Atlas store onto the four-layer c
 
 ## Status
 
-**implementing.** Approved by Sergio 2026-10-04 after the plan was persisted. Plan: `autogenesis/plans/2026-10-04-four-layer-migration.md`. Approval is not copied from the request card. The operator sentence applies only after this page exists.
+**done.** PR https://github.com/sergio-sisternes-epam/atlas/pull/48 merged at 9802abf.  Approved by Sergio 2026-10-04 after the plan was persisted. Plan: `autogenesis/plans/2026-10-04-four-layer-migration.md`. Approval is not copied from the request card. The operator sentence applies only after this page exists.
 
 ## Outcomes
 

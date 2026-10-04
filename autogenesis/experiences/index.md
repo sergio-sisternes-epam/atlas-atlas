@@ -1,3 +1,4 @@
+- [Four-layer migration](2026-10-04-four-layer-migration.md) — implement merged as atlas PR 48 at 9802abf
 # Experiences
 
 - [Implement four-level progressive disclosure](2026-10-04-implement-four-level-disclosure.md)

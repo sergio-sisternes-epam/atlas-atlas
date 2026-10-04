@@ -1,3 +1,4 @@
+- 2026-10-04: Closed work `2026-10-04-four-layer-migration` — Atlas PR 48 merged at 9802abf (0.13.0-beta.7).
 - 2026-10-04: Opened work `2026-10-04-four-layer-migration` — operator-chosen four-layer migration plan; status designed.
 - 2026-09-10: Closed work `2026-09-10-atlas-store-modes` — shared vs dedicated store strategy shipped on Atlas #20.
 - 2026-09-10: Work `2026-09-10-atlas-store-modes` status designed — plan waiting approval.
