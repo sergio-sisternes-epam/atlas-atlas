@@ -4,11 +4,11 @@ title: Operator-chosen four-layer migration for a whole Atlas store
 created: 2026-10-04
 work_id: 2026-10-04-four-layer-migration
 plan_path: autogenesis/plans/2026-10-04-four-layer-migration.md
-status: designed
+status: approved
 kva: alive
 change_class: new-surface
-stage: designed
-approval: pending until the persisted plan is explicitly approved
+stage: approved
+approval: "Once done, approve, merge the PR (no copilot feedback on this iteration) and run fresh migration test" (Sergio, 2026-10-04)
 behavioural_contract: "deferred: agent-spec is not installed in this session, so specify was not invoked and no .feature file was written"
 origin: derived
 sensitivity: internal
@@ -110,7 +110,7 @@ Stance balanced. No cap. The dominant cost is the walk, which scales with the nu
 
 ### Stop for approval
 
-Design stops here. Implementation waits for explicit approval of this persisted plan.
+Approved by Sergio on 2026-10-04 after this plan was persisted: "Once done, approve, merge the PR (no copilot feedback on this iteration) and run fresh migration test".
 
 ## SOLID
 

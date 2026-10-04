@@ -3,9 +3,9 @@ type: work
 title: Operator-chosen four-layer migration
 created: 2026-10-04
 work_id: 2026-10-04-four-layer-migration
-status: designed
+status: implementing
 kva: alive
-stage: designed
+stage: implementing
 plan_path: autogenesis/plans/2026-10-04-four-layer-migration.md
 origin: derived
 sensitivity: internal
@@ -21,7 +21,7 @@ Design an operator-chosen migration of a whole Atlas store onto the four-layer c
 
 ## Status
 
-**designed.** Plan: `autogenesis/plans/2026-10-04-four-layer-migration.md`. Approval is not copied from the request card. The operator sentence applies only after this page exists.
+**implementing.** Approved by Sergio 2026-10-04 after the plan was persisted. Plan: `autogenesis/plans/2026-10-04-four-layer-migration.md`. Approval is not copied from the request card. The operator sentence applies only after this page exists.
 
 ## Outcomes
 
