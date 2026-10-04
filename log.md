@@ -1,3 +1,4 @@
+- 2026-10-04: Opened work `2026-10-04-four-layer-migration` — operator-chosen four-layer migration plan; status designed.
 - 2026-09-10: Closed work `2026-09-10-atlas-store-modes` — shared vs dedicated store strategy shipped on Atlas #20.
 - 2026-09-10: Work `2026-09-10-atlas-store-modes` status designed — plan waiting approval.
 - 2026-09-10: Opened work `2026-09-10-atlas-store-modes` — discussion fabric under `autogenesis/discuss/store-modes/`.
@@ -50,3 +51,5 @@
 - 2026-09-10: Advanced `2026-09-10-skill-help-pilot` to designed, approval pending; linked formal plan, walkthrough experience, confirmed decisions and observed lessons. Future pattern extraction remains forming.
 - 2026-09-10: Added `help/` with Cartograph overview, Canvas-menu opening and scoped APM installation; connected the Cartograph Atlas with reciprocal graph links and preserved the older Build-fork decision as superseded. Runtime activation remains design-only.
 - 2026-09-10: Completed the user-requested retirement of the old in-Atlas Cartograph location with an alive exit-reason document and a `kva_supersede` edge. Historical content is retained; current standalone-package guidance remains the successor.
+- 2026-10-04: Opened discussion `work/2026-10-04-four-level-disclosure/` and design `autogenesis/plans/2026-10-04-four-level-disclosure.md` — four-level memory model recorded with type frame/gist/page because SCHEMA.json cannot express type schema. Plan awaiting approval; no implement.
+- 2026-10-04: implement four-level progressive disclosure — open PR sergio-sisternes-epam/atlas#47 (package 0.13.0-beta.6; stamp 0.13.0-beta.4 unchanged).

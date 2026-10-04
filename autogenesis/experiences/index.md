@@ -1,5 +1,6 @@
 # Experiences
 
+- [Implement four-level progressive disclosure](2026-10-04-implement-four-level-disclosure.md)
 - [Implement t-normaliser](2026-08-29-implement-t-normaliser.md)
 - [Implement remaining mesh MVP](2026-08-29-implement-mesh-mvp-batch.md)
 - [Storage-mesh MVP implemented](2026-08-29-implement-storage-mesh-mvp.md)

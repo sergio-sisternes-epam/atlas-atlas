@@ -1,5 +1,7 @@
+- [Four-layer migration](2026-10-04-four-layer-migration.md) — designed; plan autogenesis/plans/2026-10-04-four-layer-migration.md
 # Autogenesis work
 
+- [Four-level progressive disclosure](2026-10-04-four-level-disclosure.md) — done; open PR https://github.com/sergio-sisternes-epam/atlas/pull/47; discussion hub under work/2026-10-04-four-level-disclosure/.
 - [Skill help pilot](2026-09-10-skill-help-pilot.md) - Formal design and memory cluster; implementation approval pending.
 - [Pattern extraction candidate](2026-09-10-skill-help-pilot-proposal.md) - Evidence required before generalisation; original discussion retained.
 - [Walkthrough experience](2026-09-10-skill-help-pilot-experience.md) - What happened and what was not evaluated.

@@ -1,5 +1,7 @@
+- [Four-layer migration](2026-10-04-four-layer-migration.md) — designed; operator-chosen whole-store migration; stamp cut 0.13.0-beta.7
 # Autogenesis plans
 
+- [Four-level progressive disclosure](2026-10-04-four-level-disclosure.md) — designed; approval pending; stack accepted as target only; no implement
 - [2026-09-10-skill-help-pilot](2026-09-10-skill-help-pilot.md) - designed; approval pending; experience and future extraction linked
 - [2026-09-10-atlas-store-modes](2026-09-10-atlas-store-modes.md) — implemented (#20)
 - [2026-09-09-atlas-smr-configurable-recall](2026-09-09-atlas-smr-configurable-recall.md) — approved, implementing
