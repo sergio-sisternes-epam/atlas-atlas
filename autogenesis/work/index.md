@@ -1,3 +1,4 @@
+- [Optimise target layers](2026-10-05-atlas-optimise-target-layers.md) - Targeted atlas-optimise; implementation in the product repo.
 - [Operator skills](2026-10-04-atlas-operator-skills.md) - Four thin paths inside atlas; implementation in the product repo.
 # Autogenesis work
 

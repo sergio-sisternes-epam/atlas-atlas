@@ -1,3 +1,4 @@
+- [2026-10-05-atlas-optimise-target-layers](2026-10-05-atlas-optimise-target-layers.md) - approved; targeted optimise with four-layer repair and per-folder task list
 - [2026-10-04-atlas-operator-skills](2026-10-04-atlas-operator-skills.md) - approved; four operator paths, not separate packages
 # Autogenesis plans
 
