@@ -16,3 +16,4 @@
 - [Unmounted external Atlas references are non-blocking compile warnings](unmounted-atlas-uri-non-blocking.md)
 - [Two package shapes; this skill mounts the dedicated store at references/atlas](package-shapes.md) — superseded
 - [Atlas splits episodic log, current-theory slots, and a transform pass](atlas-memory-layers.md)
+- [schema.schema.md naming accepted for now](schema-schema-md-naming-accepted-for-now.md)
