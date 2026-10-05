@@ -28,6 +28,7 @@ Autogenesis authoring-work record for the targeted optimise path. Not a runtime 
 - Prior plan: `autogenesis/plans/2026-10-04-atlas-operator-skills.md`
 - Scenario: `references/scenarios/atlas-optimise-target-layers-adversarial-v1.yaml` in the atlas product repo
 - Implement experience: `autogenesis/experiences/2026-10-05-atlas-optimise-target-layers.md`
+- Decision: `decisions/schema-schema-md-naming-accepted-for-now.md`
 - Evaluation evidence: run_tests 19/19, test_atlas_optimise 12/12, PR checks green; MoP dry-run compile 2 to 0 on scratch copies
 - External ref: https://github.com/sergio-sisternes-epam/atlas/pull/50 merged at da24b03
 
