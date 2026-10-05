@@ -1,5 +1,6 @@
 # Experiences
 
+- [Targeted atlas-optimise](2026-10-05-atlas-optimise-target-layers.md) - beta.9 merged; MoP dry-run compile 2 to 0 on scratch copies
 - [Implement t-normaliser](2026-08-29-implement-t-normaliser.md)
 - [Implement remaining mesh MVP](2026-08-29-implement-mesh-mvp-batch.md)
 - [Storage-mesh MVP implemented](2026-08-29-implement-storage-mesh-mvp.md)

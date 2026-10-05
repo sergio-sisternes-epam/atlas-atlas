@@ -3,7 +3,7 @@ type: plan
 title: "atlas-optimise: explicit target, four-layer repair, subject clustering, per-folder task list"
 created: 2026-10-05
 work_id: 2026-10-05-atlas-optimise-target-layers
-status: approved
+status: done
 change_class: new-surface
 subject: atlas
 kva: alive
