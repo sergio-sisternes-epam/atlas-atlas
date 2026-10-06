@@ -1,5 +1,7 @@
 # Experiences
 
+- [Designed atlas-optimise vNext](2026-10-06-atlas-optimise-vnext-design.md)
+- [Implemented atlas-optimise vNext](2026-10-06-atlas-optimise-vnext-implement.md)
 - [Implement t-normaliser](2026-08-29-implement-t-normaliser.md)
 - [Implement remaining mesh MVP](2026-08-29-implement-mesh-mvp-batch.md)
 - [Storage-mesh MVP implemented](2026-08-29-implement-storage-mesh-mvp.md)

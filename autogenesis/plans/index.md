@@ -1,5 +1,6 @@
 # Autogenesis plans
 
+- [2026-10-06-atlas-optimise-vnext](2026-10-06-atlas-optimise-vnext.md) — designed packet + implement shipped (atlas PR #53, 0.13.0-beta.11 / 717b26a); sleep still unimplemented; no fleet apply
 - [2026-09-18-index-md-semantic-memory](2026-09-18-index-md-semantic-memory.md) — approved; folder index.md as STM, two-layer query
 - [2026-09-10-atlas-store-modes](2026-09-10-atlas-store-modes.md) — implemented (#20)
 - [2026-09-09-atlas-smr-configurable-recall](2026-09-09-atlas-smr-configurable-recall.md) — approved, implementing
