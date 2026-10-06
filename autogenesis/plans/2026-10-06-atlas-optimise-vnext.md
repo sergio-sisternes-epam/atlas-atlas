@@ -9,7 +9,7 @@ subject: atlas
 kva: alive
 origin: user
 sensitivity: internal
-description: "Mini-genesis for atlas-optimise after 0.13.0-beta.10: close the missing_gist gap with evidence-gated upper-layer fill (fill/tidy), four composeable modes, pilot-then-fleet gates. Pins locked; design approved; package implement waits for separate unlock. Sleep/consolidate remains unimplemented; optimise is the interim content-fill path."
+description: "Mini-genesis for atlas-optimise after 0.13.0-beta.10: close the missing_gist gap with evidence-gated upper-layer fill (fill/tidy), four composeable modes, pilot-then-fleet gates. Pins locked; design approved; package implement unlocked and shipped as atlas 0.13.0-beta.11 (PR #53, head 717b26a). Sleep/consolidate remains unimplemented; optimise is the interim content-fill path."
 plan_path: autogenesis/plans/2026-10-06-atlas-optimise-vnext.md
 catalogue_review: in-scope
 behavioural_contract: "deferred: agent-spec not invoked in this design session; deterministic helper tests and adversarial smokes cover each forbidden behaviour (same pattern as 2026-10-05)"
@@ -18,6 +18,8 @@ relates_to:
   - path: autogenesis/work/2026-10-06-atlas-optimise-vnext.md
     kind: implements
   - path: autogenesis/experiences/2026-10-06-atlas-optimise-vnext-design.md
+    kind: related
+  - path: autogenesis/experiences/2026-10-06-atlas-optimise-vnext-implement.md
     kind: related
   - path: decisions/atlas-memory-layers.md
     kind: related
@@ -36,7 +38,7 @@ relates_to:
 **Subject skill:** atlas  
 **Subject atlas:** `github.com/sergio-sisternes-epam/atlas-atlas`  
 **Baseline pin (read-only):** atlas package `0.13.0-beta.10` path `atlas-optimise` + helper `scripts/atlas_optimise.py`  
-**Disposition:** **STOP FOR IMPLEMENT** — design approved and pins locked; package implement waits for a separate explicit unlock after the folded tip is reviewed. Do not implement on this commit.
+**Disposition:** design tip locked (`eb556ce`); package implement **unlocked and shipped** as atlas `0.13.0-beta.11` via [PR #53](https://github.com/sergio-sisternes-epam/atlas/pull/53) (head `717b26a24920684280970b558fe8720614d5bbbd`, merged 2026-10-06). Plan frontmatter status remains `designed` (design packet lineage); see implement experience for product file list and test evidence. Sleep/consolidate still unimplemented; no fleet apply.
 
 ## Intent
 
@@ -111,7 +113,7 @@ Backward compatibility: vNext **keeps** `--target`, `plan`/`apply`, existing tas
 
 **Status:** design **APPROVED** under Hand criteria once the locked pins below are folded into this tip.  
 
-**Implement remains blocked** until a separate Hand/Sergio unlock after they review the folded tip. This Autogenesis design commit / PR is **design-only** — it does **not** approve atlas package product-code implement.
+**Implement unlock (2026-10-06):** Hand/Sergio unlocked package implement after the folded design tip. Package product code shipped on atlas PR #53 (`0.13.0-beta.11`). This plan file remains the design packet; the implement experience records the product delta.
 
 Approval criteria that pass (this packet):
 
@@ -519,6 +521,9 @@ Filename at implement: `references/scenarios/atlas-optimise-vnext-adversarial-v1
 - Plan: `autogenesis/plans/2026-10-06-atlas-optimise-vnext.md` (this file)
 - Work: `autogenesis/work/2026-10-06-atlas-optimise-vnext.md`
 - Design experience: `autogenesis/experiences/2026-10-06-atlas-optimise-vnext-design.md`
+- Implement experience: `autogenesis/experiences/2026-10-06-atlas-optimise-vnext-implement.md`
 - Plans index: `autogenesis/plans/index.md`
 
-**Git:** design-only commit on branch `autogenesis/2026-10-06-atlas-optimise-vnext` — pins locked; implement still blocked pending separate unlock.
+**Git (design tip):** `eb556ce775576915dcd5090164ec3dfd9ae189a6` on branch `autogenesis/2026-10-06-atlas-optimise-vnext` (atlas-atlas PR #25) — pins locked; design PASS.
+
+**Git (package implement):** atlas PR #53 head `717b26a24920684280970b558fe8720614d5bbbd` → version `0.13.0-beta.11` (merged). Autogenesis implement memory on this checkout is local/uncommitted pending King's Guard re-audit before push.
