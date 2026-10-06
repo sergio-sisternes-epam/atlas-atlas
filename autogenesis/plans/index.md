@@ -1,6 +1,6 @@
 # Autogenesis plans
 
-- [2026-10-06-atlas-force-gist-compile-green](2026-10-06-atlas-force-gist-compile-green.md) — designed; stop for approval (force-gist / compile-green follow-on)
+- [2026-10-06-atlas-force-gist-compile-green](2026-10-06-atlas-force-gist-compile-green.md) — designed; stop for approval (useful gists only; Cut 1b open; force-gist / compile-green)
 - [2026-09-18-index-md-semantic-memory](2026-09-18-index-md-semantic-memory.md) — approved; folder index.md as STM, two-layer query
 - [2026-09-10-atlas-store-modes](2026-09-10-atlas-store-modes.md) — implemented (#20)
 - [2026-09-09-atlas-smr-configurable-recall](2026-09-09-atlas-smr-configurable-recall.md) — approved, implementing
