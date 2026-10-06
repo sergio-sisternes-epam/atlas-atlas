@@ -18,7 +18,7 @@ relates_to:
 
 ## Context
 
-Subject skill atlas. Baseline read from package pin `0.13.0-beta.11`. Prior cuts of this work_id framed hard force-all / compile-green exit (override beta.11 residual-OK). **Sergio redesign pin (2026-10-06 via Hand) SUPERSEDES that hard force:** optional progressive disclosure; index may exist with or without schema; direct memory / other types allowed (no forced middle rung); optimise builds useful/evidence-grade gists when sensible — not force-all, not fail-closed missing_gist for fleet completeness. **KG note kept:** no invented bodies; scan_gate binds every created gist. Cut 2 / MultiCluster / no-stubs kept when filling.
+Subject skill atlas. Baseline read from package pin `0.13.0-beta.11`. Prior cuts of this work_id framed hard force-all / compile-green exit (override beta.11 residual-OK). **Sergio redesign pin (2026-10-06 via Hand) SUPERSEDES that hard force:** optional progressive disclosure; index may exist with or without schema; direct memory / other types allowed (no forced middle rung; non-memory types: no forced typed extensions/middle layer; index-first-class); optimise builds useful/evidence-grade gists when sensible — not force-all, not fail-closed missing_gist for fleet completeness. **KG note kept:** no invented bodies; scan_gate binds every created gist. Cut 2 / MultiCluster / no-stubs kept when filling.
 
 ## What happened
 

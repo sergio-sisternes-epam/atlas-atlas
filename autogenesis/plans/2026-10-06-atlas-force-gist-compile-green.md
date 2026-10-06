@@ -91,7 +91,7 @@ beta.11 closed the invent-gist gap with evidence-gated fill and left **residual 
 
 1. **4-layer is optional progressive disclosure** — not mandatory fleet completeness through all rungs.
 2. **Index may exist with or without schema** — schema is not required for index membership.
-3. **Direct memory / other types allowed** — **no forced middle rung** (a memory need not have a gist before a schema; types may skip layers).
+3. **Direct memory / other types allowed** — **no forced middle rung**; **non-memory types: no forced typed extensions / middle layer**; stay **index-first-class** (a memory need not have a gist before a schema; types may skip layers).
 4. **Optimise builds gists when sensible** (useful / evidence-grade only) — **not** force-all stubs, **not** fail-closed `missing_gist` for fleet completeness / compile-green exit for all indexed pages.
 
 **What this means for exit / severity:**
@@ -120,7 +120,7 @@ In (product design for a later implement on the atlas package, after separate un
 
 1. **Optional progressive disclosure** across the four-layer model — operators and optimise may deepen pages when useful; no mandate that every indexed page climb every rung.
 2. **Index membership independent of schema** — a page may be indexed with or without a same-folder schema.
-3. **No forced middle rung** — memory (and other types) may sit without a gist; schema may relate without requiring a prior gist on that lineage when the type model allows skip.
+3. **No forced middle rung / index-first-class** — memory and **non-memory** types may sit without a gist or typed middle-layer extension; schema may relate without requiring a prior gist on that lineage when the type model allows skip; do not invent forced typed extensions for non-memory pages.
 4. **Optimise fill-when-sensible writer:** verbatim / evidence-gated **useful gist only** when evidence is rich enough and the operator opts in (Path/Custom/Full-under-ceiling). No titled-stub branch. No invent-to-clear-`missing_gist`. No force-all for fleet completeness.
 5. **Shared cluster gist (N→1) + Cut 2** — when optimise chooses to cluster/fill: only same-folder peers; MultiCluster; `derived_from` lists all N parents; one-gist→one-schema still holds **when a gist is created** (schema obligation attaches to the gist create, not to bare index membership).
 6. **Optional enrich** for a thin parent the operator chooses to fill (remember/optimise evidence rules; never invent) — **not** a fleet-wide block-migrate gate.
@@ -386,7 +386,7 @@ Treat the following as design-challenge inputs. Each is pinned, rejected, modifi
 |---|---|---|
 | Soft1 | **LOCKED** | **4-layer is optional progressive disclosure** — not mandatory fleet completeness through all rungs. |
 | Soft2 | **LOCKED** | **Index may exist with or without schema** — schema not required for index membership. |
-| Soft3 | **LOCKED** | **Direct memory / other types allowed** — **no forced middle rung** (memory need not have gist before schema; types may skip layers). |
+| Soft3 | **LOCKED** | **Direct memory / other types allowed** — **no forced middle rung**; **non-memory types: no forced typed extensions / middle layer**; stay **index-first-class** (memory need not have gist before schema; types may skip layers). |
 | Soft4 | **LOCKED** | **Optimise builds gists when sensible** (useful/evidence-grade only) — not force-all stubs; not fail-closed `missing_gist` for fleet completeness / compile-green exit. |
 | CSoft1 | **LOCKED** | **Baseline residual-OK restored** as default posture for `missing_gist` (beta.11 evidence-gated). Hard override via force-all / compile-green exit **SUPERSEDED**. |
 | ForceAll | **SUPERSEDED** | Force-all indexed pages to have gists — **out of scope**. |
