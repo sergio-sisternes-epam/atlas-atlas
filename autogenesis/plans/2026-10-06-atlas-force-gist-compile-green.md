@@ -10,7 +10,7 @@ subject: atlas
 kva: alive
 origin: user
 sensitivity: internal
-description: "Follow-on mini-genesis after atlas 0.13.0-beta.11, AMENDED to Sergio redesign pin (via Hand): 4-layer is optional progressive disclosure; index may exist with or without schema; direct memory / other types allowed (no forced middle rung); optimise builds useful/evidence-grade gists when sensible — NOT force-all, NOT compile-green exit for fleet completeness. Hard force-all / compile-green / fail-closed remember-for-fleet / missing_gist-critical-as-fleet-bar SUPERSEDED. Baseline residual-OK restored as default. Design only; stop for Hand/Sergio approval."
+description: "Follow-on mini-genesis after atlas 0.13.0-beta.11. Soft tip 720c6ed: Soft1–4 + CSoft1 + Soft3 non-memory/index-first-class. Hard force-all / compile-green SUPERSEDED. Design APPROVED by Hand (deputy, Sergio delegated) 2026-10-06 against tip 720c6ed. Implement UNLOCKED 2026-10-06 (Hand/Sergio) for soft optional-4-layer / fill-when-sensible only — no fleet force; KG required before any atlas-atlas memory push. No package product code in atlas-atlas."
 plan_path: autogenesis/plans/2026-10-06-atlas-force-gist-compile-green.md
 catalogue_review: in-scope
 behavioural_contract: "deferred: agent-spec not invoked in this design session; deterministic helper/compile tests and adversarial smokes cover each forbidden behaviour"
@@ -36,7 +36,7 @@ relates_to:
 **Subject atlas:** `github.com/sergio-sisternes-epam/atlas-atlas`  
 **Baseline pin (read-only):** atlas package `0.13.0-beta.11` (PR #53) — **evidence-gated residual-OK restored as the default posture** for `missing_gist` unless a future separate unlock hardens it.  
 **Follow-on of:** `2026-10-06-atlas-optimise-vnext` (evidence-gated fill; residual `missing_gist` allowed)  
-**Disposition:** **STOP FOR APPROVAL** — design only; no package implement, no apply, no fleet.
+**Disposition:** **DESIGN APPROVED + IMPLEMENT UNLOCKED** (Hand deputy, Sergio delegated, 2026-10-06) against tip `720c6ed`. Implement authority = soft optional-4-layer / fill-when-sensible only. No fleet force. KG required before any atlas-atlas memory push. No package product code in atlas-atlas from this PR.
 
 ## Autogenesis activation card (design operation)
 
@@ -72,14 +72,14 @@ context:
   work_id: 2026-10-06-atlas-force-gist-compile-green
   atlas_id: github.com/sergio-sisternes-epam/atlas-atlas
   atlas_root: <atlas-atlas-root>
-  approval_ref: null
+  approval_ref: "Hand-deputy-design-APPROVED+implement-UNLOCKED-2026-10-06-soft-tip-720c6ed (Sergio delegated; Soft1-4 CSoft1 Soft3 non-memory/index-first-class; force-all/compile-green SUPERSEDED; no fleet force; KG before atlas-atlas memory push)"
 resolved:
   skill_root: <autogenesis-skill-root>
   module_root: <autogenesis-skill-root>/references/modules/design
   entrypoint: <autogenesis-skill-root>/references/modules/design/SKILL.md
 ```
 
-**Must announce:** this operation **stops for approval**. Request **implement** only after explicit Hand/Sergio unlock of this pinned plan. Design completion ≠ implement authority. Heavy pilot and fleet remain blocked until a separate unlock. Hard force-all / compile-green exit framing is **SUPERSEDED** by this redesign pin.
+**Must announce:** **Design APPROVED** by Hand (deputy, Sergio delegated) on 2026-10-06 against tip `720c6ed` (Soft1–4 + CSoft1 + Soft3 non-memory/index-first-class). **Implement UNLOCKED** same day for soft optional-4-layer / fill-when-sensible only — not force-all / not compile-green fleet bar. No fleet force. KG required before any atlas-atlas memory push. Heavy pilot / fleet still need separate GO. Hard force-all / compile-green exit framing remains **SUPERSEDED**. No package product code lands in atlas-atlas.
 
 ---
 
@@ -109,7 +109,7 @@ beta.11 closed the invent-gist gap with evidence-gated fill and left **residual 
 - **Shared cluster gist (N→1) + MultiCluster + Cut 2** — when optimise chooses to cluster/fill: same-folder membership only; cross-folder `relates_to` does not join; MultiCluster allows many clusters per folder.
 - **scan_gate** binds migrate / remember / optimise creates (Crit/High refuse; Medium `booking_manage_reference` handoff).
 - **Path/Custom first**; Full needs ceiling.
-- **Design-only STOP FOR HAND/SERGIO APPROVAL.**
+- **Design APPROVED + implement UNLOCKED** (Hand/Sergio, 2026-10-06, tip `720c6ed`) for soft fill-when-sensible only; no fleet force; KG before atlas-atlas memory push.
 - **Hyg1** placeholders only.
 
 Never invent episodic claim text. Never edit parent memory text.
@@ -293,13 +293,15 @@ Stance: **frugal / Path-first**. Cost scales with **chosen** fill scope × (gist
 8. **Remember (soft):** may create/wire useful gist same turn when evidence supports; must not invent/stub; must not refuse solely for missing middle rung / fleet completeness.
 9. **Pilot (soft):** evidence-gated residual-OK acceptable; useful fills quality-checked (N=10 useful); Guard rows for fills that happen; heavy/fleet blocked until separate Sergio GO — **not** under a compile-green-for-all bar.
 10. **Non-goals held:** no sleep implement; no fleet apply; no private topology in atlas-atlas; no stub clearance; no invent-to-clear; no cross-folder relates_to cluster join; no hard force framing.
-11. **Stop-for-implement:** this design writes no atlas package product files.
+11. **Approval/unlock:** design APPROVED + implement UNLOCKED for soft tip `720c6ed` (Hand/Sergio 2026-10-06); soft fill-when-sensible only; no fleet force; KG before atlas-atlas memory push; atlas-atlas stays design docs (no package product code here).
 12. **Cut 1b reframed:** fleet-wide enrich-before-migrate / block-until-useful **SUPERSEDED** as mandatory; optional enrich when operator chooses to fill a thin parent **kept**.
 13. **Cut 2 locked (kept):** cluster membership = same folder only when clustering.
 
-### Stop-for-approval
+### Approval / unlock record
 
-This operation **stops for Hand/Sergio approval**. Do not implement, merge package code, tag/release, or fleet-apply from this packet. Unlock must name: soft progressive-disclosure posture, fill-when-sensible useful-gist writer (no stub), optional enrich (not fleet Cut 1b force), shared cluster gist (N→1 / DerivedN) when filling, Cut 2 same-folder membership, MultiCluster, scan_gate binding, cost ceiling, and soft pilot done-when. Hard force-all / compile-green exit / fail-closed remember-for-fleet / missing_gist-critical-as-fleet-bar stay **SUPERSEDED**.
+**Design APPROVED** by Hand of the King (deputy; Sergio delegated) on **2026-10-06** against soft tip **`720c6ed`** (`720c6ed570a7be1838f4434461336a61847b7ec2`). Approved scope: Soft1–4 + CSoft1 + Soft3 non-memory/index-first-class. Hard force-all / compile-green / fail-closed remember-for-fleet / missing_gist-critical-as-fleet-bar remain **SUPERSEDED**.
+
+**Implement UNLOCKED** (Hand/Sergio, 2026-10-06) for **soft optional-4-layer / fill-when-sensible only** (useful/evidence-grade writer; shared cluster N→1 when filling; Cut 2; MultiCluster; scan_gate; Path/Custom first). **No fleet force.** **KG required before any atlas-atlas memory push.** Heavy pilot / fleet still need a separate Sergio GO. Do not tag/release or fleet-apply from this packet alone. Package product-code implement belongs on the atlas package (not as product code in atlas-atlas).
 
 ---
 
@@ -365,7 +367,7 @@ Treat the following as design-challenge inputs. Each is pinned, rejected, modifi
 | KG3 | Must not launder sensitivity. | **Pin Sec4.** |
 | KG4 | Pilot Guard receipt rows for fills that happen. | **Pin Rec1, Vocab1.** Force-green residual-must-be-0 row SUPERSEDED. |
 | KG5 | Public atlas-atlas scrub before push. | **Pin Hyg1.** |
-| KG6 | No implement/heavy/fleet until Hand/Sergio unlock. | **Pin Stop1.** |
+| KG6 | Design APPROVED + soft implement UNLOCKED (Hand/Sergio tip `720c6ed`); no fleet force; KG before atlas-atlas memory push; heavy/fleet still separate GO. | **Pin Stop1 (updated).** |
 | KG-note | No stubs AND no invented bodies; scan_gate binds every created gist. | **Folded into W1, Sec2, Cut2, Cluster1.** |
 
 ---
@@ -426,7 +428,7 @@ Treat the following as design-challenge inputs. Each is pinned, rejected, modifi
 | PilotSoft2 | MoN / pilots under former force-green bar do not define this redesign. Heavy pilot and fleet **blocked** until **separate Sergio GO**. |
 | PilotSoft3 / Rec1 | Guard receipt rows for fills that happen: `scan_gate_refuse_count`, `body_fills`, `shared_gist_count`, `cluster_size_hist`, `enrich_optional_count`, `zero_crit_high_promoted`. Force-green residual-must-be-0 / shell_fills SUPERSEDED. |
 | Hyg1 | Public atlas-atlas scrub before push: no private hosts, private mesh hostnames, private checkout paths, secret manager item ids, or BotOps-only tips. Use placeholders `<atlas-atlas-root>` / `<autogenesis-skill-root>` (never box-local absolute roots). Public github.com/sergio-sisternes-epam/atlas and atlas-atlas links OK. Hand/Sergio names OK for pin provenance. |
-| Stop1 | No package implement, heavy pilot apply, or fleet until this design names soft pins + fill-when-sensible writer + Cut 2 / DerivedN / Cluster* / MultiCluster + scan_gate (**done**) **and** Hand/Sergio explicit unlock for implement. |
+| Stop1 | Soft pins + fill-when-sensible writer + Cut 2 / DerivedN / Cluster* / MultiCluster + scan_gate named (**done**). **Design APPROVED** + **implement UNLOCKED** (Hand/Sergio, 2026-10-06, tip `720c6ed`) for soft fill-when-sensible only. **No fleet force.** Heavy/fleet still need separate Sergio GO. **KG required before any atlas-atlas memory push.** No package product code in atlas-atlas. |
 | S1 | Sleep/consolidate remains unimplemented; optimise remains interim fill path unless a future design says otherwise. |
 
 **C1–C5:** C1 counters above are non-trivial. C2 high-severity items pinned (W1, Soft1–4, CSoft1, Cut2, Cluster*, MultiCluster, DerivedN, Sec2–Sec4, PilotSoft*, RemSoft1) or explicitly SUPERSEDED (ForceAll, CompGreen, CCritForce, RemForce, Cut1bForce). C3 pins visible. C4 scope intact (follow-on soft progressive disclosure / fill-when-sensible). C5 no package implement in this operation. Change-class stated. Genesis Artifacts complete for new-surface.
@@ -521,11 +523,11 @@ Implement may **add** smokes; must not **drop** these without a new design.
 
 ## Open questions still needing Sergio lock (after pins)
 
-Pins above are proposed locked for design approval, including **Soft1–4 / CSoft1**, **Cut 2**, **MultiCluster**, **no stubs**, with hard force-all / compile-green **SUPERSEDED**. Remaining operator locks before / during implement unlock:
+Pins above are **design-APPROVED** (Hand deputy, Sergio delegated, 2026-10-06, tip `720c6ed`), including **Soft1–4 / CSoft1**, **Cut 2**, **MultiCluster**, **no stubs**, with hard force-all / compile-green **SUPERSEDED**. **Implement UNLOCKED** for soft fill-when-sensible only. Remaining operator locks during / before heavy:
 
 1. **Fill CLI naming** — `--fill-sensible` vs alias of former `--force-gist` (design language soft; implement names the flag).
 2. **Gate 7 medium rule corpus** — confirm `booking_manage_reference` detector definition for the first ship (full vocab still post-pilot).
-3. **Heavy pilot store + Sergio GO** — not part of design approval; required before heavy/fleet.
+3. **Heavy pilot store + Sergio GO** — implement unlock does **not** include fleet force; separate GO required before heavy/fleet.
 4. **DerivedN / StaleN package delta detail** — exact validate.py + remember-path wording for N≥1 when shared fill is chosen.
 
 ~~Force-all / compile-green exit / missing_gist critical as fleet bar / fail-closed remember-for-fleet / Cut 1b as fleet-wide force~~ — **SUPERSEDED**.
@@ -539,14 +541,21 @@ Pins above are proposed locked for design approval, including **Soft1–4 / CSof
 - **2026-10-06 (prior amend):** **MultiCluster LOCKED** — many clusters per folder.
 - **2026-10-06 (prior amend):** **Cut 2 / FolderOnly LOCKED** — cluster membership = same folder only; cross-folder `relates_to` does not join.
 - **2026-10-06 (this amend — Sergio redesign pin via Hand):** **SUPERSEDES hard force-all / compile-green exit.** New locked Soft1–4 + CSoft1: optional progressive disclosure; index ± schema; no forced middle rung; optimise fill-when-sensible (evidence-gated). Retracted as mandatory: ForceAll, CompGreen, CCritForce, RemForce, Cut1bForce (Cut 1b kept only as optional enrich). Restored beta.11 residual-OK as default. Kept: no stubs, shared cluster N→1, MultiCluster, Cut 2, scan_gate, Path/Custom first, Hyg1, design-only STOP. work_id unchanged; title/framing softened.
+- **2026-10-06 (approval record — Hand deputy, Sergio delegated):** **Design APPROVED** against soft tip `720c6ed` (Soft1–4 + CSoft1 + Soft3 non-memory/index-first-class). **Implement UNLOCKED** for soft optional-4-layer / fill-when-sensible only. Hard force-all / compile-green remain **SUPERSEDED**. No fleet force. KG required before any atlas-atlas memory push. No package product code in atlas-atlas.
 
 ## Invocation receipt (design)
 
 ```text
-disposition: awaiting-approval
+disposition: design-approved + implement-unlocked (soft only)
 work_id: 2026-10-06-atlas-force-gist-compile-green
 operation: design
 change_class: new-surface
+approved_tip: 720c6ed570a7be1838f4434461336a61847b7ec2
+approved_tip_short: 720c6ed
+design_approval: Hand-deputy (Sergio delegated) 2026-10-06
+implement_unlock: Hand/Sergio 2026-10-06 soft optional-4-layer / fill-when-sensible only
+fleet_force: false
+kg_before_atlas_atlas_memory_push: required
 loaded_entrypoints:
   - autogenesis/SKILL.md
   - autogenesis/references/modules/workflow-discipline/SKILL.md
@@ -556,10 +565,10 @@ loaded_entrypoints:
   - autogenesis/references/skill-design-principles.md
 baseline_pin: atlas 0.13.0-beta.11 (read-only; residual-OK default restored)
 artifact: autogenesis/plans/2026-10-06-atlas-force-gist-compile-green.md
-amend: soft-progressive-disclosure + fill-when-sensible; ForceAll/CompGreen/CCritForce/RemForce/Cut1bForce SUPERSEDED; Soft1-4 CSoft1 LOCKED; Cut2 MultiCluster no-stubs scan_gate Hyg1 kept
-implement_authorised: false
+amend: soft-progressive-disclosure + fill-when-sensible; ForceAll/CompGreen/CCritForce/RemForce/Cut1bForce SUPERSEDED; Soft1-4 CSoft1 Soft3 non-memory/index-first-class LOCKED; Cut2 MultiCluster no-stubs scan_gate Hyg1 kept
+implement_authorised: true (soft fill-when-sensible only; no fleet force)
 force_all_compile_green: SUPERSEDED
-soft_progressive_disclosure: locked (Soft1-4 CSoft1)
+soft_progressive_disclosure: locked + design-approved (Soft1-4 CSoft1 Soft3 non-memory/index-first-class)
 cut_2_folder_only: locked (membership = same folder only when clustering)
 shared_cluster_gist: locked when filling (Cut2 Cluster1-2 MultiCluster DerivedN RelN StaleN Schema1)
 ```

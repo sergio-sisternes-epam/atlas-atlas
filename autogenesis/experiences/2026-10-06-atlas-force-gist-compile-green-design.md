@@ -1,13 +1,16 @@
 ---
 type: experience
-title: "Designed atlas optional progressive disclosure + fill-when-sensible (soft redesign; supersedes force-all / compile-green; stop for approval)"
+title: "Designed + design-APPROVED + soft-implement-UNLOCKED: optional progressive disclosure / fill-when-sensible (tip 720c6ed)"
 created: 2026-10-06
 updated: 2026-10-06
 work_id: 2026-10-06-atlas-force-gist-compile-green
 status: raw
+design_approval: Hand-deputy (Sergio delegated) 2026-10-06 tip 720c6ed
+implement_unlock: Hand/Sergio 2026-10-06 soft fill-when-sensible only (no fleet force)
+approved_tip: 720c6ed570a7be1838f4434461336a61847b7ec2
 origin: derived
 sensitivity: internal
-description: "Design-only Autogenesis run amended to Sergio redesign pin (via Hand): 4-layer optional progressive disclosure; index ± schema; no forced middle rung; optimise fill-when-sensible (evidence-gated). Hard force-all / compile-green exit / fail-closed remember-for-fleet / missing_gist-critical-as-fleet-bar SUPERSEDED. Kept: no stubs; shared cluster N→1; MultiCluster; Cut 2; scan_gate; Hyg1. Stop for Hand/Sergio approval. No package implement."
+description: "Soft tip 720c6ed design: Soft1–4 + CSoft1 + Soft3 non-memory/index-first-class. Hard force-all / compile-green SUPERSEDED. Design APPROVED by Hand (deputy, Sergio delegated) 2026-10-06 against tip 720c6ed. Implement UNLOCKED 2026-10-06 for soft optional-4-layer / fill-when-sensible only — no fleet force; KG required before any atlas-atlas memory push. No package product code in atlas-atlas."
 plan_path: autogenesis/plans/2026-10-06-atlas-force-gist-compile-green.md
 relates_to:
   - path: autogenesis/plans/2026-10-06-atlas-force-gist-compile-green.md
@@ -26,13 +29,14 @@ Autogenesis **design** (`new-surface`, mini-genesis) drafted and amended plan `a
 
 ## Outcome
 
-Plan and work status `designed`, disposition **awaiting-approval**. Soft pins locked (Soft1–4, CSoft1). Hard force-all / compile-green exit **SUPERSEDED**. Kept: writer = useful gist only when filling; shared cluster N→1 + MultiCluster + Cut 2 when clustering; scan_gate; Path/Custom first; RemSoft1; Hyg1.
+Plan and work status/stage remain `designed` (approved design vocabulary). Soft pins locked (Soft1–4, CSoft1, Soft3 non-memory/index-first-class). Hard force-all / compile-green exit **SUPERSEDED**. **Design APPROVED** by Hand (deputy, Sergio delegated) on 2026-10-06 against tip `720c6ed`. **Implement UNLOCKED** same day for soft optional-4-layer / fill-when-sensible only — no fleet force; KG required before any atlas-atlas memory push. Kept: writer = useful gist only when filling; shared cluster N→1 + MultiCluster + Cut 2 when clustering; scan_gate; Path/Custom first; RemSoft1; Hyg1.
 
 ## Follow-ups
 
-- Hand/Sergio approval / unlock before any implement.
+- Soft-scope implement may proceed on the atlas package under this unlock (not as product code in atlas-atlas).
 - Remaining Sergio locks listed in plan (fill CLI naming, Gate 7 corpus detail, heavy-pilot GO, DerivedN code-surface naming).
-- No package product-code from this design cut.
+- Heavy/fleet still need separate Sergio GO; no fleet force.
+- KG required before any atlas-atlas memory push.
 
 ## Amend — MultiCluster (Sergio via Hand) — kept
 
@@ -45,3 +49,12 @@ Locked: cluster membership = same folder only when clustering — not cross-fold
 ## Amend — Soft redesign (Sergio via Hand) — this cut
 
 Locked Soft1–4 + CSoft1. **SUPERSEDED:** force-all indexed pages to have gists; compile-green exit as fleet bar; fail-closed remember-for-fleet; missing_gist critical after migrate+stamp as fleet completeness bar; Cut 1b as fleet-wide mandatory force path (optional enrich when operator chooses to fill kept). Baseline residual-OK restored.
+
+## Approval record — Hand deputy (Sergio delegated) — 2026-10-06
+
+- **Design APPROVED** against soft tip `720c6ed` (`720c6ed570a7be1838f4434461336a61847b7ec2`).
+- Scope: Soft1–4 + CSoft1 + Soft3 non-memory/index-first-class.
+- Hard force-all / compile-green remain **SUPERSEDED**.
+- **Implement UNLOCKED** for soft optional-4-layer / fill-when-sensible only.
+- No fleet force. KG required before any atlas-atlas memory push.
+- No package product code in atlas-atlas from this approval record.
