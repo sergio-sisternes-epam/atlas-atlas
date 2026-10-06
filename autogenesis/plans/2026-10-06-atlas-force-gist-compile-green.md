@@ -10,7 +10,7 @@ subject: atlas
 kva: alive
 origin: user
 sensitivity: internal
-description: "Follow-on mini-genesis after atlas 0.13.0-beta.11: force a compile-accepted useful gist for every MISSING_GIST_TYPES page indexed at compile. Migration/remember/optimise create evidence-grade gists only — no titled stubs, no invented bodies. Compile green is the exit for indexed in-scope pages; insufficient-evidence handling awaits Cut 1b (block migrate vs exclude from index). Overrides beta.11 residual-OK for opted-in indexed pages. Design only; stop for Hand/Sergio approval."
+description: "Follow-on mini-genesis after atlas 0.13.0-beta.11: force a compile-accepted useful gist for every MISSING_GIST_TYPES page indexed at compile. Useful gists only (no stubs). Cut 1b LOCKED: enrich parent before migrate / block migrate until useful gist possible; exclude-from-index REJECTED. Chained/related memories → one shared cluster gist (N parents → 1 gist) aligned with existing optimise subject-clustering. Compile green exit; missing_gist critical after migrate+stamp; grandfather older stamps. Design only; stop for Hand/Sergio approval."
 plan_path: autogenesis/plans/2026-10-06-atlas-force-gist-compile-green.md
 catalogue_review: in-scope
 behavioural_contract: "deferred: agent-spec not invoked in this design session; deterministic helper/compile tests and adversarial smokes cover each forbidden behaviour"
@@ -52,13 +52,16 @@ arguments:
   objective: >-
     Force useful gist for all memories indexed at compile; migration creates
     evidence-grade gists only (no titled stubs, no invented bodies); compile
-    green = exit for indexed in-scope pages. Insufficient-evidence path awaits
-    Cut 1b (block migrate vs exclude from index). Overrides beta.11
-    evidence-only handoff skip for indexed pages when a useful gist is possible.
+    green = exit for indexed in-scope pages. Cut 1b LOCKED: enrich parent
+    before migrate / block migrate until useful gist possible; exclude-from-index
+    REJECTED. Chained/related memories share one cluster gist (N→1) aligned with
+    existing optimise subject-clustering. Overrides beta.11 residual-OK for
+    opted-in indexed pages when a useful gist is required.
   change_evidence: >-
-    Sergio pin 2026-10-06 via Hand (compile-green + force-gist); Sergio pin
-    amend via Hand (no gist stubs — every gist useful); KG note (no invented
-    bodies; Cut 1b open; scan_gate binds); BotOps Grand Maester + MoP +
+    Sergio pin 2026-10-06 via Hand (compile-green + force-gist); Sergio amend
+    pins via Hand (no stubs; no de-index/skip; enrich-before-migrate LOCKED /
+    exclude-from-index REJECTED; chained/related → one shared cluster gist);
+    KG note (no invented bodies; scan_gate binds); BotOps Grand Maester + MoP +
     King's Guard challenges.
   behavioural_contract: "deferred: agent-spec not invoked; deterministic smokes cover forbidden behaviours"
 context:
@@ -75,7 +78,7 @@ resolved:
   entrypoint: <autogenesis-skill-root>/references/modules/design/SKILL.md
 ```
 
-**Must announce:** this operation **stops for approval**. Request **implement** only after explicit Hand/Sergio unlock of this pinned plan. Design completion ≠ implement authority. Heavy pilot and fleet remain blocked until the new done-when + receipt verdict rules ship and Sergio GO is recorded. **Cut 1b remains open** — do not implement as if either option were locked.
+**Must announce:** this operation **stops for approval**. Request **implement** only after explicit Hand/Sergio unlock of this pinned plan. Design completion ≠ implement authority. Heavy pilot and fleet remain blocked until the new done-when + receipt verdict rules ship and Sergio GO is recorded. **Cut 1b is LOCKED CLOSED** (enrich-before-migrate / block until useful; exclude-from-index REJECTED) — implement must not reopen exclude-from-index. Shared cluster gist (N→1) is a locked pin of this amend.
 
 ---
 
@@ -83,9 +86,14 @@ resolved:
 
 beta.11 closed the invent-gist gap with evidence-gated fill, but left **residual `missing_gist` expected** when evidence is insufficient (confirm-only / handoff). Sergio’s pin (2026-10-06 via Hand) **overrides** that residual-OK and the evidence handoff skip for pages **indexed at compile**: every in-scope indexed parent must get a compile-accepted **useful** gist. **Compile green is the exit** for those indexed in-scope pages. Migration creates the gists; force-gist may compose migrate+optimise.
 
-**Sergio amend pin (via Hand) — MUST fold:** **No gist stubs — every gist must be useful.** Gists created by migration / remember / optimise must have a **useful body (evidence-grade)**, not title-only shells. The titled-stub writer path is **retracted / superseded**.
+**Sergio amend pins (via Hand) — ALL LOCKED (not open):**
 
-**KG note (folded):** No stubs **and** no invented bodies to clear `missing_gist` — only verbatim / evidence-grade useful gist content; else handoff / residual per open Cut 1b. Compile-green vs residual for insufficient-evidence parents stays tied to **Cut 1b** (do not invent that pin). `scan_gate` still binds every created gist.
+1. **No stubs** — every gist must be useful (evidence-grade). Titled-stub writer path **retracted / superseded**.
+2. **No de-index / skip trick** — every indexed memory covered. Cut 1b option **(b) exclude-from-index = REJECTED**.
+3. **Thin parents: enrich before migrate** — block migrate until the parent (or cluster evidence pack) is rich enough for a useful gist. Cut 1b option **(a) = LOCKED** path. Enrich may use remember / optimise evidence rules; **never invent claims**.
+4. **NEW: multiple chained / related memories → one shared gist** (cluster + optimise), not one gist per page. Clustering reuses existing optimise **subject-clustering** signals (stem groups, `--subject-folder`, `work_id` / work-cluster, existing `relates_to` chains). Do **not** invent private topology.
+
+**KG note (folded):** No stubs **and** no invented bodies to clear `missing_gist` — only verbatim / evidence-grade useful gist content; else enrich / block migrate per locked Cut 1b (a). `scan_gate` still binds every created gist.
 
 Never invent episodic claim text. Never edit parent memory text.
 
@@ -94,25 +102,27 @@ Never invent episodic claim text. Never edit parent memory text.
 In (product design for a later implement on the atlas package, after separate unlock):
 
 1. **Force-gist writer** (named before implement): **verbatim / evidence-gated useful gist only**. No titled-stub branch. No invent-to-clear-`missing_gist`.
-2. **Day-one scope:** all pages of types in compile `MISSING_GIST_TYPES` that are reachable from an **unfocused** compile page index (definition pinned below from beta.11 source) — subject to open **Cut 1b** for parents too thin for a useful gist.
-3. **Migration path** that creates missing **useful** gists (+ required same-folder schema pages per one-gist→one-schema, from evidence only) before/with optimise; migration ≠ free invention; migration ≠ stub shells.
-4. **CONTRACT / compile delta:** after store opts in / completes migration + stamp bump, `missing_gist` for in-scope **indexed** types is **critical** (fail compile) — when a useful gist is required. Grandfather: older stamp keeps warning/info until migrate+stamp. How thin parents leave the index or block migrate is **Cut 1b (open)**.
-5. **scan_gate binding** on migrate, optimise fill, and remember-created gists; Crit/High refuse+fail; Medium `booking_manage_reference` handoff (Gate 7); receipt hits `{path,type,severity}` only.
-6. **Optimise interaction:** force-gist may be migrate+optimise compose; confirm/auto must not auto-promote scan_gate hits; **no stub-as-evidence** path (stubs out of scope).
-7. **Cost:** Path/Custom first; Full needs explicit ceiling (max tasks or operator confirm); serial Full only.
-8. **Pilot bar:** receipt exit = compile green on pilot store after migrate+fill (for indexed in-scope pages under locked Cut 1b rules); N=10 still required; Guard receipt rows; heavy waits Sergio GO under new bar.
-9. **Remember-time (MoP 11):** creating an in-scope indexed parent without a **useful** gist is fail-closed unless remember also creates a verbatim/evidence-grade useful gist (and required schema) in the same turn — **not** a stub.
+2. **Day-one scope:** all pages of types in compile `MISSING_GIST_TYPES` that are reachable from an **unfocused** compile page index (definition pinned below from beta.11 source). **Every indexed in-scope page covered** — no exclude-from-index. Thin parents → enrich then migrate, or **block migrate** (Cut 1b a LOCKED).
+3. **Migration path** that creates missing **useful** gists (+ required same-folder schema pages per one-gist→one-schema, from evidence only) before/with optimise; migration ≠ free invention; migration ≠ stub shells. **Enrich-before-migrate** for thin parents (remember/optimise evidence rules; never invent).
+4. **Shared cluster gist (N parents → 1 gist):** chained/related memories form a cluster via existing optimise subject-clustering signals; one shared useful gist covers the cluster; `derived_from` lists all N parents; one-gist→one-schema still holds.
+5. **CONTRACT / compile delta:** after store opts in / completes migration + stamp bump, `missing_gist` for in-scope **indexed** types is **critical** (fail compile). Grandfather: older stamp keeps warning/info until migrate+stamp. Thin parents never leave the index to dodge the finding.
+6. **scan_gate binding** on migrate, optimise fill, and remember-created gists; Crit/High refuse+fail; Medium `booking_manage_reference` handoff (Gate 7); receipt hits `{path,type,severity}` only.
+7. **Optimise interaction:** force-gist may be migrate+optimise compose (cluster + fill); confirm/auto must not auto-promote scan_gate hits; **no stub-as-evidence** path (stubs out of scope).
+8. **Cost:** Path/Custom first; Full needs explicit ceiling (max tasks or operator confirm); serial Full only.
+9. **Pilot bar:** receipt exit = compile green on pilot store after enrich+migrate+fill for indexed in-scope pages; N=10 still required; Guard receipt rows; heavy waits Sergio GO under new bar.
+10. **Remember-time (MoP 11):** creating an in-scope indexed parent without useful-gist coverage is fail-closed unless remember also creates or wires a verbatim/evidence-grade useful gist (shared cluster or singleton) and required schema in the same turn — **not** a stub.
 
 Out:
 
 - Implementing sleep/consolidate.
 - Free invention of episodic claims; editing parent claim text.
 - **Titled stubs, shell gists, title-only gist bodies** as a compile-green clearance path (superseded by Sergio amend pin).
+- **Exclude-from-index / de-index / skip** to clear `missing_gist` without a useful gist (Cut 1b b REJECTED).
 - Fleet apply / multi-store Full in this design or its first implement unlock.
 - Expanding this plan into full detector-family / scanner↔vocab implement (note as post-pilot follow-up; only Gate 7 medium rule needed for scan_gate on promotions).
 - Private topology, private hosts, or ops-only URLs in atlas-atlas pages.
+- Inventing a private clustering ontology beyond existing optimise subject-clustering / relates_to / work_id signals.
 - Package product-code implement on this design commit.
-- **Locking Cut 1b** without Hand/Sergio (both options recorded open).
 
 ## Non-goals
 
@@ -122,10 +132,12 @@ Out:
 - Treating title-only or invented gist text as evidence that claimful schema/gist enrichment is safe.
 - Silent Full on large stores.
 - Inventing bodies solely to satisfy compile-green / clear `missing_gist`.
+- Skipping or de-indexing thin parents to fake compile-green.
+- One-gist-per-page when chained/related parents already form a subject cluster (prefer shared cluster gist).
 
 ## Change-class
 
-`new-surface` (mini-genesis): useful-gist writer obligation + compile severity raise + migrate compose + remember fail-closed + receipt/exit bar change; stub writer **retracted**. Not `new-skill`. Not a rewrite of vNext — a **follow-on** that overrides residual-OK for indexed pages and rejects stub clearance.
+`new-surface` (mini-genesis): useful-gist writer obligation + compile severity raise + migrate compose + enrich-before-migrate + shared cluster gist (N→1) + remember fail-closed + receipt/exit bar change; stub writer **retracted**; exclude-from-index **rejected**. Not `new-skill`. Not a rewrite of vNext — a **follow-on** that overrides residual-OK for indexed pages, rejects stub/de-index clearance, and extends optimise subject-clustering into shared-gist coverage.
 
 ## Baseline (beta.11 facts — source truth)
 
@@ -133,14 +145,14 @@ From pin `0.13.0-beta.11` (`scripts/atlas_cli/commands/validate.py`, `scripts/at
 
 - `GIST_PARENT_TYPES = {experience, decision, lesson, recipe, document, memory, page, protostar}`
 - `MISSING_GIST_TYPES = GIST_PARENT_TYPES - {protostar}`
-- Compile emits `missing_gist` for every concept page of those types with no valid single-parent `derived_from` gist.
+- Compile emits `missing_gist` for every concept page of those types with no valid `derived_from` gist. **beta.11 source today requires exactly one `derived_from` parent** for a gist to count (`_valid_gist_parent`); this follow-on **extends** that to **N≥1 parents** so one shared gist can cover a cluster (see Cluster1 / DerivedN).
 - Default memory rung keeps `missing_gist` as **info** (warn/error rungs escalate); residual after evidence handoff **does not fail** optimise (`missing_gist_fails_run: false`).
 - Fill: verbatim parent description or first claim line; insufficient → handoff; security scan blocks Crit/High and `sensitivity: restricted`; never invent; never edit parent.
 - `stale_upper_page` applies when a gist has a non-empty `description` and parent type is **`memory`**: description must be a substring of parent body or parent description. Omitting description skips that check.
 - One gist forces one same-folder schema listing; schema must be cued from folder `index.md`.
 - Store write stamp stays `0.13.0-beta.7` on beta.11; sleep still unimplemented.
 
-**Source contradiction note:** beta.11 path text and receipt treat residual `missing_gist` as done. This follow-on **intentionally overrides** that for stores that opt into the force-gist migrate+stamp **when a useful gist is required for an indexed page**. Prefer source truth for type sets, scan behaviour, and stale rules; prefer Sergio pins for exit criteria and no-stub useful-gist rule. Prefer open Cut 1b for insufficient-evidence compile-green vs residual.
+**Source contradiction note:** beta.11 path text and receipt treat residual `missing_gist` as done. This follow-on **intentionally overrides** that for stores that opt into the force-gist migrate+stamp **when a useful gist is required for an indexed page**. Prefer source truth for type sets and scan behaviour; prefer Sergio pins for exit criteria, no-stub, enrich-before-migrate, and shared cluster gist. Prefer locked Cut 1b (a) for insufficient-evidence handling (enrich / block — never exclude). Single-parent `derived_from` in beta.11 validate is **extended** (not silently ignored) to multi-parent shared gists under DerivedN.
 
 ### “Indexed at compile” (day-one definition)
 
@@ -149,7 +161,7 @@ From beta.11 compile enumeration: an **unfocused** `atlas compile` builds its pa
 1. its frontmatter `type` ∈ `MISSING_GIST_TYPES`, and  
 2. it appears in that unfocused page index.
 
-Focused `--path` / `--type` compile may omit findings for operator batching; it **does not** shrink the migration obligation for an opted-in store (subject to Cut 1b if exclude-from-index is later locked). Protostar remains out of `MISSING_GIST_TYPES`.
+Focused `--path` / `--type` compile may omit findings for operator batching; it **does not** shrink the migration obligation for an opted-in store. **No page may be dropped from the index to dodge `missing_gist`.** Protostar remains out of `MISSING_GIST_TYPES`.
 
 ---
 
@@ -159,39 +171,70 @@ Focused `--path` / `--type` compile may omit findings for operator batching; it 
 
 ```mermaid
 flowchart TB
-  Pin[Sergio pin: compile-green + useful gists only] --> Scope[Unfocused compile index ∩ MISSING_GIST_TYPES]
-  Scope --> Rich{Parent rich enough for useful gist?}
-  Rich -->|yes| Mig[Migrate / force-gist compose]
-  Rich -->|no / insufficient| Cut1b{Cut 1b OPEN - awaiting Hand/Sergio}
-  Cut1b -->|option a| Block[block migrate until parent rich enough]
-  Cut1b -->|option b| Exclude[exclude from index - no gist required for compile-green]
-  Mig --> Scan[scan_gate on every candidate]
+  Pin[Sergio pins LOCKED: useful gists + enrich-before-migrate + shared cluster] --> Scope[Unfocused compile index ∩ MISSING_GIST_TYPES]
+  Scope --> Cluster[Subject-cluster / work-cluster / relates_to chains / --subject-folder]
+  Cluster --> Pack{Cluster evidence pack rich enough?}
+  Pack -->|no| Enrich[Enrich thin parents - remember/optimise evidence rules; never invent]
+  Enrich -->|still thin| Block[Cut 1b a LOCKED: block migrate - stay indexed]
+  Enrich -->|now rich| Pack
+  Pack -->|yes| Mig[Migrate / force-gist compose: N parents to 1 shared useful gist]
+  Mig --> Scan[scan_gate on every created gist]
   Scan -->|Crit/High| Refuse[refuse + fail window]
   Scan -->|Medium booking_manage_reference| Handoff[Gate 7 handoff]
   Scan -->|sensitivity gated| Skip[skip/handoff - no invent-through]
-  Scan -->|pass| Writer{Writer - useful only}
-  Writer -->|extractable evidence| Verbatim[verbatim / evidence-gated useful gist]
-  Writer -->|insufficient - no stub| Residual[handoff / residual - Cut 1b]
-  Verbatim --> SchemaBody[schema minimal prose from evidence only]
+  Scan -->|pass| Writer[Writer: useful evidence-grade only]
+  Writer --> DerivedN[derived_from lists all N parents]
+  DerivedN --> SchemaBody[one-gist to one same-folder schema; schema relates_to gist]
   SchemaBody --> Index[index.md schema cues]
-  Index --> Compile[compile: missing_gist critical after stamp for indexed in-scope]
+  Index --> Compile[compile: missing_gist critical after stamp; every indexed parent covered]
   Compile -->|green| Exit[done-when / pilot receipt]
-  Compile -->|residual missing_gist on required page| Fail[NOT OK - exit red]
-  Remember[path remember new parent] -->|MoP 11 useful gist or fail| Writer
-  Opt[atlas-optimise fill] --> Writer
+  Compile -->|residual missing_gist| Fail[NOT OK - exit red]
+  Remember[path remember new parent] -->|Rem1: wire shared gist or create useful / fail closed| Writer
+  Opt[atlas-optimise cluster + fill] --> Cluster
   Sleep[Future sleep/consolidate] -.not this cut.-> Mig
-  StubOld[titled stub / shell gist path] -.->|SUPERSEDED - out of scope| X[retracted]
+  StubOld[titled stub / shell] -.->|SUPERSEDED| X1[retracted]
+  ExcludeOld[exclude-from-index / de-index skip] -.->|REJECTED Cut 1b b| X2[retracted]
 ```
 
 ### Interface sketch
 
 **New / extended surfaces (design intent for later implement):**
 
-1. **Migrate / force-gist batch** (compose with existing memory-migrate and/or optimise Enter): creates missing **useful** gists for in-scope parents with extractable evidence; creates required schema pages (minimal prose from evidence only); bumps store stamp / opt-in flag so compile treats `missing_gist` as critical for indexed in-scope pages. Behaviour when parent is not rich enough is **Cut 1b (open)** — block migrate or exclude from index; do not invent; do not stub.
-2. **~~Stub frontmatter marker~~ SUPERSEDED:** `gist_kind: stub`, title-only shells, `shell_gist_count` / shell-gist receipt members, and compile waivers that accept title-only stubs to clear `missing_gist` are **out of scope** under the Sergio amend pin. Do not implement stub acceptance.
-3. **Compile / CONTRACT:** post-migrate stamp → `missing_gist` severity **critical** for in-scope **indexed** types that still require a useful gist; grandfather on older stamp (info/warn per rung as today). Interaction with thin parents = Cut 1b.
-4. **Remember Enter:** fail-closed if it would leave an in-scope indexed parent without a **useful** gist; must create verbatim/evidence-grade gist (+ schema obligation) in the same remember turn, or refuse the remember write. **Not** stub.
-5. **Receipt fields (additive):** `scan_gate_refuse_count`, `body_fills` (useful/evidence-grade fills), `zero_crit_high_promoted`, compile exit, residual `missing_gist` count (must be 0 for opted-in green on pages that still require a gist), hits as `{path, type, severity}` only. **`shell_fills` / shell_gist_count retracted** — shells out of scope; if a prior draft counted shells, supersede with useful-fill / handoff / exclude counts as implement names after Cut 1b locks.
+1. **Migrate / force-gist batch** (compose with existing memory-migrate and/or optimise Enter): **enrich thin parents first** (Cut 1b a); then create missing **useful** gists — prefer **one shared gist per subject cluster** when parents are chained/related; create required schema pages (minimal prose from evidence only); bumps store stamp / opt-in flag so compile treats `missing_gist` as critical for indexed in-scope pages. Thin / insufficient after enrich → **block migrate** (stay indexed); do not invent; do not stub; do not exclude-from-index.
+2. **Shared cluster gist (N→1):** see **Shared cluster gist design** below. Extends beta.11 single-parent `derived_from` to N≥1; aligns clustering with existing optimise subject-cluster / work-cluster / `--subject-folder` / `relates_to` chains.
+3. **~~Stub frontmatter marker~~ SUPERSEDED:** `gist_kind: stub`, title-only shells, `shell_gist_count` / shell-gist receipt members, and compile waivers that accept title-only stubs to clear `missing_gist` are **out of scope**. Do not implement stub acceptance.
+4. **~~Exclude-from-index~~ REJECTED:** no compile waiver that drops a thin parent from the unfocused index to clear `missing_gist`.
+5. **Compile / CONTRACT:** post-migrate stamp → `missing_gist` severity **critical** for in-scope **indexed** types; grandfather on older stamp (info/warn per rung as today). Coverage: a parent is covered when it appears in some gist's `derived_from` list (singleton or shared cluster).
+6. **Remember Enter:** fail-closed if it would leave an in-scope indexed parent without useful-gist coverage; must create or **wire into** a verbatim/evidence-grade shared/singleton gist (+ schema obligation) in the same remember turn, or refuse. **Not** stub.
+7. **Receipt fields (additive):** `scan_gate_refuse_count`, `body_fills` (useful/evidence-grade fills), `shared_gist_count`, `cluster_size_hist`, `enrich_blocked_count`, `zero_crit_high_promoted`, compile exit, residual `missing_gist` count (must be 0 for opted-in green), hits as `{path, type, severity}` only. **`shell_fills` / shell_gist_count / exclude_count retracted**.
+
+### Shared cluster gist design (N parents → 1 gist)
+
+Align with **existing** optimise subject-clustering (beta.11 path + helper); do not invent private topology.
+
+**Cluster membership signals (reuse only):**
+
+| Signal | Source | Role |
+|---|---|---|
+| Subject stem | Same filename stem across folders (existing `subject-cluster` grouping) | Default subject key |
+| `--subject-folder <folder>:<stem>` | Existing operator pin | Explicit cluster destination folder |
+| `work_id` → `work/<work_id>/` | Existing `work-cluster` | Cluster when work folder exists |
+| Existing parent `relates_to` chains | Kinds already on disk (`related`, `follows`, `records`, `implements`, …) | Chained/related memories join one cluster when they share a subject key or operator folder |
+| Same-folder co-location | After subject/work moves | Members already in one subject folder form one cluster |
+
+Do **not** detect subject change by embedding similarity, private hosts, or any ontology outside these signals (path text today: “Do not detect subject change any other way”).
+
+**Choosing the shared gist:**
+
+1. Form clusters from the signals above for in-scope indexed parents lacking gist coverage.
+2. **One shared useful gist per cluster** (not one gist per page). Singleton cluster (N=1) is the degenerate case of the same writer.
+3. Place the gist in the cluster's subject folder (operator `--subject-folder` dest, or `work/<work_id>/`, or the folder holding the members after clustering).
+4. Build an **evidence pack = union** of extractable spans from all cluster parents (beta.11 / vNext evidence rules: parent `description`, claim body spans, prior upper text that already satisfies substring). Enrich thin members first (Cut 1b a) before declaring the pack insufficient.
+5. Writer emits one **useful** gist body from that pack (verbatim/evidence-gated; confirm default; `--auto-verbatim` only for extractive single-span copy). Never invent. Never edit parent claim text.
+6. **`derived_from`:** the gist lists **all N parents** as `derived_from` edges. Compile indexes coverage by parent path: each listed parent is covered. This **extends** beta.11 `_valid_gist_parent` (exactly-one) → **N≥1** valid parents, each `type` ∈ `GIST_PARENT_TYPES`, each resolving inside the store. Malformed (zero parents, gist-of-gist, outside store) still fails `gist_parent` and does not suppress `missing_gist`.
+7. **`relates_to` among parents:** existing chain edges stay; parents may also `relates_to` the shared gist with kind `related` if operators want upward visibility — optional, not required for compile coverage (coverage is `derived_from` on the gist).
+8. **stale_upper_page / substring for N>1:** every sentence (or documented extractive span) of the gist `description` must be an exact substring of **at least one** derived_from parent's body or description (**union pack membership**). Singleton N=1 keeps today's “substring of the one parent” rule. This intentionally relaxes remember-path wording that required the whole description to appear in *each* parent (intersection), which cannot yield a useful multi-parent shared gist. Implement must update remember path + compile stale check together with DerivedN.
+9. **one-gist → one-schema still holds:** the shared gist still requires exactly one same-folder `type: schema` listing it via `relates_to` kind `related`; schema cued from folder `index.md`; minimal prose from evidence only (vNext S8). A second schema is legal only when the subject changes (locked four-layer model). Schema lists the **gist**, not each parent. Conflicting claim clusters with no operator-chosen subject split remain **insufficient** (vNext evidence rule) → enrich / operator `--subject-folder` / block migrate — not invent a merge.
 
 **CLI sketch (additive; exact flags at implement):**
 
@@ -200,8 +243,9 @@ flowchart TB
 python3 <atlas-skill>/scripts/atlas_optimise.py plan \
   --root <root> --target <folder|.> --out-dir <dir outside store> \
   --optimise-mode path|custom|full|incremental \
-  --force-gist \          # NEW: useful gists only; no stubs; residual missing_gist fails exit for opted-in indexed pages (Cut 1b governs thin parents)
+  --force-gist \          # NEW: useful gists only; enrich-before-migrate; shared cluster N→1; no stubs; no exclude-from-index
   --cost-ceiling <N> \
+  [--subject-folder <folder>:<stem>]... \
   [--pilot]
 
 # Migrate opt-in / stamp bump (name at implement; may be memory-migrate batch or sibling)
@@ -219,20 +263,22 @@ Stance: **frugal / Path-first**. Cost scales with in-scope parent count × (gist
 
 ### Acceptance criteria
 
-1. **Compile-green exit:** On an opted-in / post-migrate stamped fixture, every in-scope **indexed** parent that still requires a gist has a valid **useful** (verbatim/evidence-grade) gist; unfocused compile has **zero** `missing_gist` for those pages; residual is **not** OK for required pages. Thin-parent outcome follows locked Cut 1b (when locked).
-2. **Writer fidelity:** Extractable parents get verbatim/evidence-gated **useful** gists under beta.11 rules; insufficient-evidence parents get **no stub** and **no invented body** — handoff / residual / block / exclude per Cut 1b (open).
+1. **Compile-green exit:** On an opted-in / post-migrate stamped fixture, every in-scope **indexed** parent has useful-gist coverage (singleton or shared cluster); unfocused compile has **zero** `missing_gist` for those pages; residual is **not** OK. No parent left uncovered via exclude-from-index.
+2. **Writer fidelity:** Extractable parents / clusters get verbatim/evidence-gated **useful** gists under beta.11 / DerivedN rules; insufficient after enrich → **no stub**, **no invented body**, **block migrate** (Cut 1b a) — parent stays indexed.
 3. **~~Stub acceptance~~ SUPERSEDED:** titled stubs do not clear `missing_gist`. No thin-body waive for title-only shells. No `gist_kind: stub` clearance path.
-4. **scan_gate binds** migrate, optimise fill, and remember-created gists: Crit/High → refuse + fail window; Medium `booking_manage_reference` → handoff (Gate 7); receipts list `{path,type,severity}` only.
-5. **Grandfather:** pre-stamp stores keep today’s rung behaviour for `missing_gist`; no silent critical raise.
-6. **Remember fail-closed (MoP 11):** new in-scope parent without **useful** gist create refuses (not stub).
-7. **Pilot:** receipt exit = compile green under locked Cut 1b rules; N=10 spot-check; Guard rows present; MoN light under old bar is **not** a pass under the new bar; heavy/fleet blocked until cut ships + Sergio GO.
-8. **Non-goals held:** no sleep implement; no fleet apply; no private topology in atlas-atlas; no stub clearance; no invent-to-clear.
-9. **Stop-for-implement:** this design writes no atlas package product files.
-10. **Cut 1b still open:** design must not treat either option (a) or (b) as locked.
+4. **~~Exclude-from-index~~ REJECTED:** design/smokes refuse any path that drops an indexed in-scope page to dodge `missing_gist`.
+5. **Shared cluster (N→1):** chained/related parents clustered via existing subject-cluster / work-cluster / `--subject-folder` / `relates_to` signals share **one** useful gist; gist `derived_from` lists all N parents; each parent loses `missing_gist`; one-gist→one-schema holds; union pack membership for N>1 stale check; no private clustering ontology.
+6. **scan_gate binds** migrate, optimise fill, and remember-created gists: Crit/High → refuse + fail window; Medium `booking_manage_reference` → handoff (Gate 7); receipts list `{path,type,severity}` only.
+7. **Grandfather:** pre-stamp stores keep today’s rung behaviour for `missing_gist`; no silent critical raise.
+8. **Remember fail-closed (MoP 11 / Rem1):** new in-scope parent without useful-gist coverage refuses; same-turn create or wire into shared/singleton useful gist accepts.
+9. **Pilot:** receipt exit = compile green after enrich+migrate+fill; N=10 spot-check; Guard rows present; MoN light under old bar is **not** a pass under the new bar; heavy/fleet blocked until cut ships + Sergio GO.
+10. **Non-goals held:** no sleep implement; no fleet apply; no private topology in atlas-atlas; no stub clearance; no invent-to-clear; no de-index skip.
+11. **Stop-for-implement:** this design writes no atlas package product files.
+12. **Cut 1b locked closed:** option (a) enrich-before-migrate / block until useful is LOCKED; option (b) exclude-from-index is REJECTED — implement must not reopen (b).
 
 ### Stop-for-approval
 
-This operation **stops for Hand/Sergio approval**. Do not implement, merge package code, tag/release, or fleet-apply from this packet. Unlock must name: useful-gist writer (no stub), scan_gate binding, compile severity + grandfather, cost ceiling, pilot done-when, and **Cut 1b choice** (block migrate vs exclude from index).
+This operation **stops for Hand/Sergio approval**. Do not implement, merge package code, tag/release, or fleet-apply from this packet. Unlock must name: useful-gist writer (no stub), enrich-before-migrate (Cut 1b a), shared cluster gist (N→1 / DerivedN), scan_gate binding, compile severity + grandfather, cost ceiling, and pilot done-when. Cut 1b (b) exclude-from-index stays REJECTED.
 
 ---
 
@@ -240,21 +286,21 @@ This operation **stops for Hand/Sergio approval**. Do not implement, merge packa
 
 | Principle | Status | Rationale / design consequence |
 |---|---|---|
-| S | applicable | Force-gist owns one job: every compile-indexed `MISSING_GIST_TYPES` page that remains in scope has a compile-accepted **useful** gist so compile can be green. Sleep, fleet, stub clearance, and detector-vocab expansion stay outside. |
-| O | applicable | Four-layer model stays; extension is useful-gist writer obligation + severity/stamp opt-in + remember fail-closed; stub writer retracted. Intentional override of beta.11 residual-OK is versioned and evaluated, not silent drift. |
-| L | not-applicable | Force-gist does not claim to substitute sleep, remember’s claim authorship, or memory-migrate’s document retyping. Invented or title-only bodies are not interchangeable with evidence-backed useful gists. |
-| I | applicable | Path/Custom Enter remains the cheap surface; Full fields + ceiling only when chosen. Receipt exposes scan/useful-fill counts without dumping secret spans; shell counts superseded. |
-| D | trade-off | Continue depending on package compile type sets and helper scan primitives (essential). Do not invent a parallel “indexed memories” ontology. Gate 7 medium rule may extend the scanner; full vocab coverage is a separate follow-up. Cut 1b remains an explicit operator lock, not a hidden default. |
+| S | applicable | Force-gist owns one job: every compile-indexed `MISSING_GIST_TYPES` page has compile-accepted **useful**-gist coverage (singleton or shared cluster) so compile can be green. Sleep, fleet, stub clearance, de-index skip, and detector-vocab expansion stay outside. |
+| O | applicable | Four-layer model stays; extension is useful-gist writer + enrich-before-migrate + shared cluster N→1 (DerivedN) + severity/stamp opt-in + remember fail-closed; stub writer retracted; exclude-from-index rejected. Intentional override of beta.11 residual-OK and single-parent-only `derived_from` is versioned, not silent drift. |
+| L | not-applicable | Force-gist does not claim to substitute sleep, remember’s claim authorship, or memory-migrate’s document retyping. Invented or title-only bodies are not interchangeable with evidence-backed useful gists. Shared cluster gist is not a license to invent private clustering topology. |
+| I | applicable | Path/Custom Enter remains the cheap surface; Full fields + ceiling only when chosen; `--subject-folder` remains the operator cluster pin. Receipt exposes scan/useful-fill/shared-gist/enrich-blocked counts without dumping secret spans; shell/exclude counts superseded. |
+| D | trade-off | Continue depending on package compile type sets, helper scan primitives, and existing subject-cluster / work-cluster signals (essential). Do not invent a parallel “indexed memories” or embedding-cluster ontology. Gate 7 medium rule may extend the scanner; full vocab coverage is a separate follow-up. Cut 1b (a) is locked; (b) rejected. |
 
 ---
 
 ## Catalogue Review
 
-- **Genesis matches:** uses A9 SUPERVISED EXECUTION (plan → approve → apply → compile verify), A11 RECONCILIATION LOOP (drive missing_gist to terminal green for required indexed pages), S7 DETERMINISTIC TOOL BRIDGE (type sets, stamp, scan_gate, evidence/useful-gist checks). Refines vNext; conflicts with beta.11 “residual OK” by **explicit pin override**, not accidental drift; rejects stub clearance by **Sergio amend pin**.
-- **Autogenesis extension:** B17 ACTIVATION CARD — Enter gains force-gist / useful-gist / ceiling fields (stub fields retracted). `autogenesis:S8` not-selected (still INLINE path + LOCAL SIBLING helper; no new skill package).
-- **Composition:** INLINE path updates, LOCAL SIBLING helper/compile changes at implement.
-- **Inherited anti-patterns avoided:** TOOLLESS ASSERTION; soft-only evaluation; silent Full; promotion-as-invention; sensitivity laundering; invent-to-clear-missing_gist; titled-stub clearance.
-- **Delta only:** useful-gist-only writer (stub path superseded), compile critical after stamp, migrate compose, remember fail-closed useful gist, Guard receipt rows, Gate 7 medium handoff, pilot bar raise, Cut 1b open.
+- **Genesis matches:** uses A9 SUPERVISED EXECUTION (plan → approve → apply → compile verify), A11 RECONCILIATION LOOP (drive missing_gist to terminal green for every indexed in-scope page), S7 DETERMINISTIC TOOL BRIDGE (type sets, stamp, scan_gate, evidence/useful-gist checks, subject-cluster signals). Refines vNext; conflicts with beta.11 “residual OK” and single-parent-only gist by **explicit pin override**; rejects stub and exclude-from-index clearance by **Sergio amend pins**.
+- **Autogenesis extension:** B17 ACTIVATION CARD — Enter gains force-gist / useful-gist / ceiling / enrich-before-migrate / shared-cluster fields (stub and exclude fields retracted). `autogenesis:S8` not-selected (still INLINE path + LOCAL SIBLING helper; no new skill package).
+- **Composition:** INLINE path updates, LOCAL SIBLING helper/compile changes at implement (DerivedN + union stale check + enrich gate).
+- **Inherited anti-patterns avoided:** TOOLLESS ASSERTION; soft-only evaluation; silent Full; promotion-as-invention; sensitivity laundering; invent-to-clear-missing_gist; titled-stub clearance; de-index/skip clearance; private clustering ontology.
+- **Delta only:** useful-gist-only writer (stub path superseded), Cut 1b a LOCKED / b REJECTED, shared cluster N→1, compile critical after stamp, enrich+migrate compose, remember fail-closed useful gist, Guard receipt rows, Gate 7 medium handoff, pilot bar raise.
 - `pattern_applicability: applicable` (A9, A11, S7, B17). `pattern_admission: not-selected` (S8).
 
 ---
@@ -267,14 +313,14 @@ Treat the following as design-challenge inputs. Each is pinned, rejected, modifi
 
 | # | Counter | Disposition |
 |---|---|---|
-| GM1 | Contradiction with E1 / insufficient_evidence: forcing gists must name writer and what compile accepts (no invented claim text). | **Pin W1–W2 (amended).** Writer = verbatim/evidence-gated **useful** gist only. Insufficient → no stub, no invent; Cut 1b open. Prior Stub1–Stub3 **superseded**. |
-| GM2 | Compile-green hard contract: which findings critical; grandfather; cost ceiling before Full. | **Pin CCrit1–CCrit2, Cost2.** `missing_gist` critical post-stamp for required indexed pages; grandfather older stamp; Path/Custom first; Full needs ceiling + confirm. Thin-parent residual vs green tied to Cut 1b. |
+| GM1 | Contradiction with E1 / insufficient_evidence: forcing gists must name writer and what compile accepts (no invented claim text). | **Pin W1–W2 (amended).** Writer = verbatim/evidence-gated **useful** gist only. Insufficient → enrich / block migrate (Cut 1b a); no stub, no invent, no exclude. Prior Stub1–Stub3 **superseded**. |
+| GM2 | Compile-green hard contract: which findings critical; grandfather; cost ceiling before Full. | **Pin CCrit1–CCrit2, Cost2, Cut1b.** `missing_gist` critical post-stamp for every indexed in-scope page; grandfather older stamp; Path/Custom first; Full needs ceiling + confirm. Thin parents → enrich / block migrate (stay indexed). |
 | GM3 | Scope ambiguity: every `type: memory`, every `MISSING_GIST_TYPES`, or only schema-folder pages? | **Pin Scope1.** Day one = unfocused compile index ∩ `MISSING_GIST_TYPES` (source set). Not memory-only. |
 | GM4 | Promotion risk: force-fill still runs scan_gate; refuse Crit/High and Medium booking_manage_reference; must not launder restricted spans. | **Pin Sec2–Sec4, KG1–KG3.** |
 | GM5 | Pilot bar: MoN light would fail under new exit; heavy blocked until new done-when + receipt. | **Pin Pilot1–Pilot3.** |
 | GM6 | Ops: Full cost cap / Path-first; no silent Full. | **Pin Cost2, Cost3.** |
 | GM7 | Shell→schema rollup: title-only / shell gists must not become claimful schema evidence. | **Pin Rollup1 (amended).** Shell/stub gists out of scope; schema prose only from evidence-backed useful gists. |
-| GM8 | Pilot path under new exit. | **Pin Pilot1, Pilot2.** Light pilot must redefine pass = compile green under Cut 1b rules; old residual-OK pilots do not carry forward. |
+| GM8 | Pilot path under new exit. | **Pin Pilot1, Pilot2.** Light pilot must redefine pass = compile green under locked Cut 1b a + shared-cluster rules; old residual-OK pilots do not carry forward. |
 | GM9 | Public hygiene. | **Pin Hyg1.** Scrub private hosts/paths/mesh/1P/BotOps tips from atlas-atlas before push. Placeholders `<atlas-atlas-root>` / `<autogenesis-skill-root>` only — no box checkout paths in public pages. |
 | GM10 | Noise budget / Path batches. | **Pin Cost3.** Prefer Path batches; Full only with ceiling. |
 
@@ -298,8 +344,8 @@ Treat the following as design-challenge inputs. Each is pinned, rejected, modifi
 | KG3 | Must not launder sensitivity — skip/handoff sensitivity-gated parents; never invent-through or stub-through restricted/confidential/booking/secret-shaped into indexes/schemas. | **Pin Sec4.** |
 | KG4 | Pilot Guard receipt rows: scan_gate refuse count, useful/body fills, zero Crit/High promoted; empty hits ≠ full vocab coverage. Shell fill counts superseded. | **Pin Rec1, Vocab1.** |
 | KG5 | Public atlas-atlas scrub before push. | **Pin Hyg1.** |
-| KG6 | No implement/heavy/fleet until design names useful-gist writer + scan_gate binding and Hand/Sergio unlock (including Cut 1b). | **Pin Stop1** (writer/scan named; Cut 1b still open; unlock still required). |
-| KG-note | No stubs AND no invented bodies to clear missing_gist; compile-green vs residual for insufficient-evidence parents tied to open Cut 1b; scan_gate binds every created gist. | **Folded into W1, Cut1b, Sec2, Pilot1.** |
+| KG6 | No implement/heavy/fleet until design names useful-gist writer + scan_gate binding and Hand/Sergio unlock. | **Pin Stop1** (writer/scan/Cut1b a/DerivedN named; unlock still required for implement). |
+| KG-note | No stubs AND no invented bodies to clear missing_gist; thin parents enrich/block (not exclude); scan_gate binds every created gist. | **Folded into W1, Cut1b, Sec2, Pilot1, Cluster1.** |
 
 ---
 
@@ -309,26 +355,37 @@ Treat the following as design-challenge inputs. Each is pinned, rejected, modifi
 
 | ID | Pin |
 |---|---|
-| W1 | **Writer (named):** if extractable lower-layer evidence per beta.11 rules → **verbatim / evidence-gated useful gist**. If insufficient evidence → **no titled stub**, **no invented body** to clear `missing_gist`; handoff / residual / block / exclude per **Cut 1b (open)**. Never invent episodic claims. Never edit parent memory/claim text. |
-| W2 | Verbatim branch keeps beta.11 extract rules (plain description or first claim line), confirm default, `--auto-verbatim` opt-in for auto class. Useful body = evidence-grade content derived from extractable parent evidence — not title-only. |
+| W1 | **Writer (named):** if extractable lower-layer evidence per beta.11 / cluster union-pack rules → **verbatim / evidence-gated useful gist**. If insufficient evidence → **enrich parent(s) first**; if still insufficient → **block migrate** (Cut 1b a). **No titled stub**, **no invented body**, **no exclude-from-index**. Never invent episodic claims. Never edit parent memory/claim text. |
+| W2 | Verbatim branch keeps beta.11 extract rules (plain description or first claim line), confirm default, `--auto-verbatim` opt-in for auto class. Useful body = evidence-grade content derived from extractable parent / cluster evidence — not title-only. |
 | W3 | ~~Stub branch~~ **SUPERSEDED / RETRACTED.** No stub template, no `gist_kind: stub` clearance, no title-only shell gist writer. |
 | Stub1–Stub3 | **SUPERSEDED.** Compile must not accept titled stubs to clear `missing_gist`. Thin-body waive for marked stubs retracted. Stubs-as-non-evidence is moot — stubs are out of scope. |
 
-### Cut 1b — OPEN (awaiting Hand/Sergio lock)
+### Cut 1b — LOCKED CLOSED
 
-| ID | Status | Options (do NOT invent Sergio’s choice) |
+| ID | Status | Decision |
 |---|---|---|
-| Cut1b | **OPEN** | When parent is **not rich enough** for a useful gist, either: **(a) block migrate** until the parent is rich enough, or **(b) exclude from index** (so compile-green does not require a gist for that page). Both options await Hand/Sergio lock. Design records both; implement must not assume either until unlock names one. Compile-green vs residual for insufficient-evidence parents **stays tied to this open cut**. |
+| Cut1b | **LOCKED CLOSED** | **(a) LOCKED:** enrich parent (or cluster members) before migrate; **block migrate** until evidence is rich enough for a useful gist; parent **stays indexed**. Enrich may use remember / optimise evidence rules; **never invent claims**. **(b) REJECTED:** exclude-from-index / de-index / skip so compile-green does not require a gist — **out of scope**. Every indexed in-scope memory remains covered. |
+
+### Shared cluster gist (N parents → 1)
+
+| ID | Pin |
+|---|---|
+| Cluster1 | **Clustering signals (reuse only):** existing optimise subject-stem groups, `--subject-folder <folder>:<stem>`, `work_id` / work-cluster, existing parent `relates_to` chains, and same-folder co-location after moves. No embedding / private-host / invented topology. |
+| Cluster2 | **One shared useful gist per cluster** (singleton N=1 allowed). Not one gist per page when members are chained/related under Cluster1. |
+| DerivedN | **`derived_from` lists all N parents.** Compile coverage: parent covered iff listed on some valid gist. Extends beta.11 exactly-one → **N≥1** valid parents (`GIST_PARENT_TYPES`, in-store, not gist-of-gist). Malformed gists never suppress `missing_gist`. |
+| RelN | Parent↔parent `relates_to` chains preserved; parent→gist `relates_to` optional; **schema `relates_to` lists the shared gist** (kind `related`), not each parent. |
+| StaleN | **N=1:** gist description substring of the one parent (beta.11). **N>1:** each description sentence/span is substring of **at least one** derived_from parent (**union pack membership**). Update remember path + compile together at implement. |
+| Schema1 | **one-gist → one-schema still holds** for shared gists. Second schema only when subject changes. Conflicting clusters without operator subject split → enrich / `--subject-folder` / block migrate (vNext insufficient rule). |
 
 ### Scope, compile, grandfather
 
 | ID | Pin |
 |---|---|
-| Scope1 | Day-one scope = pages in unfocused compile page index whose `type` ∈ compile `MISSING_GIST_TYPES` (`experience`, `decision`, `lesson`, `recipe`, `document`, `memory`, `page`). Not memory-only. Not protostar. Thin-parent membership vs exclusion = Cut 1b. |
-| CCrit1 | After store **opts in / completes force-gist migration + stamp bump**, `missing_gist` for in-scope **indexed** types that still require a useful gist is **critical** (fail compile). |
+| Scope1 | Day-one scope = pages in unfocused compile page index whose `type` ∈ compile `MISSING_GIST_TYPES` (`experience`, `decision`, `lesson`, `recipe`, `document`, `memory`, `page`). Not memory-only. Not protostar. **Every such page covered** — no exclude-from-index. |
+| CCrit1 | After store **opts in / completes force-gist migration + stamp bump**, `missing_gist` for in-scope **indexed** types is **critical** (fail compile). |
 | CCrit2 | **Grandfather:** stores on older stamp keep today’s rung behaviour (`info`/`warn`/`error`) until migrate+stamp. No silent critical raise. |
-| Mig1 | Migration creates missing **useful** gists (and required schema pages per one-gist→one-schema + index cues from evidence). Migration ≠ free invention; ≠ stub shells (uses W1). Insufficient-evidence parents follow Cut 1b. |
-| Rem1 | **Remember-time:** creating an in-scope indexed parent must also create a **useful** (verbatim/evidence-grade) gist (and satisfy schema obligation) in the same turn, or **fail closed**. Not stub. |
+| Mig1 | Migration: enrich thin parents first; then create missing **useful** gists (prefer shared cluster per Cluster1–2) and required schema pages per Schema1 + index cues from evidence. Migration ≠ free invention; ≠ stub shells; ≠ de-index (uses W1, Cut1b, Cluster*). |
+| Rem1 | **Remember-time:** creating an in-scope indexed parent must also create or **wire into** a **useful** (verbatim/evidence-grade) shared/singleton gist (and satisfy schema obligation) in the same turn, or **fail closed**. Not stub. |
 
 ### Security / scan_gate / sensitivity
 
@@ -336,51 +393,50 @@ Treat the following as design-challenge inputs. Each is pinned, rejected, modifi
 |---|---|
 | Sec2 | **scan_gate binds** optimise fill, **migrate** force-gist creates, and **remember-created** gists — every created gist. |
 | Sec3 | Crit/High → **refuse + fail window** (nothing promoted). Medium **`booking_manage_reference`** → **handoff** (Gate 7). Receipt hits are `{path, type, severity}` only — no secret spans in receipts. |
-| Sec4 | Sensitivity-gated parents (`restricted`, and confidential/booking/secret-shaped per scan rules) → **skip/handoff**; **never invent-through or stub-through** into indexes/schemas. |
+| Sec4 | Sensitivity-gated parents (`restricted`, and confidential/booking/secret-shaped per scan rules) → **skip/handoff**; **never invent-through or stub-through** into indexes/schemas. Skip here means “do not promote secret text,” **not** exclude-from-index for `missing_gist` — coverage obligation remains; operator must redact/enrich under gates or leave migrate blocked. |
 | Vocab1 | Scanner↔vocab gap remains a **post-pilot follow-up**. Empty hits ≠ full vocab coverage. Do not expand this plan into full detector-family implement beyond Gate 7 need. |
 
 ### Optimise, cost, pilot, hygiene, stop
 
 | ID | Pin |
 |---|---|
-| Opt1 | Force-gist may compose migrate+optimise. Confirm/auto **must not** auto-promote scan_gate hits. |
-| Rollup1 | **Schema rollup:** evidence-backed useful gists may feed minimal-prose schema (beta.11). **Shell/stub gist → schema shell path SUPERSEDED** — no stub folders as a designed clearance mode; schema claimful prose only from evidence. |
+| Opt1 | Force-gist may compose migrate+optimise (cluster + fill). Confirm/auto **must not** auto-promote scan_gate hits. |
+| Rollup1 | **Schema rollup:** evidence-backed useful gists may feed minimal-prose schema (beta.11 / S8). **Shell/stub gist → schema shell path SUPERSEDED** — no stub folders as a designed clearance mode; schema claimful prose only from evidence. |
 | Cost2 | Require **Path/Custom first**. Full needs explicit ceiling (max tasks or operator confirm). **Serial Full only.** |
 | Cost3 | Prefer Path batches when noise budget would drown review; no silent Full on large stores. |
-| Pilot1 | Redefine receipt exit = **compile green** on pilot store after migrate+fill for pages that require a useful gist (residual `missing_gist` count 0 for those). Thin-parent residual vs exclude follows Cut 1b when locked. N=10 spot-check still required. |
+| Pilot1 | Redefine receipt exit = **compile green** on pilot store after enrich+migrate+fill (residual `missing_gist` count 0 for all indexed in-scope pages). N=10 spot-check still required. |
 | Pilot2 | MoN light under beta.11 residual-OK is **not** a pass under the new bar. Heavy pilot and fleet **blocked** until this cut ships and **Sergio GO**. |
-| Pilot3 / Rec1 | Guard receipt rows required: `scan_gate_refuse_count`, `body_fills` (useful fills), `zero_crit_high_promoted`, compile exit, residual missing_gist. **`shell_fills` / shell_gist_count SUPERSEDED** (shells out of scope). |
-| Hyg1 | Public atlas-atlas scrub before push: no private hosts, private mesh hostnames, private checkout paths, 1Password item ids, or BotOps-only tips. Use placeholders `<atlas-atlas-root>` / `<autogenesis-skill-root>` (never box-local absolute roots). Public github.com/sergio-sisternes-epam/atlas and atlas-atlas links OK. Hand/Sergio names OK for pin provenance. |
-| Stop1 | No package implement, heavy pilot apply, or fleet until this design names useful-gist writer + scan_gate binding (**done**) **and** Hand/Sergio explicit unlock including **Cut 1b**. |
+| Pilot3 / Rec1 | Guard receipt rows required: `scan_gate_refuse_count`, `body_fills` (useful fills), `shared_gist_count`, `cluster_size_hist`, `enrich_blocked_count`, `zero_crit_high_promoted`, compile exit, residual missing_gist. **`shell_fills` / exclude_count SUPERSEDED**. |
+| Hyg1 | Public atlas-atlas scrub before push: no private hosts, private mesh hostnames, private checkout paths, 1Password item ids, or BotOps-only tips. Use placeholders `<atlas-atlas-root>` / `<autogenesis-skill-root>` (never box-local absolute roots). **Never** `/workspace`, `/home/box`, or `sesispla` in public pages. Public github.com/sergio-sisternes-epam/atlas and atlas-atlas links OK. Hand/Sergio names OK for pin provenance. |
+| Stop1 | No package implement, heavy pilot apply, or fleet until this design names useful-gist writer + Cut 1b a + DerivedN/Cluster* + scan_gate binding (**done**) **and** Hand/Sergio explicit unlock for implement. |
 | S1 | Sleep/consolidate remains unimplemented; optimise remains interim fill path unless a future design says otherwise. |
 
-**C1–C5:** C1 counters above are non-trivial. C2 high-severity items pinned (W1 amended, CCrit1, Sec2–Sec4, Pilot1–2, Rem1 amended; Cut1b open). C3 pins visible. C4 scope intact (follow-on force-gist/compile-green only). C5 no package implement in this operation. Change-class stated. Genesis Artifacts complete for new-surface.
-
----
+**C1–C5:** C1 counters above are non-trivial. C2 high-severity items pinned (W1 amended, Cut1b locked, Cluster1–2, DerivedN, CCrit1, Sec2–Sec4, Pilot1–2, Rem1 amended). C3 pins visible. C4 scope intact (follow-on force-gist/compile-green only). C5 no package implement in this operation. Change-class stated. Genesis Artifacts complete for new-surface.
 
 ## Behavioural contract (agent-spec)
 
-`deferred: agent-spec was not invoked in this design session; deterministic helper/compile tests and adversarial smokes will cover each forbidden behaviour (invention, invent-to-clear-missing_gist, titled-stub clearance, scan_gate bypass, sensitivity laundering, silent Full, residual-OK on opted-in stamp for required indexed pages, remember without useful gist).`
+`deferred: agent-spec was not invoked in this design session; deterministic helper/compile tests and adversarial smokes will cover each forbidden behaviour (invention, invent-to-clear-missing_gist, titled-stub clearance, exclude-from-index clearance, scan_gate bypass, sensitivity laundering, silent Full, residual-OK on opted-in stamp for indexed pages, remember without useful gist, private clustering ontology, one-gist-per-page when Cluster1 applies).`
 
-`@forbidden` families to protect at implement: invent episodic gist body; clear missing_gist via titled stub or invented body; promote Crit/High; invent-through/stub-through restricted; skip scan_gate on migrate/remember; claim fleet ready without compile-green receipt; raise missing_gist critical without stamp opt-in; assume Cut 1b locked without Sergio unlock.
+`@forbidden` families to protect at implement: invent episodic gist body; clear missing_gist via titled stub, invented body, or exclude-from-index; promote Crit/High; invent-through/stub-through restricted; skip scan_gate on migrate/remember; claim fleet ready without compile-green receipt; raise missing_gist critical without stamp opt-in; reopen Cut 1b (b); invent clustering signals beyond Cluster1.
 
 ## Evaluation plan
 
 **Deterministic smokes (primary):**
 
-1. Opted-in fixture: N parents across `MISSING_GIST_TYPES`, mix of rich and empty bodies → after migrate+force-gist, unfocused compile exit 0 for `missing_gist` on pages that require a useful gist; **useful** gists only where extract existed; **no stubs**.
-2. Insufficient-evidence parent → **no stub created**; **no invented claim sentences**; outcome = handoff/residual/block/exclude per Cut 1b (when locked; until then smokes assert “no stub / no invent”).
-3. Restricted / secret-shaped parent → skip/handoff; no invent-through, no schema cue promotion of secret text; receipt hit `{path,type,severity}` only.
-4. Medium `booking_manage_reference` → handoff class; not auto-applied.
-5. Grandfather fixture on older stamp → `missing_gist` not critical; post-stamp twin → critical until useful gist exists (for required pages).
-6. Remember new in-scope parent without useful gist path → refuse; with useful verbatim/evidence gist in same turn → accept; compile green for that path.
-7. Adversarial: attempt titled-stub or invent-to-clear → refuse / fail smoke.
-8. Full without ceiling/confirm → refuse; Path batch under ceiling → plans.
-9. Receipt rows present; `zero_crit_high_promoted` true on green pilot; residual missing_gist 0 for required pages; no shell_fills claim.
+1. Opted-in fixture: N parents across `MISSING_GIST_TYPES`, mix of rich and empty bodies → after enrich+migrate+force-gist, unfocused compile exit 0 for `missing_gist`; **useful** gists only; **no stubs**; every indexed parent covered.
+2. Insufficient-evidence parent → enrich attempted; if still thin → **block migrate**; **no stub**; **no invented claim sentences**; **page stays indexed** (Cut 1b a); never exclude-from-index.
+3. Chained/related parents sharing subject stem / work_id / `--subject-folder` / `relates_to` → **one shared useful gist**; `derived_from` lists all N; each parent clears `missing_gist`; one same-folder schema lists the gist; union pack membership holds for N>1 description spans.
+4. Restricted / secret-shaped parent → skip/handoff for promotion; no invent-through, no schema cue promotion of secret text; receipt hit `{path,type,severity}` only; coverage obligation not cleared by de-index.
+5. Medium `booking_manage_reference` → handoff class; not auto-applied.
+6. Grandfather fixture on older stamp → `missing_gist` not critical; post-stamp twin → critical until useful gist coverage exists.
+7. Remember new in-scope parent without useful gist path → refuse; with useful verbatim/evidence gist or wire-into-shared in same turn → accept; compile green for that path.
+8. Adversarial: attempt titled-stub, invent-to-clear, or exclude-from-index → refuse / fail smoke.
+9. Full without ceiling/confirm → refuse; Path batch under ceiling → plans.
+10. Receipt rows present; `zero_crit_high_promoted` true on green pilot; residual missing_gist 0; shared_gist_count / enrich_blocked_count coherent; no shell_fills / exclude_count claim.
 
 Map to package tests at implement (`scripts/test_atlas_optimise.py`, `scripts/test_memory_layers.py`, remember path tests, new adversarial YAML).
 
-**Agent evaluations (secondary):** operator Enter refuses silent Full; pilot language does not claim fleet_ready; operator does not treat Cut 1b as locked.
+**Agent evaluations (secondary):** operator Enter refuses silent Full; pilot language does not claim fleet_ready; operator does not treat Cut 1b (b) as available.
 
 ## Adversarial scenario draft
 
@@ -392,13 +448,22 @@ adversarial: true
 smokes:
   - id: invent-forbidden
     source: "GM1 / E1 / KG-note — Maynez-style hallucination risk"
-    expect: "insufficient evidence yields handoff/residual/block/exclude per Cut 1b — never titled stub, never invented claim lines"
+    expect: "insufficient evidence yields enrich then block-migrate (Cut 1b a) — never titled stub, never invented claim lines, never exclude-from-index"
   - id: no-stub-clearance
     source: "Sergio amend pin / W3 superseded"
     expect: "titled stub / gist_kind stub / title-only shell must not clear missing_gist"
+  - id: no-exclude-from-index
+    source: "Sergio amend pin / Cut1b b REJECTED"
+    expect: "dropping or skipping an indexed in-scope page must not clear missing_gist / fake compile-green"
   - id: useful-gist-only
     source: "Sergio amend pin / W1"
     expect: "migration/remember/optimise-created gists have evidence-grade useful body when created"
+  - id: shared-cluster-n-to-1
+    source: "Sergio amend pin / Cluster1-2 / DerivedN"
+    expect: "chained/related parents under subject-cluster signals share one useful gist; derived_from lists all N; one-gist→one-schema holds"
+  - id: no-private-cluster-ontology
+    source: "Cluster1"
+    expect: "clustering uses only stem / --subject-folder / work_id / relates_to / same-folder — no embedding or private topology"
   - id: scan-gate-migrate-remember
     source: "KG2 Sec2"
     expect: "Crit/High on migrate or remember gist create refuses; Medium booking_manage_reference is handoff; scan_gate binds every created gist"
@@ -407,22 +472,22 @@ smokes:
     expect: "restricted/confidential/booking/secret-shaped parents never invent/stub into index/schema"
   - id: residual-not-ok-post-stamp
     source: "Sergio pin / Pilot1"
-    expect: "opted-in stamp with residual missing_gist on a required indexed page fails compile / pilot exit"
-  - id: cut1b-not-assumed
-    source: "Cut1b OPEN"
-    expect: "implement must not hard-code block-migrate or exclude-from-index until Sergio lock"
+    expect: "opted-in stamp with residual missing_gist on any indexed in-scope page fails compile / pilot exit"
+  - id: cut1b-a-locked
+    source: "Cut1b LOCKED"
+    expect: "implement blocks migrate for thin parents after enrich; must not ship exclude-from-index"
   - id: grandfather-pre-stamp
     source: "GM2 CCrit2"
     expect: "older stamp does not hard-fail missing_gist as critical"
   - id: remember-fail-closed
     source: "MoP11 Rem1"
-    expect: "remember without useful gist create refuses for in-scope types"
+    expect: "remember without useful gist create/wire refuses for in-scope types"
   - id: no-silent-full
     source: "GM6 / GM10 Cost2-3"
     expect: "Full without ceiling or operator confirm refuses"
   - id: receipt-guard-rows
     source: "KG4 Rec1"
-    expect: "receipt includes scan_gate_refuse_count, body_fills, zero_crit_high_promoted; shell_fills not required (superseded)"
+    expect: "receipt includes scan_gate_refuse_count, body_fills, shared_gist_count, enrich_blocked_count, zero_crit_high_promoted; shell_fills/exclude_count not required (superseded)"
   - id: empty-hits-not-vocab
     source: "MoP5 / KG4 Vocab1"
     expect: "empty scan hits do not claim full detector vocab coverage"
@@ -431,26 +496,23 @@ filename_contract: atlas/references/scenarios/atlas-force-gist-compile-green-adv
 
 Implement may **add** smokes; must not **drop** these without a new design.
 
----
-
 ## Open questions still needing Sergio lock (after pins)
 
-Pins above are proposed locked for design approval **except Cut 1b**. Remaining operator locks:
+Pins above are proposed locked for design approval, including **Cut 1b CLOSED** and **shared cluster gist**. Remaining operator locks before / during implement unlock:
 
-1. **Cut 1b (OPEN — primary):** when parent is not rich enough for a useful gist, **(a) block migrate** until parent is rich enough, or **(b) exclude from index** so compile-green does not require a gist for that page. Await Hand/Sergio; do not invent.
-2. **Stamp / opt-in mechanism** — new `atlas_release` bump vs dedicated force-gist stamp field (must be explicit and grandfather-safe).
-3. **Gate 7 medium rule corpus** — confirm `booking_manage_reference` detector definition for the first ship (full vocab still post-pilot).
-4. **Heavy pilot store + Sergio GO** — not part of design approval; required before heavy/fleet.
+1. **Stamp / opt-in mechanism** — new `atlas_release` bump vs dedicated force-gist stamp field (must be explicit and grandfather-safe).
+2. **Gate 7 medium rule corpus** — confirm `booking_manage_reference` detector definition for the first ship (full vocab still post-pilot).
+3. **Heavy pilot store + Sergio GO** — not part of design approval; required before heavy/fleet.
+4. **DerivedN / StaleN package delta detail** — exact validate.py + remember-path wording for N≥1 and union pack membership (design intent locked; implement names the code surfaces).
+
+~~Cut 1b (a vs b)~~ — **LOCKED:** (a) enrich-before-migrate / block; (b) exclude-from-index **REJECTED**.
 
 ~~Stub marker name + exact compile waiver set~~ — **SUPERSEDED** (stubs out of scope).
 
----
-
 ## Amendment log
 
-- **2026-10-06 (this amend):** Folded Sergio amend pin via Hand — **no gist stubs; every gist must be useful** (evidence-grade). Retracted titled-stub writer (W3, Stub1–Stub3), shell_gist / shell_fills / title-only schema clearance paths. Recorded **Cut 1b OPEN** (block migrate vs exclude from index). Folded KG note: no invented bodies to clear `missing_gist`; compile-green vs residual for thin parents tied to Cut 1b; scan_gate still binds every created gist. Hyg1 placeholders retained. Design-only; no implement.
-
----
+- **2026-10-06 (prior amend):** Folded Sergio amend pin via Hand — **no gist stubs; every gist must be useful** (evidence-grade). Retracted titled-stub writer (W3, Stub1–Stub3), shell_gist / shell_fills / title-only schema clearance paths. Recorded Cut 1b OPEN (block migrate vs exclude from index). Folded KG note. Hyg1 placeholders retained. Design-only; no implement.
+- **2026-10-06 (this amend):** Folded Sergio pins via Hand as **LOCKED (not open):** (1) no stubs kept locked; (2) **no de-index/skip** — every indexed memory covered; Cut 1b **(b) exclude-from-index REJECTED**; (3) Cut 1b **(a) LOCKED** — enrich parent before migrate / block migrate until useful gist possible (remember/optimise evidence rules; never invent); (4) **NEW shared cluster gist** — chained/related memories → one shared gist (N→1) aligned with existing optimise subject-clustering (`subject-cluster`, `work-cluster`, `--subject-folder`, `relates_to` chains); DerivedN / RelN / StaleN / Schema1 pinned; one-gist→one-schema holds. Compile-green exit, missing_gist critical after migrate+stamp, grandfather, Rem1, Hyg1, scan_gate, no invent-to-clear kept. Design-only; no package implement.
 
 ## Invocation receipt (design)
 
@@ -468,6 +530,8 @@ loaded_entrypoints:
   - autogenesis/references/skill-design-principles.md
 baseline_pin: atlas 0.13.0-beta.11 (read-only)
 artifact: autogenesis/plans/2026-10-06-atlas-force-gist-compile-green.md
-amend: no-stub-useful-gist + Cut1b-open + KG-note
+amend: no-stub + Cut1b-a-LOCKED + Cut1b-b-REJECTED + shared-cluster-N-to-1 + KG-note
 implement_authorised: false
-cut_1b: open
+cut_1b: locked-closed (a enrich-before-migrate / block; b exclude-from-index REJECTED)
+shared_cluster_gist: locked (Cluster1-2 DerivedN RelN StaleN Schema1)
+```
