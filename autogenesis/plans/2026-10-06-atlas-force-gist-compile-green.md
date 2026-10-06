@@ -62,12 +62,12 @@ context:
   operation: design
   work_id: 2026-10-06-atlas-force-gist-compile-green
   atlas_id: github.com/sergio-sisternes-epam/atlas-atlas
-  atlas_root: /workspace/atlas-optimise-vnext-design/atlas-atlas
+  atlas_root: <atlas-atlas-root>
   approval_ref: null
 resolved:
-  skill_root: /home/box/agent-data/workflows/autogenesis
-  module_root: /home/box/agent-data/workflows/autogenesis/references/modules/design
-  entrypoint: /home/box/agent-data/workflows/autogenesis/references/modules/design/SKILL.md
+  skill_root: <autogenesis-skill-root>
+  module_root: <autogenesis-skill-root>/references/modules/design
+  entrypoint: <autogenesis-skill-root>/references/modules/design/SKILL.md
 ```
 
 **Must announce:** this operation **stops for approval**. Request **implement** only after explicit Hand/Sergio unlock of this pinned plan. Design completion ≠ implement authority. Heavy pilot and fleet remain blocked until the new done-when + receipt verdict rules ship and Sergio GO is recorded.
