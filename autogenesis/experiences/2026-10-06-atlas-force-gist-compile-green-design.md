@@ -33,3 +33,7 @@ Plan and work status `designed`, disposition **awaiting-approval**. Pins locked:
 - Hand/Sergio approval / unlock before any implement (Cut 1b already locked in design; unlock is for package implement).
 - Remaining Sergio locks listed in plan (stamp mechanism, Gate 7 corpus detail, heavy-pilot GO, DerivedN code-surface naming). Stub-marker and Cut 1b choice locks **closed**.
 - No package product-code from this design cut.
+
+## Amend — MultiCluster (Sergio via Hand)
+
+Locked: multiple clusters per folder allowed; each cluster gets its own shared useful gist under the folder schema layer (one-gist→one-schema per gist). Do not collapse co-located parents into one gist solely for sharing a folder.

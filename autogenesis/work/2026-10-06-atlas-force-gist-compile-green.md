@@ -10,7 +10,7 @@ kva: alive
 stage: designed
 origin: user
 sensitivity: internal
-description: "Authoring hub for force-gist / compile-green follow-on after atlas 0.13.0-beta.11. Amended: useful gists only (no stubs); Cut 1b LOCKED CLOSED (enrich-before-migrate / block; exclude-from-index REJECTED); shared cluster gist N→1. Design only; stop for Hand/Sergio approval. No package implement."
+description: "Authoring hub for force-gist / compile-green follow-on after atlas 0.13.0-beta.11. Amended: useful gists only (no stubs); Cut 1b LOCKED CLOSED (enrich-before-migrate / block; exclude-from-index REJECTED); shared cluster gist N→1; MultiCluster (multiple clusters per folder). Design only; stop for Hand/Sergio approval. No package implement."
 plan_path: autogenesis/plans/2026-10-06-atlas-force-gist-compile-green.md
 relates_to:
   - path: autogenesis/plans/2026-10-06-atlas-force-gist-compile-green.md
@@ -35,6 +35,7 @@ Autogenesis authoring-work record for atlas force-gist / compile-green. Not a ru
 - designed: 2026-10-06 — Autogenesis design (new-surface mini-genesis) on branch `autogenesis/2026-10-06-atlas-force-gist-compile-green`; **STOP FOR APPROVAL**; no package implement
 - amended: 2026-10-06 — Folded Sergio amend pin (no gist stubs — every gist useful / evidence-grade); retracted titled-stub / shell-gist clearance; recorded Cut 1b OPEN (later superseded). Still **STOP FOR APPROVAL**; no package implement.
 - amended: 2026-10-06 — Folded Sergio pins as **LOCKED**: Cut 1b **CLOSED** — (a) enrich-before-migrate / block migrate until useful gist **LOCKED**; (b) exclude-from-index **REJECTED**; every indexed memory covered; **NEW** chained/related → one shared cluster gist (N→1) aligned with existing optimise subject-clustering; DerivedN / Schema1 pinned. Still **STOP FOR APPROVAL**; no package implement.
+- amended: 2026-10-06 — **MultiCluster LOCKED** (Sergio via Hand): multiple clusters per folder allowed; each cluster gets its own shared useful gist under the folder schema layer (one-gist→one-schema per gist). Still **STOP FOR APPROVAL**; no package implement.
 
 ## Notes
 

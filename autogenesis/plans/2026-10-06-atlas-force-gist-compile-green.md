@@ -212,6 +212,8 @@ flowchart TB
 
 Align with **existing** optimise subject-clustering (beta.11 path + helper); do not invent private topology.
 
+**MultiCluster (LOCKED — Sergio via Hand):** A folder may hold **multiple** subject clusters. Each cluster gets its **own** shared useful gist. Gists sit under that folder’s schema layer (each gist still obeys one-gist→one-schema; a folder may therefore contain several gist+schema pairs when subjects differ). Do **not** collapse all co-located parents into one gist solely because they share a folder.
+
 **Cluster membership signals (reuse only):**
 
 | Signal | Source | Role |
@@ -220,14 +222,14 @@ Align with **existing** optimise subject-clustering (beta.11 path + helper); do 
 | `--subject-folder <folder>:<stem>` | Existing operator pin | Explicit cluster destination folder |
 | `work_id` → `work/<work_id>/` | Existing `work-cluster` | Cluster when work folder exists |
 | Existing parent `relates_to` chains | Kinds already on disk (`related`, `follows`, `records`, `implements`, …) | Chained/related memories join one cluster when they share a subject key or operator folder |
-| Same-folder co-location | After subject/work moves | Members already in one subject folder form one cluster |
+| Same-folder co-location | After subject/work moves | Co-located pages may form **one or more** clusters in the same folder (subject/relates_to split); **not** forced into a single per-folder gist |
 
 Do **not** detect subject change by embedding similarity, private hosts, or any ontology outside these signals (path text today: “Do not detect subject change any other way”).
 
 **Choosing the shared gist:**
 
 1. Form clusters from the signals above for in-scope indexed parents lacking gist coverage.
-2. **One shared useful gist per cluster** (not one gist per page). Singleton cluster (N=1) is the degenerate case of the same writer.
+2. **One shared useful gist per cluster** (not one gist per page). **Multiple clusters per folder are allowed** (MultiCluster); each cluster gets its own gist. Singleton cluster (N=1) is the degenerate case of the same writer.
 3. Place the gist in the cluster's subject folder (operator `--subject-folder` dest, or `work/<work_id>/`, or the folder holding the members after clustering).
 4. Build an **evidence pack = union** of extractable spans from all cluster parents (beta.11 / vNext evidence rules: parent `description`, claim body spans, prior upper text that already satisfies substring). Enrich thin members first (Cut 1b a) before declaring the pack insufficient.
 5. Writer emits one **useful** gist body from that pack (verbatim/evidence-gated; confirm default; `--auto-verbatim` only for extractive single-span copy). Never invent. Never edit parent claim text.
@@ -267,7 +269,7 @@ Stance: **frugal / Path-first**. Cost scales with in-scope parent count × (gist
 2. **Writer fidelity:** Extractable parents / clusters get verbatim/evidence-gated **useful** gists under beta.11 / DerivedN rules; insufficient after enrich → **no stub**, **no invented body**, **block migrate** (Cut 1b a) — parent stays indexed.
 3. **~~Stub acceptance~~ SUPERSEDED:** titled stubs do not clear `missing_gist`. No thin-body waive for title-only shells. No `gist_kind: stub` clearance path.
 4. **~~Exclude-from-index~~ REJECTED:** design/smokes refuse any path that drops an indexed in-scope page to dodge `missing_gist`.
-5. **Shared cluster (N→1):** chained/related parents clustered via existing subject-cluster / work-cluster / `--subject-folder` / `relates_to` signals share **one** useful gist; gist `derived_from` lists all N parents; each parent loses `missing_gist`; one-gist→one-schema holds; union pack membership for N>1 stale check; no private clustering ontology.
+5. **Shared cluster (N→1) + MultiCluster:** chained/related parents in a cluster share **one** useful gist; **multiple clusters per folder are allowed**, each with its own shared useful gist (and its own schema under one-gist→one-schema); gist `derived_from` lists that cluster’s N parents; each parent loses `missing_gist`; union pack for N>1 stale check; no private clustering ontology; do not force one gist per folder.
 6. **scan_gate binds** migrate, optimise fill, and remember-created gists: Crit/High → refuse + fail window; Medium `booking_manage_reference` → handoff (Gate 7); receipts list `{path,type,severity}` only.
 7. **Grandfather:** pre-stamp stores keep today’s rung behaviour for `missing_gist`; no silent critical raise.
 8. **Remember fail-closed (MoP 11 / Rem1):** new in-scope parent without useful-gist coverage refuses; same-turn create or wire into shared/singleton useful gist accepts.
