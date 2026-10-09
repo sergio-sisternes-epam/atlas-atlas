@@ -26,7 +26,7 @@ On 2026-10-09 at 13:54 BST, Sergio approved packets A, B and C. Built-in drivers
 
 ## What was done
 
-- **Branch:** `feat/graph-query-drivers` in `sergio-sisternes-epam/atlas`, from `b0b1012` (v0.13.0). PR [#61](https://github.com/sergio-sisternes-epam/atlas/pull/61), now at head `4517ba6c556c7eb1edc07fba0a49e92ddf992245`: packets A–F, then a merge of v0.13.1 from main (it was `16c3b44` after packet C and `37f1c3a` after F). It is not merged and no Copilot review was requested.
+- **Branch:** `feat/graph-query-drivers` in `sergio-sisternes-epam/atlas`, from `b0b1012` (v0.13.0). PR [#61](https://github.com/sergio-sisternes-epam/atlas/pull/61), now at head `0c939d354388e943b15fcac4f184b484b05535f9`: packets A–F, a merge of v0.13.1 from main, then review fixes (it was `16c3b44` after packet C and `37f1c3a` after F). It is not merged and no Copilot review was requested.
 - **Packet A, `58c6075`:** `--engine bm25` runs on SQLite FTS5 (fast path or a temporary index), with a labelled any-word retry and the `.atlas-index/` ignore guard.
 - **Packet B, `d90ae24`:** `atlas graph nodes|edges|neighbours|export`, built on the shared projection, with golden nanograph export fixtures.
 - **Packet C, `16c3b44`:** the driver interface, registry and platform matrix, plus the nanograph driver. It is gated to darwin/arm64 with version 1.3.0 or later, called with argument lists and timeouts, and run with embedding keys stripped. Its index lives under `.atlas-index/nanograph/<generation>/`. Commands added: `atlas graph drivers`, `--engine nanograph` and `--driver nanograph`.
@@ -46,6 +46,27 @@ On 2026-10-09 at 13:54 BST, Sergio approved packets A, B and C. Built-in drivers
   - After packet F: `run_tests.py` passed all 26 entrypoints, and `release_readiness.py --commit 37f1c3a` passed. CI results are on the PR.
   - `apm audit` found no issues.
   - The diff scan found no private host name and no tokens.
+
+## Review fixes (2026-10-09 evening)
+
+Copilot's automatic reviewer left 12 unresolved threads on PR #61: 7 Blockers, 4 Recommended and 1 Nit. Sergio asked about them at 18:23 BST. All 12 were fixed in three fresh Copilot CLI sessions, each fix with a regression test. Each thread got a reply and was resolved.
+- **R1 `a513b67`:**
+  - external driver subprocesses get an allow-listed environment, and a deny pass strips GitHub/APM/Copilot tokens;
+  - the platform override is injectable only through the test-only entry `scripts/testing/atlas_test_cli.py`;
+  - the nanograph binary path is made absolute;
+  - index locks carry an owner token, and stale takeover is guarded;
+  - duplicate mesh ids are a validation error.
+- **R2 `97e7ab9`:**
+  - edge type names are collision-free, with a stable hash suffix, and the receipt records the mapping;
+  - FTS eligibility is applied in SQL before the any-word retry is decided;
+  - nanograph candidates are uncapped before Atlas filters them.
+- **R3 `0c939d3`:**
+  - CLI limits and caps are bounded;
+  - SKILL.md has a per-verb `atlas index` synopsis and a single recall/graph routing rule.
+
+`run_tests.py` passed all 30 entrypoints, and `release_readiness` passed.
+
+The lesson: the first report called the PR green on CI alone. The review threads were not checked, so "done" must include zero unresolved threads.
 
 ## Changed files
 
