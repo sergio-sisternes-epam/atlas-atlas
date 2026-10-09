@@ -3,8 +3,8 @@ type: work
 title: "Graph queries for Atlas, and whether nanograph replaces BM25"
 created: 2026-10-09
 work_id: 2026-10-09-atlas-graph-query-nanograph
-status: designed
-description: "Designed, awaiting approval: keep SQLite FTS5 as BM25, make --engine bm25 real, add a dependency-free atlas graph surface for discuss, add a nanograph export, gate any nanograph driver."
+status: implementing
+description: "Approved 2026-10-09 (revision 1), implementing: keep SQLite FTS5 as BM25, make --engine bm25 real, add a dependency-free atlas graph surface for discuss, add a nanograph export, gate any nanograph driver."
 origin: user
 sensitivity: internal
 relates_to:
@@ -24,8 +24,8 @@ Sergio asked (2026-10-09) for a formal design to discuss, and possibly replace, 
 
 ## Status
 
-**Designed**, awaiting explicit approval. Plan: [2026-10-09-atlas-graph-query-nanograph](../autogenesis/plans/2026-10-09-atlas-graph-query-nanograph.md).
+**Approved** by Sergio on 2026-10-09 at 13:54 BST with a direction change (driver overlay; nanograph on macOS arm64 only). Implementing. Plan: [2026-10-09-atlas-graph-query-nanograph](../autogenesis/plans/2026-10-09-atlas-graph-query-nanograph.md).
 
 ## Outcome in one line
 
-Complement, not replace. FTS5 stays; `--engine bm25` becomes real; `atlas graph nodes|edges|neighbours|export` lands natively; nanograph gets an export now and a driver only behind gate G-N.
+Complement, not replace. FTS5 stays; `--engine bm25` becomes real; `atlas graph nodes|edges|neighbours|export` lands natively; nanograph gets an export and an optional driver behind a driver overlay, enabled only on macOS arm64 with a detected binary.

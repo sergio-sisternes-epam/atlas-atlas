@@ -1,6 +1,6 @@
 # Autogenesis plans
 
-- [2026-10-09-atlas-graph-query-nanograph](2026-10-09-atlas-graph-query-nanograph.md) — designed, waiting approval; graph queries and nanograph versus BM25
+- [2026-10-09-atlas-graph-query-nanograph](2026-10-09-atlas-graph-query-nanograph.md) — approved (revision 1), implementing; graph queries and nanograph versus BM25
 - [2026-09-18-index-md-semantic-memory](2026-09-18-index-md-semantic-memory.md) — approved; folder index.md as STM, two-layer query
 - [2026-09-10-atlas-store-modes](2026-09-10-atlas-store-modes.md) — implemented (#20)
 - [2026-09-09-atlas-smr-configurable-recall](2026-09-09-atlas-smr-configurable-recall.md) — approved, implementing

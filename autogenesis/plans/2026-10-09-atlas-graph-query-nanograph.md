@@ -3,12 +3,13 @@ type: plan
 title: "Design — graph queries for Atlas, and whether nanograph replaces BM25"
 created: 2026-10-09
 work_id: 2026-10-09-atlas-graph-query-nanograph
-status: designed
+status: approved
+approval_ref: "Sergio, 2026-10-09 13:54 BST: \"Let's do A, B and C, enabling nanograph only the supported platforms (Mac in this case). Let's make sure we have a driver overlay, in case we want to ship other drivers for Windows and Linux, but focus on nanograph for now\""
 change_class: new-surface
-description: "Designed, awaiting approval. Complement, not replace: keep SQLite FTS5 as the BM25 engine, make --engine bm25 real, add a dependency-free atlas graph surface that discuss can use, add a nanograph export, and gate any nanograph driver on Linux binaries and a live probe."
+description: "Approved (revision 1): keep SQLite FTS5 as default BM25, make --engine bm25 real with a labelled any-word retry, add a dependency-free atlas graph surface for discuss, add a nanograph export, and add a driver overlay whose only external driver is nanograph, enabled on macOS arm64 when the binary is detected."
 origin: derived
 sensitivity: internal
-stage: design
+stage: implement
 plan_path: autogenesis/plans/2026-10-09-atlas-graph-query-nanograph.md
 kva: forming
 relates_to:
@@ -46,7 +47,22 @@ Change-class: **new-surface**. It adds a CLI command group (`atlas graph`), an e
 
 Subject: Atlas. Baseline: `sergio-sisternes-epam/atlas` `main` at `b0b1012` (Release v0.13.0). Store: `github.com/sergio-sisternes-epam/atlas-atlas`, branch `main` at `e79aef0`.
 
-Status: **designed, awaiting explicit approval.** Nothing has been implemented. No product file was changed.
+Status: **approved with a direction change (revision 1).** Implementation of packets A, B and C is authorised.
+
+## Revision 1 (2026-10-09, 13:54 BST): Sergio's decision
+
+Approval, verbatim: "Let's do A, B and C, enabling nanograph only the supported platforms (Mac in this case). Let's make sure we have a driver overlay, in case we want to ship other drivers for Windows and Linux, but focus on nanograph for now".
+
+He gave it straight after being told that nanograph ships only `aarch64-apple-darwin` binaries (every release from v0.8.1 to v1.3.0), that npm `nanograph-db` is macOS-only, and that a source build needs Rust 1.94.1 and `protoc`.
+
+What changes:
+
+- Packets A and B proceed as designed, with the recommended defaults for open questions 2 and 6: FTS5 retries with any-word matching when all-words finds nothing, and labels it in the output; `atlas graph` shares projection code with recall but stays a separate command.
+- Packet C is reshaped into a **driver overlay**: a small documented driver interface with a registry and a platform-support matrix. Built-in drivers (SQLite FTS5 for BM25, native Python for graph) stay the default everywhere. nanograph is the only optional external driver. It is enabled only on a supported platform (macOS arm64 today) **and** when a `nanograph` binary at or above the minimum version is detected. Anywhere else it reports `unavailable on <platform>` and Atlas falls back with no error. Windows and Linux drivers are future slots in the matrix, not built.
+- The old gate G-N (Linux binaries, a release in the last 90 days, a live probe before admission) is **dropped** in favour of this platform gate. Why: Sergio wants the capability where it can run today, and the overlay keeps the risk local. An absent or unsupported binary changes nothing for anyone else, the built-in drivers remain the default, and the export keeps data portable if upstream stalls (counter C1). The live probe becomes a manual check on Sergio's Mac rather than an admission gate.
+- Open questions 3 and 4 (container build; upstream issue) are closed as not needed. Open question 5 (store move) is unchanged.
+
+The original design text below is kept for provenance. Where it conflicts with this revision, this revision wins; P10 and P11 are replaced below.
 
 ## The request and what it turned out to mean
 
@@ -150,10 +166,15 @@ discuss `lint.py` on atlas-atlas reported real findings: one L4, three L2 (`kva:
 | P7 | Output is deterministic: sorted by hop, then path, then kind. JSON carries `generation`, `corpus_digest`, `fast_path` and `complete`, as recall does. |
 | P8 | `atlas graph export --format nanograph --out <dir>` writes `schema.pg` and `seed.jsonl` in pure Python. Mapping: one `Page` node type, `@key slug` = store-relative path, OKF `type` as a property (OKF types are open, and nanograph edge endpoints are fixed per type, so subtypes would multiply edge declarations). Scalar frontmatter becomes nullable properties; `text` = title, description and body. One edge type per relation kind actually present, plus any declared in the effective schema, named in PascalCase (`kva_terminate` becomes `KvaTerminate`, queried as `kvaTerminate`). `atlas://` targets become `External` nodes. No `Vector` fields. `--format json` writes the same graph as plain JSON for other tools. |
 | P9 | Compile and any index build make sure `.atlas-index/` is ignored: they add it to the store's `.git/info/exclude` when the store is a git checkout and the pattern is missing, and report that they did. They never edit a committed `.gitignore` without the path that owns it. |
-| P10 | A `nanograph` driver (Rank stage, plus a graph backend for `neighbours`) is **gated**. It is admitted only through a new design amendment after gate G-N passes. Its shape is fixed now so the gate has something to test: argv subprocess only; pinned version and SHA-256; capability probe; database at `.atlas-index/nanograph/<generation>/`; rebuilt with `init` and `load --mode overwrite` from the P8 export when a generation is published; no `.env.nano`; no embeddings; fail closed with `unsupported_capability: nanograph_binary_missing`; never a default; never a server. |
-| P11 | Gate G-N, all required: (1) official Linux x86_64 and arm64 binaries with published checksums, or a box-restore entry approved by Grand Maester; (2) an upstream release within the last 90 days, or a named maintained fork; (3) the live probe on atlas-atlas: top-10 overlap with `atlas:ranked` of at least 0.7 on the evaluation query set, graph answers identical to `atlas graph` on the fixed graph cases, two runs give identical order, and it runs with networking blocked; (4) the result shows something native Atlas cannot do at Atlas sizes. |
+| P10 (superseded by P15–P19) | A `nanograph` driver (Rank stage, plus a graph backend for `neighbours`) is **gated**. It is admitted only through a new design amendment after gate G-N passes. Its shape is fixed now so the gate has something to test: argv subprocess only; pinned version and SHA-256; capability probe; database at `.atlas-index/nanograph/<generation>/`; rebuilt with `init` and `load --mode overwrite` from the P8 export when a generation is published; no `.env.nano`; no embeddings; fail closed with `unsupported_capability: nanograph_binary_missing`; never a default; never a server. |
+| P11 (dropped in revision 1) | Gate G-N, all required: (1) official Linux x86_64 and arm64 binaries with published checksums, or a box-restore entry approved by Grand Maester; (2) an upstream release within the last 90 days, or a named maintained fork; (3) the live probe on atlas-atlas: top-10 overlap with `atlas:ranked` of at least 0.7 on the evaluation query set, graph answers identical to `atlas graph` on the fixed graph cases, two runs give identical order, and it runs with networking blocked; (4) the result shows something native Atlas cannot do at Atlas sizes. |
 | P12 | Python reaches nanograph only through the CLI. No TypeScript or Swift bridge. |
 | P13 | Discuss changes are not made here. They need their own Autogenesis design with discuss as subject, after this plan ships. This plan lists what discuss would use. |
+| P15 | **Driver overlay.** A documented driver interface: `id`, `capabilities` (subset of `bm25_search`, `graph_traversal`), `platforms` (supported `sys.platform`/machine pairs), and lifecycle methods `detect()` (returns available or an unavailable reason), `build(export_dir, index_dir)`, `query(...)` per capability, and `health()`. A registry lists drivers and a platform-support matrix. Built-ins `sqlite-fts5` (BM25) and `native-graph` (Python) are always registered, always available and the default. |
+| P16 | **nanograph driver.** The only external driver. Supported platform: macOS arm64 (`darwin`/`arm64`) only. Enabled when the platform matches **and** `nanograph` is found on PATH (or `ATLAS_NANOGRAPH_BIN`) at minimum version 1.3.0, read from `nanograph --version`. Otherwise `detect()` returns `unavailable on <platform>` or `binary not found` or `version below 1.3.0`, and callers fall back to built-ins with an informational note, exit code unchanged. Argv subprocess only, with timeouts. Never a server. |
+| P17 | **Selection.** Built-ins stay the default. nanograph is used only when explicitly asked: `atlas recall run --engine nanograph` and `atlas graph neighbours --driver nanograph`. When unavailable, output carries `driver_used: <built-in>` and `driver_note: "nanograph unavailable on <platform>"`. `atlas graph drivers` lists the matrix and detection results. |
+| P18 | **Index and build.** The nanograph database lives at `.atlas-index/nanograph/<generation>/` (generation = corpus digest prefix), built from the pure-Python P8 export with `nanograph init` and `nanograph load --mode overwrite`. Rebuilt when the digest changes. No `.env.nano`, no vector fields, no embeddings, no network. |
+| P19 | **Future slots.** Windows and Linux rows exist in the matrix as `planned: none`. No other external driver is built. |
 | P14 | Implementation runs through Copilot CLI only: `env -u GH_TOKEN copilot -p "<packet prompt>" --model claude-opus-5.5`, a fresh session per packet, never `--continue`. |
 
 ## Genesis Artifacts
@@ -269,7 +290,7 @@ How discuss would call it:
 4. `atlas graph export --format nanograph` output is byte-stable across two runs and matches golden files. Every edge is either loaded or listed as unresolved.
 5. After compile on a recall-enabled store, `git status --porcelain` shows nothing under `.atlas-index/`.
 6. No new runtime dependency in `scripts/requirements.txt`. Existing tests stay green.
-7. No packet C code merges under this approval.
+7. (Revision 1) On Linux CI, every nanograph path reports unavailable and falls back; the fake-binary tests exercise build and query; the live test is skipped with a reason.
 
 ### Stop for approval
 
@@ -280,10 +301,10 @@ This design stops here. Implementation needs Sergio's explicit approval of this 
 | Principle | Status | Rationale / design consequence |
 |---|---|---|
 | S | applicable | `recall run` stays ranked text discovery. `atlas graph` owns structural lookup. Export owns interchange. Three reasons to change, three surfaces. Graph verbs are tools, not a new path module. |
-| O | applicable | Closed: recall semantics, `atlas:ranked`, grep default, exit-state rule. Open through the existing driver capability registry (P10), not a new plug-in system. Changing `--engine bm25` from stub to FTS5 is an intended, versioned behaviour change (CHANGELOG, minor bump). |
+| O | applicable | Revision 1: the driver overlay is the governed extension point: new platform drivers are added by registering a driver, without touching recall or graph commands. Closed: recall semantics, `atlas:ranked`, grep default, exit-state rule. Open through the existing driver capability registry (P10), not a new plug-in system. Changing `--engine bm25` from stub to FTS5 is an intended, versioned behaviour change (CHANGELOG, minor bump). |
 | L | trade-off | Interchangeability is claimed twice. `--engine bm25` must give the same hits as `atlas:ranked`'s FTS5 stage (acceptance 1). A future nanograph driver must match the native graph answers exactly and BM25 top-10 at 0.7 or more. Exact BM25 parity is not claimed, because the tokenisers differ; the driver must report its own `driver` field so callers can tell. |
 | I | applicable | Four narrow verbs with flags, not one query language, following nanograph's own "one query, one tool" stance. Discuss needs `nodes` and `neighbours` for search and `export --format json` for lint. Nothing forces it to learn recall profiles. |
-| D | applicable | Callers depend on the projection contract (paths, fields, edges), not on SQLite or Lance. nanograph enters only behind the capability probe, as tgrep did. No adapter layer is built until gate G-N gives it a second implementation. |
+| D | applicable | Callers depend on the projection contract and on the driver interface (P15), not on SQLite, Lance or a binary. Revision 1 justifies the abstraction now: there are two real implementations per capability (built-in and nanograph) and announced future platform slots. |
 
 ## Catalogue Review
 
@@ -374,7 +395,7 @@ All packets: Copilot CLI only, `env -u GH_TOKEN copilot -p "<packet prompt>" --m
 |---|---|---|
 | A | P2 (`--engine bm25` runs FTS5) and P9 (ignore guard). SKILL.md and `references/paths/recall.md` engine text updated. CHANGELOG | none |
 | B | P3 to P8: `atlas graph nodes|edges|neighbours|export`, tests, golden files, SKILL.md CLI surface lines, `references/paths/recall.md` note that structural questions use `atlas graph` | A (shares projection reuse) |
-| C (gated) | P10 nanograph driver. Not approved by approving this plan. Needs gate G-N and a design amendment | B, G-N |
+| C | Revision 1: driver overlay (P15–P19), nanograph driver gated to macOS arm64 plus detected binary. Tests use a fake `nanograph` script and platform mocking so they run on Linux; one live test skips unless the platform and binary are present | B |
 
 Release of A and B belongs to Master of Packages.
 
@@ -421,4 +442,4 @@ Named-theory smokes added: Hyrum's law (users may depend on `--engine bm25` retu
 5. **Should the atlas-atlas move to the `atlas` branch happen before packet A?** Recommendation: no dependency either way; do the move when planned and carry this page with the squash.
 6. **Should `atlas graph` also be offered as a recall Retrieve driver (replacing `pages-graph` internals)?** Recommendation: no. Share the code, keep the surfaces separate.
 
-**Waiting for explicit approval.** Approval should name the packets (for example "approve A and B"). Without it this plan authorises nothing.
+**Approved 2026-10-09 13:54 BST** (revision 1 above): packets A, B and C as revised.

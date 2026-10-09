@@ -1,6 +1,6 @@
 # Work
 
-- [Graph queries for Atlas, and whether nanograph replaces BM25](2026-10-09-atlas-graph-query-nanograph.md) — **designed** (waiting approval)
+- [Graph queries for Atlas, and whether nanograph replaces BM25](2026-10-09-atlas-graph-query-nanograph.md) — **implementing**
 - [Design index.md as short-term memory](2026-09-18-index-md-semantic-memory.md) — **approved** (#36)
 - [Pin atlas-marketplace catalog refs to cloneable release tags](2026-09-14-copilot-sha-ref-install.md) — **done** ([issue 33](https://github.com/sergio-sisternes-epam/atlas-marketplace/issues/33), [PR 34](https://github.com/sergio-sisternes-epam/atlas-marketplace/pull/34))
 - [Atlas marketplace rename and catalog republish](2026-09-10-atlas-marketplace-rename.md) — **done**
