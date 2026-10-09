@@ -6,7 +6,7 @@ work_id: 2026-10-09-atlas-graph-query-nanograph
 status: approved
 approval_ref: "Sergio, 2026-10-09 13:54 BST: \"Let's do A, B and C, enabling nanograph only the supported platforms (Mac in this case). Let's make sure we have a driver overlay, in case we want to ship other drivers for Windows and Linux, but focus on nanograph for now\""
 change_class: new-surface
-description: "Approved (revision 1): keep SQLite FTS5 as default BM25, make --engine bm25 real with a labelled any-word retry, add a dependency-free atlas graph surface for discuss, add a nanograph export, and add a driver overlay whose only external driver is nanograph, enabled on macOS arm64 when the binary is detected."
+description: "Approved (revisions 1–4): indexes under .atlas/indexes/<driver-type>/<atlas-id>/, a configurable self-refreshing preferred engine managed by atlas index; keep SQLite FTS5 as default BM25, make --engine bm25 real with a labelled any-word retry, add a dependency-free atlas graph surface for discuss, add a nanograph export, and add a driver overlay whose only external driver is nanograph, enabled on macOS arm64 when the binary is detected."
 origin: derived
 sensitivity: internal
 stage: implement
@@ -47,7 +47,7 @@ Change-class: **new-surface**. It adds a CLI command group (`atlas graph`), an e
 
 Subject: Atlas. Baseline: `sergio-sisternes-epam/atlas` `main` at `b0b1012` (Release v0.13.0). Store: `github.com/sergio-sisternes-epam/atlas-atlas`, branch `main` at `e79aef0`.
 
-Status: **approved with a direction change (revision 1).** Implementation of packets A, B and C is authorised.
+Status: **approved with a direction change (revision 1), extended by revisions 2–4** (index location, preferred engine, `atlas index` CLI). Implementation of packets A–F is authorised.
 
 ## Revision 1 (2026-10-09, 13:54 BST): Sergio's decision
 
@@ -61,6 +61,35 @@ What changes:
 - Packet C is reshaped into a **driver overlay**: a small documented driver interface with a registry and a platform-support matrix. Built-in drivers (SQLite FTS5 for BM25, native Python for graph) stay the default everywhere. nanograph is the only optional external driver. It is enabled only on a supported platform (macOS arm64 today) **and** when a `nanograph` binary at or above the minimum version is detected. Anywhere else it reports `unavailable on <platform>` and Atlas falls back with no error. Windows and Linux drivers are future slots in the matrix, not built.
 - The old gate G-N (Linux binaries, a release in the last 90 days, a live probe before admission) is **dropped** in favour of this platform gate. Why: Sergio wants the capability where it can run today, and the overlay keeps the risk local. An absent or unsupported binary changes nothing for anyone else, the built-in drivers remain the default, and the export keeps data portable if upstream stalls (counter C1). The live probe becomes a manual check on Sergio's Mac rather than an admission gate.
 - Open questions 3 and 4 (container build; upstream issue) are closed as not needed. Open question 5 (store move) is unchanged.
+
+## Revision 2 (2026-10-09, 14:58 BST): index location
+
+Sergio first asked "shouldn't we store the index in .atlas/indexes/<repo-id>?". He was told that `.atlas/` already holds mounted stores as `.atlas/<host>/<owner>/<repo>`. Indexes there would sit outside every store's git history, there would be one per store across the mesh, and the ignore guard would only need to exclude `.atlas/indexes/` once in the consuming project. He then decided, verbatim: "Yes: move both the FTS5 and nanograph indexes to .atlas/indexes/<atlas-id>/<driver>/, reading the old .atlas-index/ for one release". Minutes later he corrected the order, verbatim: "use \".atlas/indexes/<type>/<repo-id>\", where type is e.g. nanograph".
+
+| Pin | Decision |
+|---|---|
+| P20 | **Layout.** All derived indexes live at `<project-root>/.atlas/indexes/<driver-type>/<atlas-id>/`, driver type first. The driver types are `fts5`, `nanograph` and `tgrep`, and the generation layout inside each is unchanged. P18's `.atlas-index/nanograph/<generation>/` is superseded. Temporary FTS5 indexes stay in the system temp directory. |
+| P21 | **How the project root and atlas-id are found.** (a) **Mesh mode:** walk up from the store's parent. The first `atlas-mesh.json` with a row whose `path`, resolved against that file's directory, equals the store gives the project root and the row `id`. (b) **Standalone mode:** the store's own git top level is the project root, or the store directory outside git. The id comes from the origin remote, but only when the store is that top level. Otherwise it is `local/<name>-<sha256(path)[:8]>`, so two stores in one repo never share an index. (c) An absolute `ATLAS_INDEX_ROOT` overrides the project root. Id segments must match `[A-Za-z0-9][A-Za-z0-9._-]*`. `..`, absolute paths, empty segments and symlink escapes under `.atlas/indexes/` are refused. Nested directories that mirror the mount layout are intended. |
+| P22 | **Ignore guard and migration.** The guard adds `/.atlas/indexes/` to the project repo's `info/exclude` once and never edits a committed `.gitignore`. Projection and validation skip `.atlas`, so a standalone store's index is never content. For 0.14.x only, readers fall back to a usable legacy `<store>/.atlas-index/` index, read-only, with a `legacy_index_location` deprecation warning. New builds write only the new location. The legacy `.atlas-index/` guard stays for that release. |
+
+## Revision 3 (2026-10-09, 15:01 BST): preferred engine with automatic indexes
+
+Sergio, verbatim: "I'd like to be able to configure the preferred engine, so it automatically creates the indexes, keeps them refreshed once something changes, and use it during recall by default, unless the user overwrites it".
+
+| Pin | Decision |
+|---|---|
+| P23 | **Preference and precedence.** Values are `grep`, `bm25` and `nanograph`. The preference is set per store as `recall.engine` on its `atlas-mesh.json` row, with an optional project-wide `recall.engine` at the top level. Precedence: `--engine` > `ATLAS_RECALL_ENGINE` > store row > project default > built-in default (`grep`, or an existing SCHEMA `query.search_engine`). A standalone store skips the two mesh levels. Invalid values fail with a clear error naming where they were set. Payloads carry `engine_requested` and `engine_source`. |
+| P24 | **Auto-create and freshness, with no daemon and no watcher.** Recall with an indexed engine (bm25 uses `fts5`, nanograph uses `nanograph`) checks the corpus digest, and for nanograph the binary version. If the index is missing or stale, it builds and publishes before answering. `compile`/`validate` (not dry-run) and `recall index build` refresh the preferred index; a failed refresh is a warning and never changes the exit code. Publishing is atomic: build in a temporary folder next to the index, rename it into place, then replace the pointer. A `.lock` file with a 10-minute stale timeout stops two builders running at once. A reader waits up to 5 s, then falls back with a `driver_note`. Old generations are pruned, but never the one the pointer names. An explicit `--engine bm25` now saves its index too. |
+| P25 | **Fallback.** nanograph falls back to bm25, then grep; bm25 falls back to grep. No index is built for an unavailable driver. Output says once which engine was used and why (`driver_used`, `driver_note`), with exit 0. |
+| P26 | **Stores with their own recall profile.** The store's recall profile wins over mesh and env preferences, because it is authored in the store and versioned with it, while a mesh preference is one consumer's convenience. A `bm25` preference is a no-op there; the profile's FTS5 index uses the new location and the same auto-refresh. A `nanograph` or `grep` preference is ignored, with a `preferred_engine_ignored` notice, and no nanograph index is built. An explicit `--engine` on a profile store still exits 2, and the message now points to `--profile`. This was the cleaner of the two options because it adds no second rank pipeline inside the profile engine. |
+
+## Revision 4 (2026-10-09, 15:38 and 15:40 BST): managing engines and indexes with `atlas index`
+
+At 15:38 Sergio asked, verbatim: "can we set the default engine for the atlas via the cli?". At 15:40 he refined it, verbatim: "should we use the cli 'atlas index' to set the index engine for each atlas? and a default engine for all". A first `atlas recall engine` group was briefed and then dropped before it was committed. The `atlas recall engine` command that packet E had added never shipped and is removed.
+
+| Pin | Decision |
+|---|---|
+| P27 | **The `atlas index` group.** Commands: `set <grep\|bm25\|nanograph> [--store <atlas-id> \| --default] [--build]`, `unset [--store <id> \| --default]`, `show [--store <id>] [--json]`, `status` and `build [--store <id> \| --all] [--force]`. `show` lists the configured value at each level, the winner and its source, the effective engine after fallback and why, any profile override, and the index path and freshness. `status` covers every store row plus the default. `--default` sets the project-wide value, stored as top-level `recall.engine`; `--store` sets a row's `recall.engine`. Writes to `atlas-mesh.json` are atomic (temp file, then `os.replace`) and validated before writing. They preserve other keys, row order, indentation and the trailing newline, and an unchanged value means no write. Setting an engine that is unavailable here warns but is not refused. `atlas recall index build` stays for 0.14.x as a deprecated alias of `atlas index build`. |
 
 The original design text below is kept for provenance. Where it conflicts with this revision, this revision wins; P10 and P11 are replaced below.
 
@@ -396,6 +425,9 @@ All packets: Copilot CLI only, `env -u GH_TOKEN copilot -p "<packet prompt>" --m
 | A | P2 (`--engine bm25` runs FTS5) and P9 (ignore guard). SKILL.md and `references/paths/recall.md` engine text updated. CHANGELOG | none |
 | B | P3 to P8: `atlas graph nodes|edges|neighbours|export`, tests, golden files, SKILL.md CLI surface lines, `references/paths/recall.md` note that structural questions use `atlas graph` | A (shares projection reuse) |
 | C | Revision 1: driver overlay (P15–P19), nanograph driver gated to macOS arm64 plus detected binary. Tests use a fake `nanograph` script and platform mocking so they run on Linux; one live test skips unless the platform and binary are present | B |
+| D | Revision 2: index location (P20–P22): `core/index_location.py`, re-pointed writers/readers, `.atlas/indexes/` ignore guard, one-release legacy read, tests | C |
+| E | Revision 3: preferred engine (P23–P26): mesh/env config, auto-create, digest refresh, atomic publish and lock, fallback chain, profile-store rule, tests | D |
+| F | Revision 4: `atlas index set\|unset\|show\|status\|build` (P27), safe atomic mesh writes, `recall index build` deprecated alias, tests | E |
 
 Release of A and B belongs to Master of Packages.
 
@@ -442,4 +474,4 @@ Named-theory smokes added: Hyrum's law (users may depend on `--engine bm25` retu
 5. **Should the atlas-atlas move to the `atlas` branch happen before packet A?** Recommendation: no dependency either way; do the move when planned and carry this page with the squash.
 6. **Should `atlas graph` also be offered as a recall Retrieve driver (replacing `pages-graph` internals)?** Recommendation: no. Share the code, keep the surfaces separate.
 
-**Approved 2026-10-09 13:54 BST** (revision 1 above): packets A, B and C as revised.
+**Approved 2026-10-09 13:54 BST** (revision 1 above): packets A, B and C as revised. Extended 14:58 BST (revision 2, packet D), 15:01 BST (revision 3, packet E) and 15:38/15:40 BST (revision 4, packet F).

@@ -4,7 +4,7 @@ title: "Graph queries for Atlas, and whether nanograph replaces BM25"
 created: 2026-10-09
 work_id: 2026-10-09-atlas-graph-query-nanograph
 status: implemented
-description: "Approved 2026-10-09 (revision 1); implemented in atlas PR #61, in review: keep SQLite FTS5 as BM25, make --engine bm25 real, add a dependency-free atlas graph surface for discuss, add a nanograph export, gate any nanograph driver."
+description: "Approved 2026-10-09 (revision 1); implemented in atlas PR #61 (A–F: plus .atlas/indexes, preferred engine, atlas index), in review: keep SQLite FTS5 as BM25, make --engine bm25 real, add a dependency-free atlas graph surface for discuss, add a nanograph export, gate any nanograph driver."
 origin: user
 sensitivity: internal
 relates_to:
@@ -26,7 +26,7 @@ Sergio asked (2026-10-09) for a formal design to discuss, and possibly replace, 
 
 ## Status
 
-**Approved** by Sergio on 2026-10-09 at 13:54 BST with a direction change (driver overlay; nanograph on macOS arm64 only). Implemented in [atlas PR #61](https://github.com/sergio-sisternes-epam/atlas/pull/61) (head `16c3b44`, not merged); run record [implement experience](../autogenesis/experiences/2026-10-09-implement-atlas-graph-query-drivers.md). The live nanograph check on an Apple Silicon Mac is still pending. Plan: [2026-10-09-atlas-graph-query-nanograph](../autogenesis/plans/2026-10-09-atlas-graph-query-nanograph.md).
+**Approved** by Sergio on 2026-10-09 at 13:54 BST with a direction change (driver overlay; nanograph on macOS arm64 only). Implemented in [atlas PR #61](https://github.com/sergio-sisternes-epam/atlas/pull/61) (head `37f1c3a`, packets A–F, not merged); run record [implement experience](../autogenesis/experiences/2026-10-09-implement-atlas-graph-query-drivers.md). The live nanograph check on an Apple Silicon Mac is still pending. Plan: [2026-10-09-atlas-graph-query-nanograph](../autogenesis/plans/2026-10-09-atlas-graph-query-nanograph.md).
 
 ## Outcome in one line
 
