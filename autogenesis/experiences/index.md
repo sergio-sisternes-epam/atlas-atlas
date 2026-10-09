@@ -1,5 +1,7 @@
 # Experiences
 
+- [Implement Run: real BM25 engine, atlas graph and driver overlay](2026-10-09-implement-atlas-graph-query-drivers.md)
+- [Design Run — Atlas graph queries and nanograph versus BM25](2026-10-09-design-atlas-graph-query-nanograph.md)
 - [Implement t-normaliser](2026-08-29-implement-t-normaliser.md)
 - [Implement remaining mesh MVP](2026-08-29-implement-mesh-mvp-batch.md)
 - [Storage-mesh MVP implemented](2026-08-29-implement-storage-mesh-mvp.md)
