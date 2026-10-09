@@ -26,7 +26,7 @@ On 2026-10-09 at 13:54 BST, Sergio approved packets A, B and C. Built-in drivers
 
 ## What was done
 
-- **Branch:** `feat/graph-query-drivers` in `sergio-sisternes-epam/atlas`, from `b0b1012` (v0.13.0). PR [#61](https://github.com/sergio-sisternes-epam/atlas/pull/61), now at head `8b263d3`: packets A–F, a merge of v0.13.1 from main, then two rounds of review fixes (it was `16c3b44` after packet C and `37f1c3a` after F). It is not merged and no Copilot review was requested.
+- **Branch:** `feat/graph-query-drivers` in `sergio-sisternes-epam/atlas`, from `b0b1012` (v0.13.0). PR [#61](https://github.com/sergio-sisternes-epam/atlas/pull/61), now at head `db2052c`: packets A–F, a merge of v0.13.1 from main, then three rounds of review fixes (it was `16c3b44` after packet C and `37f1c3a` after F). It is not merged and no Copilot review was requested.
 - **Packet A, `58c6075`:** `--engine bm25` runs on SQLite FTS5 (fast path or a temporary index), with a labelled any-word retry and the `.atlas-index/` ignore guard.
 - **Packet B, `d90ae24`:** `atlas graph nodes|edges|neighbours|export`, built on the shared projection, with golden nanograph export fixtures.
 - **Packet C, `16c3b44`:** the driver interface, registry and platform matrix, plus the nanograph driver. It is gated to darwin/arm64 with version 1.3.0 or later, called with argument lists and timeouts, and run with embedding keys stripped. Its index lives under `.atlas-index/nanograph/<generation>/`. Commands added: `atlas graph drivers`, `--engine nanograph` and `--driver nanograph`.
@@ -72,7 +72,11 @@ After the fix push, the automatic review posted 4 new threads. Sergio asked at 1
 - ignore-guard failures are reported warnings, and `index show/status` report the ignore status;
 - mesh writes are serialised under an owner-token lock.
 
-All 16 threads were replied to and resolved. `run_tests.py` passed all 31 entrypoints, and `release_readiness` passed.
+The next automatic review posted 2 more threads. **R5 `db2052c`** fixed them:
+- **Blocker:** nanograph `init` scaffolded `.env.nano` and `nanograph.toml` into the generation (confirmed in the v1.3.0 source). nanograph now runs in a private, empty working directory with the schema copy outside the index, its scaffolding is removed, and generations are scrubbed before publish.
+- `graph neighbours --driver nanograph` now reports build warnings.
+
+All 18 threads were replied to and resolved. `run_tests.py` passed all 32 entrypoints, and `release_readiness` passed.
 
 The lesson: the first report called the PR green on CI alone. The review threads were not checked, so "done" must include zero unresolved threads.
 
