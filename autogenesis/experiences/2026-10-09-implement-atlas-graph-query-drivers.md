@@ -26,7 +26,7 @@ On 2026-10-09 at 13:54 BST, Sergio approved packets A, B and C. Built-in drivers
 
 ## What was done
 
-- **Branch:** `feat/graph-query-drivers` in `sergio-sisternes-epam/atlas`, from `b0b1012` (v0.13.0). PR [#61](https://github.com/sergio-sisternes-epam/atlas/pull/61), now at head `37ef957`: packets A–F, a merge of v0.13.1 from main, then five rounds of review fixes (it was `16c3b44` after packet C and `37f1c3a` after F). It is not merged and no Copilot review was requested.
+- **Branch:** `feat/graph-query-drivers` in `sergio-sisternes-epam/atlas`, from `b0b1012` (v0.13.0). PR [#61](https://github.com/sergio-sisternes-epam/atlas/pull/61), now at head `de8263d`: packets A–F, a merge of v0.13.1 from main, then six rounds of review fixes (it was `16c3b44` after packet C and `37f1c3a` after F). It is not merged and no Copilot review was requested.
 - **Packet A, `58c6075`:** `--engine bm25` runs on SQLite FTS5 (fast path or a temporary index), with a labelled any-word retry and the `.atlas-index/` ignore guard.
 - **Packet B, `d90ae24`:** `atlas graph nodes|edges|neighbours|export`, built on the shared projection, with golden nanograph export fixtures.
 - **Packet C, `16c3b44`:** the driver interface, registry and platform matrix, plus the nanograph driver. It is gated to darwin/arm64 with version 1.3.0 or later, called with argument lists and timeouts, and run with embedding keys stripped. Its index lives under `.atlas-index/nanograph/<generation>/`. Commands added: `atlas graph drivers`, `--engine nanograph` and `--driver nanograph`.
@@ -86,7 +86,14 @@ The next automatic review posted 4 Blockers. **R7 `37ef957`** fixed them:
 - the nanograph pointer, the FTS5 pointer and the mesh write now publish inside an owner-checked critical section that holds the takeover guard;
 - the freshness digest includes the projection inputs (SCHEMA/CONTRACT, schema.d, projection version).
 
-All 24 threads were replied to and resolved. `run_tests.py` passed all 34 entrypoints, and `release_readiness` passed.
+The next automatic review posted 1 Blocker and 3 Recommended threads.
+- **R8 `de8263d`** fixed the Blocker: FTS5 query words are split as SQLite's `unicode61` does, where before an ASCII-only pattern mangled `café`, `résumé` and `東京`.
+- By decision, the 3 Recommended threads were left open and unfixed:
+  - nanograph legacy reuse when the new-location index is stale;
+  - the same gap for tgrep;
+  - the unreported mesh-lock ignore failure.
+
+25 threads were fixed and resolved. `run_tests.py` passed all 35 entrypoints, and `release_readiness` passed.
 
 The lesson: the first report called the PR green on CI alone. The review threads were not checked, so "done" must include zero unresolved threads.
 

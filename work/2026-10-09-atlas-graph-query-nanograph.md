@@ -26,7 +26,7 @@ Sergio asked (2026-10-09) for a formal design to discuss, and possibly replace, 
 
 ## Status
 
-**Approved** by Sergio on 2026-10-09 at 13:54 BST with a direction change (driver overlay; nanograph on macOS arm64 only). Implemented in [atlas PR #61](https://github.com/sergio-sisternes-epam/atlas/pull/61) (head `37ef957`, packets A–F, a merge of v0.13.1 and five rounds of review fixes; not merged); run record [implement experience](../autogenesis/experiences/2026-10-09-implement-atlas-graph-query-drivers.md). The live nanograph check on an Apple Silicon Mac is still pending. Plan: [2026-10-09-atlas-graph-query-nanograph](../autogenesis/plans/2026-10-09-atlas-graph-query-nanograph.md).
+**Approved** by Sergio on 2026-10-09 at 13:54 BST with a direction change (driver overlay; nanograph on macOS arm64 only). Implemented in [atlas PR #61](https://github.com/sergio-sisternes-epam/atlas/pull/61) (head `de8263d`, packets A–F, a merge of v0.13.1 and six rounds of review fixes; 3 Recommended threads left open; not merged); run record [implement experience](../autogenesis/experiences/2026-10-09-implement-atlas-graph-query-drivers.md). The live nanograph check on an Apple Silicon Mac is still pending. Plan: [2026-10-09-atlas-graph-query-nanograph](../autogenesis/plans/2026-10-09-atlas-graph-query-nanograph.md).
 
 ## Outcome in one line
 
