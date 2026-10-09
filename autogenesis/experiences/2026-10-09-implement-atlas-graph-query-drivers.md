@@ -88,12 +88,14 @@ The next automatic review posted 4 Blockers. **R7 `37ef957`** fixed them:
 
 The next automatic review posted 1 Blocker and 3 Recommended threads.
 - **R8 `de8263d`** fixed the Blocker: FTS5 query words are split as SQLite's `unicode61` does, where before an ASCII-only pattern mangled `café`, `résumé` and `東京`.
-- By decision, the 3 Recommended threads were left open and unfixed:
-  - nanograph legacy reuse when the new-location index is stale;
-  - the same gap for tgrep;
-  - the unreported mesh-lock ignore failure.
+- At first, by decision, the 3 Recommended threads were left open; Sergio then chose to fix them before merge.
+- **R9 `57198e4`** fixed all three in one fresh Copilot CLI session:
+  - one shared rule, `index_location.choose_source()`: when any new-location index exists, a stale one is rebuilt and legacy is never read, for nanograph and tgrep;
+  - fts5 had the same gap on its stale and old-format pointer paths, so it was fixed too (a deviation from the prompt, which assumed fts5 already complied);
+  - `ensure_mesh_lock_ignored()` failures are now reported as the `atlas_mesh_lock_ignore_failed` warning through a `MeshWrite` result. The regressions are in `scripts/test_review_r9.py`.
 
-25 threads were fixed and resolved. `run_tests.py` passed all 35 entrypoints, and `release_readiness` passed.
+28 threads were fixed and resolved. `run_tests.py` passed all 36 entrypoints, and `release_readiness --commit <full sha>` passed.
+- Lesson: `release_readiness.py` takes `--commit`, not `--sha`. `--pre-tag` on a feature branch is blocked because the tag for the unbumped version already exists.
 
 The lesson: the first report called the PR green on CI alone. The review threads were not checked, so "done" must include zero unresolved threads.
 
