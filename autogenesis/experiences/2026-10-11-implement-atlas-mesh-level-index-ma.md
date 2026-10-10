@@ -1,18 +1,18 @@
 ---
 type: experience
-title: "Implement Run: mesh-level index packet MA (mesh core: members, atlas:// ids, strict cross-store resolver)"
+title: "Implement Run: mesh-level index packets MA (mesh core) and MC (federated recall)"
 created: 2026-10-11
 work_id: 2026-10-10-atlas-mesh-level-index
 implements: 2026-10-10-atlas-mesh-level-index
 closes: []
 status: implementing
 kva: alive
-description: "Packet MA of the approved mesh-level index plan was built by one fresh Copilot CLI session, with one more for a review Blocker, on atlas branch feat/mesh-core-ma (PR #63, head 5263b87). It adds the library-only core/mesh_scope.py (members, atlas:// node ids, restricted pages withheld, a strict resolver with six unresolved reasons), the inert mesh config keys and index_location.mesh_index_dir. Output without the new keys is byte-identical to PR #61. Not merged."
+description: "Packet MA of the approved mesh-level index plan was built by one fresh Copilot CLI session, with one more for a review Blocker, on atlas branch feat/mesh-core-ma (PR #63, head 5263b87), then packet MC by one more fresh session on feat/mesh-federated-recall-mc stacked on it (PR #64, head 28af545: recall run --scope mesh with tiered RRF and a restricted pre-filter). MA adds the library-only core/mesh_scope.py (members, atlas:// node ids, restricted pages withheld, a strict resolver with six unresolved reasons), the inert mesh config keys and index_location.mesh_index_dir. Output without the new keys is byte-identical to PR #61. Not merged."
 origin: derived
 sensitivity: internal
 stage: implement
 plan_path: autogenesis/plans/2026-10-10-atlas-mesh-level-index.md
-external_ref: "github.com/sergio-sisternes-epam/atlas/pull/63"
+external_ref: "github.com/sergio-sisternes-epam/atlas/pull/63, github.com/sergio-sisternes-epam/atlas/pull/64"
 relates_to:
   - path: work/2026-10-10-atlas-mesh-level-index.md
     kind: implements
@@ -73,9 +73,41 @@ All of the following ran on Linux x86_64 with no nanograph present.
   - Consumer install (agent-skills)
   - Consumer install (stable-runtimes)
   - No site/ on main
-- **Automatic review:** the review at 00:25 BST left 1 thread, a Blocker, fixed in R1. At 00:33 BST, about 15 minutes after the push, there were no new threads; the post-R1 checks follow below.
+- **Automatic review:** the review at 00:25 BST left 1 thread, a Blocker, fixed in R1. At 00:33 BST, about 15 minutes after the push, there were no new threads. After the R1 push (00:37 BST), the automatic review of `5263b87` at 00:43 BST added no threads, and none were open at 00:47 BST. CI at `5263b87`: all six checks green. PR #63 has 1 thread, resolved.
 - **Adversarial smokes:** `references/scenarios/mesh-index-adversarial-v1.yaml` holds all 11 approved smokes. The MA smokes have real checks: no-alias-resolution, no-auto-mount, unresolved-visible, excluded-member-unread, id-collision, single-store-hyrum and the MA part of no-shared-text-index. The rest are marked `pending packet MB/MC`.
 - **agent-spec `specify`:** still deferred, because there is no agent-spec package in this harness's catalogue. The plan requires it, or a recorded deferral, before MC merges.
+
+## Packet MC (federated recall)
+
+- **Branch:** `feat/mesh-federated-recall-mc`, stacked on `feat/mesh-core-ma` at `5263b87`. PR [#64](https://github.com/sergio-sisternes-epam/atlas/pull/64) has base `feat/mesh-core-ma` and is titled "feat(mesh): MC federated recall: --scope mesh with tiered RRF". It was pushed at 00:55 BST.
+- **`28af545`:** one fresh Copilot CLI session, 13 min 8 s, 269.6 AI credits, +1,130/−60 lines.
+  - **`recall run --scope store|mesh [--rrf-k N]`:**
+    - Precedence: the flag, then the top-level config, then the built-in default. The payload reports `scope_source` and `rrf_k_source`.
+    - Exit 2 for: `--rrf-k` in store scope; `--profile` or `--allow-partial` with mesh scope; no mesh; k out of range.
+  - **New `core/mesh_recall.py`:**
+    - Each member runs its own engine in process and fetches `2 × limit`.
+    - Restricted pages are removed from each member's eligible set before ranking.
+    - Fusion is tiered RRF: tier, then score, then row order, then path.
+    - A failing member gets `status: error`; the run returns `complete: false` with exit 1.
+  - The M12 payload, a short `SKILL.md`/`recall.md` synopsis, real checks for the MC smokes, `benchmark-goodhart` retagged `MF`, and a CHANGELOG bullet.
+- **Evidence at `28af545`:**
+  - `test_mesh_rrf.py` 56 checks, `test_mesh_recall.py` 101 checks, `test_mesh_scope_default.py` 92 checks with goldens unchanged;
+  - `run_tests.py`: "All 45 repository test entrypoints passed";
+  - `release_readiness.py --commit 28af5456971e368f3f10defc4e179a00e4089878`: pass;
+  - `apm audit --no-drift`: clean;
+  - diff scan of `feat/mesh-core-ma..HEAD`: clean.
+- **MC deviations:**
+  - `--allow-partial` with mesh scope exits 2, because it is per store.
+  - With an explicit `--engine`, a member whose recall profile is enabled is reported as `error`, because P23 already rejects `--engine` with an enabled profile.
+  - Extra payload fields: `scope_source`, `rrf_k_source`, `project`, `query`, `limit`, `count`, `members[].error`.
+  - Excluded and unmounted members show `hits: 0`.
+  - Text output omits the RRF score.
+- **MC changed files:**
+  - `scripts/atlas_cli/core/mesh_recall.py` (new)
+  - `scripts/atlas_cli/commands/search.py`, `scripts/atlas_cli/core/recall.py`, `scripts/atlas_cli/cli.py`
+  - `scripts/test_mesh_rrf.py`, `scripts/test_mesh_recall.py` (new)
+  - `references/scenarios/mesh-index-adversarial-v1.yaml`, `SKILL.md`, `references/paths/recall.md`, `CHANGELOG.md`
+- **Still open:** agent-spec `specify` is deferred for MC as well, because the harness has no agent-spec package. This deferral is recorded before MC merges, as the plan requires.
 
 ## Changed files
 
@@ -89,6 +121,7 @@ All of the following ran on Linux x86_64 with no nanograph present.
 - `fixtures/mesh-default/goldens.json` (new)
 - `references/scenarios/mesh-index-adversarial-v1.yaml` (new)
 - `CHANGELOG.md` (`## Unreleased (targets 0.14.0)`)
+- MC: see the MC changed files above
 
 ## Deviations from the plan
 
