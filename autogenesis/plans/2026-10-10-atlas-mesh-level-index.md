@@ -3,9 +3,10 @@ type: plan
 title: "Design — mesh-level indexing: one mesh graph and federated recall across mounted Atlases"
 created: 2026-10-10
 work_id: 2026-10-10-atlas-mesh-level-index
-status: designed
+status: approved
+approval_ref: "Sergio, 2026-10-10 23:08 BST (relayed): approved the design with the recommended answers to all three open questions; approve MA, MB, MC and MF now, MD and ME after MB and MC are reviewed; build with Copilot CLI once atlas PR #61 merges"
 change_class: new-surface
-description: "Designed, awaiting approval: a structure-only mesh graph index at .atlas/indexes/<type>/_mesh/ with atlas://-namespaced node ids and a cross-store link resolver, plus a federated recall run --scope mesh that fuses each member's own index with tiered Reciprocal Rank Fusion (k=60). Single-store behaviour unchanged. Six packets, as follow-up PRs after atlas PR #61 merges."
+description: "Approved 2026-10-10 23:08 BST (packets MA, MB, MC, MF now; MD, ME after MB and MC review; build after atlas PR #61 merges): a structure-only mesh graph index at .atlas/indexes/<type>/_mesh/ with atlas://-namespaced node ids and a cross-store link resolver, plus a federated recall run --scope mesh that fuses each member's own index with tiered Reciprocal Rank Fusion (k=60). Single-store behaviour unchanged. Six packets, as follow-up PRs after atlas PR #61 merges."
 origin: derived
 sensitivity: internal
 stage: design
@@ -44,7 +45,20 @@ Change-class: **new-surface**. It adds CLI flags and a config block (`--scope`, 
 
 Subject: Atlas. Baseline: `sergio-sisternes-epam/atlas` PR #61, branch `feat/graph-query-drivers`, head `57198e4` (not merged; 29 review threads resolved, CI green, Mac live check 9/9). Store: `github.com/sergio-sisternes-epam/atlas-atlas`, this page on a branch stacked on the PR #27 branch (head `244de59`).
 
-Status: **designed, awaiting Sergio's explicit approval.** Nothing here is implemented. Implementation will run through Copilot CLI after approval, one packet per PR.
+Status: **approved 2026-10-10 at 23:08 BST** (see Approval below). Packets MA, MB, MC and MF are authorised; MD and ME wait for review of MB and MC. Nothing is implemented yet. Implementation runs through Copilot CLI, one packet per PR, and starts only after atlas PR #61 merges.
+
+## Approval (2026-10-10, 23:08 BST)
+
+Sergio approved this design at 23:08 BST on 2026-10-10, taking the recommended answer to every open question. The approval was relayed to this Run, not quoted verbatim.
+
+| Pin | Decision |
+|---|---|
+| M20 | **Restricted pages (open question 1).** `sensitivity: restricted` pages are left out of the mesh graph and of federated results by default, as M7 says. There is **no override flag in v1**; `--include-restricted` is not built. Single-store recall is unchanged. |
+| M21 | **Strict resolver (open question 2).** M4 stands as written: short-form `atlas://<name>/...` links are unresolved with `reason: noncanonical_atlas_uri` and a canonical `suggest`; no alias or repo-name matching. The 11 existing short-form links are fixed with **one small PR per store**: atlas-atlas (7, on the `docs/skill-help-pilot` line) and atlas-cartograph-atlas (4, `atlas-skill-memory`). Those store PRs are separate from the product packets and do not wait for them. |
+| M22 | **Approved packet scope (open question 3).** Authorised now: **MA** (mesh core), **MB** (native mesh graph), **MC** (federated recall) and **MF** (benchmark kit). **MD** (nanograph mesh graph) and **ME** (config writers and docs) are approved in principle but start only after MB and MC have been reviewed. |
+| M23 | **Start condition.** Implementation starts only after atlas PR #61 merges (M1), through Copilot CLI with a fresh session per packet (M19). Merging this store PR is not a start signal. |
+
+The original design text below is kept as written. Where it conflicts with this section, this section wins.
 
 ## The request
 
@@ -464,3 +478,5 @@ Named-theory smokes added: Hyrum's law (single-store output byte-identical), Goo
 1. **Restricted pages in mesh scope.** Leave `sensitivity: restricted` pages out of the mesh graph and federated results by default? **Recommended: yes, with no override flag in v1.** Single-store recall keeps its current behaviour. An `--include-restricted` flag can come later if a real need appears.
 2. **Short-form `atlas://` links.** Keep the resolver strict (unresolved, `noncanonical_atlas_uri`, with a canonical suggestion) and fix the 11 existing links with one small PR per store? **Recommended: yes, strict.** That follows the settled no-alias decision. The alternative, resolving a unique repo-name match, would make 7 of the 11 work but brings back aliases, and still fails on the 4 `atlas-skill-memory` links.
 3. **Which packets to approve now?** **Recommended: MA, MB, MC and MF now; MD and ME after MB and MC are reviewed.** MA–MC carry the capability; MF lets the benchmark start while the rest lands.
+
+**Approved 2026-10-10 23:08 BST** with the recommended answers to questions 1–3 (pins M20–M23 above).

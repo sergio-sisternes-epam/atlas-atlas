@@ -1,6 +1,6 @@
 # Work
 
-- [Mesh-level indexing: one mesh graph and federated recall across mounted Atlases](2026-10-10-atlas-mesh-level-index.md) — **designed, waiting approval**
+- [Mesh-level indexing: one mesh graph and federated recall across mounted Atlases](2026-10-10-atlas-mesh-level-index.md) — **approved (MA, MB, MC, MF; build after atlas PR #61 merges)**
 - [Graph queries for Atlas, and whether nanograph replaces BM25](2026-10-09-atlas-graph-query-nanograph.md) — **implemented (atlas PR #61, in review; Mac live check pending)**
 - [Design index.md as short-term memory](2026-09-18-index-md-semantic-memory.md) — **approved** (#36)
 - [Pin atlas-marketplace catalog refs to cloneable release tags](2026-09-14-copilot-sha-ref-install.md) — **done** ([issue 33](https://github.com/sergio-sisternes-epam/atlas-marketplace/issues/33), [PR 34](https://github.com/sergio-sisternes-epam/atlas-marketplace/pull/34))

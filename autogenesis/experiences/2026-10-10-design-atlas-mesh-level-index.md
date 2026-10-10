@@ -29,6 +29,16 @@ Run Autogenesis formal design (design operation only) for mesh-level indexing in
 - Search-grounded challenge: RRF on disjoint lists, cross-index BM25 statistics, index leakage of restricted content (CWE-612), budgeted agentic search. Pinned M1–M19.
 - Persisted the plan, work hub and this record; compile green.
 
+## Approval
+
+Sergio approved the plan on 2026-10-10 at 23:08 BST (relayed to this Run), with the recommended answers to all three open questions:
+
+1. Restricted pages are left out of mesh results by default, with no override in v1 (pin M20).
+2. The resolver stays strict; the 11 short-form links get fixed with one small PR per store (pin M21).
+3. Packets MA, MB, MC and MF are approved now; MD and ME follow after MB and MC are reviewed (pin M22).
+
+Implementation runs through Copilot CLI once atlas PR #61 merges (pin M23). This Run recorded the approval only; it started no implementation. Plan and work hub status: `approved`.
+
 ## Deferred
 
 - agent-spec `specify`: not in this harness's catalogue; deferred in the plan.
