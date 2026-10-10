@@ -96,6 +96,12 @@ The next automatic review posted 1 Blocker and 3 Recommended threads.
 
 28 threads were fixed and resolved. `run_tests.py` passed all 36 entrypoints, and `release_readiness --commit <full sha>` passed.
 - Lesson: `release_readiness.py` takes `--commit`, not `--sha`. `--pre-tag` on a feature branch is blocked because the tag for the unbumped version already exists.
+- A later automatic review (23:24 BST, after the R9 re-check) posted 1 Blocker and 2 Recommended threads.
+- **R10 `bfc6bfc`** fixed all three in one fresh Copilot CLI session:
+  - tgrep's index and search subprocesses now use `external_driver_env()` (they used `os.environ.copy()`, which leaked tokens), and a static test now forbids `os.environ.copy()` in driver modules;
+  - `IndexLocationError` from tgrep `capability()` in `recall profiles` and `recall status` is now a structured exit 2 (`index_location_error`) instead of a traceback.
+  - Regressions are in `scripts/test_review_r10.py`. `run_tests.py` passed all 37 entrypoints.
+- Lesson: a re-check 10 minutes after the push was not long enough; this review arrived about 75 minutes later. Re-check twice.
 
 The lesson: the first report called the PR green on CI alone. The review threads were not checked, so "done" must include zero unresolved threads.
 
