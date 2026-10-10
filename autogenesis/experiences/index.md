@@ -1,5 +1,6 @@
 # Experiences
 
+- [Implement Run — mesh-level index packet MA (mesh core)](2026-10-11-implement-atlas-mesh-level-index-ma.md)
 - [Design Run — Atlas mesh-level indexing](2026-10-10-design-atlas-mesh-level-index.md)
 - [Implement Run: real BM25 engine, atlas graph and driver overlay](2026-10-09-implement-atlas-graph-query-drivers.md)
 - [Design Run — Atlas graph queries and nanograph versus BM25](2026-10-09-design-atlas-graph-query-nanograph.md)

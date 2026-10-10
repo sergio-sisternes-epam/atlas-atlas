@@ -3,10 +3,10 @@ type: plan
 title: "Design — mesh-level indexing: one mesh graph and federated recall across mounted Atlases"
 created: 2026-10-10
 work_id: 2026-10-10-atlas-mesh-level-index
-status: approved
+status: implementing
 approval_ref: "Sergio, 2026-10-10 23:08 BST (relayed): approved the design with the recommended answers to all three open questions; approve MA, MB, MC and MF now, MD and ME after MB and MC are reviewed; build with Copilot CLI once atlas PR #61 merges"
 change_class: new-surface
-description: "Approved 2026-10-10 23:08 BST (packets MA, MB, MC, MF now; MD, ME after MB and MC review; build after atlas PR #61 merges): a structure-only mesh graph index at .atlas/indexes/<type>/_mesh/ with atlas://-namespaced node ids and a cross-store link resolver, plus a federated recall run --scope mesh that fuses each member's own index with tiered Reciprocal Rank Fusion (k=60). Single-store behaviour unchanged. Six packets, as follow-up PRs after atlas PR #61 merges."
+description: "Implementing MA (atlas PR #63, opened 2026-10-11) after atlas PR #61 merged as 7af5805. Approved 2026-10-10 23:08 BST (packets MA, MB, MC, MF now; MD, ME after MB and MC review; build after atlas PR #61 merges): a structure-only mesh graph index at .atlas/indexes/<type>/_mesh/ with atlas://-namespaced node ids and a cross-store link resolver, plus a federated recall run --scope mesh that fuses each member's own index with tiered Reciprocal Rank Fusion (k=60). Single-store behaviour unchanged. Six packets, as follow-up PRs after atlas PR #61 merges."
 origin: derived
 sensitivity: internal
 stage: design
@@ -45,7 +45,7 @@ Change-class: **new-surface**. It adds CLI flags and a config block (`--scope`, 
 
 Subject: Atlas. Baseline: `sergio-sisternes-epam/atlas` PR #61, branch `feat/graph-query-drivers`, head `57198e4` (not merged; 29 review threads resolved, CI green, Mac live check 9/9). Store: `github.com/sergio-sisternes-epam/atlas-atlas`, this page on a branch stacked on the PR #27 branch (head `244de59`).
 
-Status: **approved 2026-10-10 at 23:08 BST** (see Approval below). Packets MA, MB, MC and MF are authorised; MD and ME wait for review of MB and MC. Nothing is implemented yet. Implementation runs through Copilot CLI, one packet per PR, and starts only after atlas PR #61 merges.
+Status: **implementing MA**. Atlas PR #61 merged as `7af5805` at 23:50 BST on 2026-10-10 (start condition M23). Packet MA is atlas PR #63 (`feat/mesh-core-ma`); see the [implement run record](../experiences/2026-10-11-implement-atlas-mesh-level-index-ma.md). Approved 2026-10-10 at 23:08 BST (see Approval below). Packets MA, MB, MC and MF are authorised; MD and ME wait for review of MB and MC. Nothing is implemented yet. Implementation runs through Copilot CLI, one packet per PR, and starts only after atlas PR #61 merges.
 
 ## Approval (2026-10-10, 23:08 BST)
 
