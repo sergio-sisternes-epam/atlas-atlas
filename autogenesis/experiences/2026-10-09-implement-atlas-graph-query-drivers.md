@@ -102,6 +102,8 @@ The next automatic review posted 1 Blocker and 3 Recommended threads.
   - `IndexLocationError` from tgrep `capability()` in `recall profiles` and `recall status` is now a structured exit 2 (`index_location_error`) instead of a traceback.
   - Regressions are in `scripts/test_review_r10.py`. `run_tests.py` passed all 37 entrypoints.
 - Lesson: a re-check 10 minutes after the push was not long enough; this review arrived about 75 minutes later. Re-check twice.
+- The R10 re-check (23:17 BST) posted 1 Blocker.
+- **R11 `ae5df32`** fixed it in one fresh Copilot CLI session: freshness now digests the overlay bytes projection actually reads (symlinked `schema.d`, symlinked overlay files, symlinked SCHEMA/CONTRACT targets), and the overlay list is shared with `merge_overlays()` via `overlay_files()`. Regressions are in `scripts/test_review_r11.py`. `run_tests.py` passed all 38 entrypoints.
 
 The lesson: the first report called the PR green on CI alone. The review threads were not checked, so "done" must include zero unresolved threads.
 
