@@ -1,18 +1,18 @@
 ---
 type: experience
-title: "Implement Run: mesh-level index packets MA (mesh core) and MC (federated recall)"
+title: "Implement Run: mesh-level index packets MA (mesh core), MB (mesh graph), MC (federated recall) and MF (benchmark kit)"
 created: 2026-10-11
 work_id: 2026-10-10-atlas-mesh-level-index
 implements: 2026-10-10-atlas-mesh-level-index
 closes: []
 status: implementing
 kva: alive
-description: "Packet MA of the approved mesh-level index plan was built by one fresh Copilot CLI session, with one more for a review Blocker, on atlas branch feat/mesh-core-ma (PR #63, head 5263b87), then packet MC by one more fresh session on feat/mesh-federated-recall-mc stacked on it (PR #64, head 28af545: recall run --scope mesh with tiered RRF and a restricted pre-filter). MA adds the library-only core/mesh_scope.py (members, atlas:// node ids, restricted pages withheld, a strict resolver with six unresolved reasons), the inert mesh config keys and index_location.mesh_index_dir. Output without the new keys is byte-identical to PR #61. Not merged."
+description: "Packet MA of the approved mesh-level index plan was built by one fresh Copilot CLI session, with one more for a review Blocker, on atlas branch feat/mesh-core-ma (PR #63, head 5263b87), then packet MC by one more fresh session on feat/mesh-federated-recall-mc stacked on it (PR #64, head 28af545: recall run --scope mesh with tiered RRF and a restricted pre-filter), then MB (PR #65, head 0ace304: graph --scope mesh and the structure-only _mesh graph index) and MF (PR #66, head fe1b5ab: fixtures/mesh and the contributor-only mesh-bench kit), each by one fresh session. MA adds the library-only core/mesh_scope.py (members, atlas:// node ids, restricted pages withheld, a strict resolver with six unresolved reasons), the inert mesh config keys and index_location.mesh_index_dir. Output without the new keys is byte-identical to PR #61. Not merged."
 origin: derived
 sensitivity: internal
 stage: implement
 plan_path: autogenesis/plans/2026-10-10-atlas-mesh-level-index.md
-external_ref: "github.com/sergio-sisternes-epam/atlas/pull/63, github.com/sergio-sisternes-epam/atlas/pull/64"
+external_ref: "github.com/sergio-sisternes-epam/atlas/pull/63, /pull/64, /pull/65, /pull/66"
 relates_to:
   - path: work/2026-10-10-atlas-mesh-level-index.md
     kind: implements
@@ -110,6 +110,81 @@ All of the following ran on Linux x86_64 with no nanograph present.
   - `references/scenarios/mesh-index-adversarial-v1.yaml`, `SKILL.md`, `references/paths/recall.md`, `CHANGELOG.md`
 - **Still open:** agent-spec `specify` is deferred for MC as well, because the harness has no agent-spec package. This deferral is recorded before MC merges, as the plan requires.
 
+## Packet MB (native mesh graph)
+
+- **Branch:** `feat/mesh-graph-mb`, stacked on `feat/mesh-core-ma` at `5263b87`. PR [#65](https://github.com/sergio-sisternes-epam/atlas/pull/65) has base `feat/mesh-core-ma` and was pushed at 01:39 BST.
+- **`0ace304`:** one fresh Copilot CLI session, 19 min 1 s, 458.39 AI credits, +1,649/−9 lines.
+  - **New `core/mesh_graph.py`:**
+    - a structure-only `graph/_mesh/` index with generations and a `current.json` pointer;
+    - the M8 `mesh_digest` with fingerprint checks;
+    - M9 locking with OwnedLock, BuildLock and locked_build. A busy reader waits 5 s, then answers in memory with `mesh_index_busy`. No member lock is ever taken;
+    - the M10 compile hook, which runs only when the index exists and never changes the exit code.
+  - **`--scope store|mesh` on `graph nodes|edges|neighbours|export`:**
+    - `--store <atlas-id>`;
+    - titles hydrated only for returned nodes;
+    - a native fallback note for `--driver nanograph`;
+    - `export --format json` refuses an `--out` inside a member or under `.atlas/indexes/`;
+    - `--format nanograph` in mesh scope exits 2, because it is MD.
+  - **`index`:** `index build --mesh`, the `index status` mesh block and `index show --mesh`.
+  - SKILL.md and `references/graph.md` synopsis lines, real checks for the MB smokes, and a CHANGELOG bullet.
+- **Evidence:**
+  - `test_mesh_graph.py`: 71 checks;
+  - `test_mesh_graph_index.py`: 55 checks;
+  - `test_mesh_scope_default.py`: 92 checks, goldens unchanged;
+  - `run_tests.py`: "All 45 repository test entrypoints passed";
+  - `release_readiness --commit 0ace304…`: pass;
+  - `apm audit`: clean;
+  - diff scan: clean.
+- **CI on PR #65:** all six checks green.
+- **Automatic review:** at 01:50 BST, about 11 minutes after the push, there was no automatic review and there were 0 threads.
+- **MB deviations:**
+  - The `index status` mesh block appears only when a mesh scope is configured or a mesh index exists, to keep M15.
+  - Compile refreshes an existing mesh graph even when the store has critical findings, and the exit code is unchanged.
+  - The digest also covers unmounted row ids.
+  - `graph.driver` from config applies only in mesh scope.
+  - `edges --store` filters by the store the link is written in. An excluded id exits 2.
+- **MB changed files:**
+  - `scripts/atlas_cli/core/mesh_graph.py` (new)
+  - `scripts/atlas_cli/cli.py`, `commands/graph.py`, `commands/index.py`, `commands/validate.py`
+  - `scripts/test_mesh_graph.py`, `scripts/test_mesh_graph_index.py` (new)
+  - `references/scenarios/mesh-index-adversarial-v1.yaml`, `SKILL.md`, `references/graph.md`, `CHANGELOG.md`
+
+## Packet MF (benchmark kit)
+
+- **Branch:** `feat/mesh-bench-mf`, stacked on `feat/mesh-federated-recall-mc` at `28af545`, as the plan's MF row requires (MA for the query set, MC for scoring). PR [#66](https://github.com/sergio-sisternes-epam/atlas/pull/66) has base `feat/mesh-federated-recall-mc` and was pushed at 01:54 BST.
+- **`fe1b5ab`:** one fresh Copilot CLI session, 14 min 41 s, 301.26 AI credits. Nothing under `scripts/atlas_cli/` changed. It adds:
+  - `fixtures/mesh/`: 52 invented pages in three stores, plus an excluded store, an unmounted row, a restricted page and one link per unresolved reason;
+  - `contributor/mesh-bench/`:
+    - `queries.json`, 41 queries: 31 multi-store (9 of them three-store) and 10 controls;
+    - `bench.py`, comparing the oracle single store, plain RRF, tiered RRF with k = 10, 60 and 100, a BM25 score merge, and a scratch single index;
+    - a latency mode and an unresolved-link report;
+    - `MAC-HARNESS.md`, with the M17 criteria verbatim and a sha256 question lock;
+    - `README.md` and `test_bench.py` (20 tests);
+  - the `benchmark-goodhart` check and a CHANGELOG bullet.
+- **One run on fixtures/mesh, Recall@10 and MRR:**
+
+  | Arm | Recall@10 | MRR |
+  |---|---|---|
+  | oracle single store | 0.528 | 0.988 |
+  | plain RRF | 0.900 | 0.854 |
+  | tiered RRF, k = 10, 60 and 100 | 0.900 | 0.976 |
+  | BM25 score merge | 0.900 | 1.000 |
+  | scratch single index | 0.624 | 1.000 |
+
+  - Tier inversions: plain RRF 38, tiered 0.
+  - Federated latency, median total: 12, 38 and 70 ms at 2, 5 and 10 members.
+  - The labels were written by the same session that built the kit, so this checks that the kit works, not retrieval quality. M17 on the Mac decides promotion.
+- **Evidence:**
+  - `run_tests.py`: "All 46 repository test entrypoints passed";
+  - `release_readiness --commit fe1b5ab…`: pass;
+  - `apm audit`: clean;
+  - diff scan: clean.
+- **MF deviation:** `MAC-HARNESS.md` defines the question format and the pre-run rules, but not the 40 Mac questions. They must be written from the real Mac corpus, which is not reachable here and must not go into the public repo.
+- **MF changed files:**
+  - `fixtures/mesh/**` (new, 57 files)
+  - `contributor/mesh-bench/queries.json`, `bench.py`, `MAC-HARNESS.md`, `README.md`, `test_bench.py` (new)
+  - `references/scenarios/mesh-index-adversarial-v1.yaml`, `CHANGELOG.md`
+
 ## Changed files
 
 - `scripts/atlas_cli/core/mesh_scope.py` (new)
@@ -122,7 +197,7 @@ All of the following ran on Linux x86_64 with no nanograph present.
 - `fixtures/mesh-default/goldens.json` (new)
 - `references/scenarios/mesh-index-adversarial-v1.yaml` (new)
 - `CHANGELOG.md` (`## Unreleased (targets 0.14.0)`)
-- MC: see the MC changed files above
+- MC, MB and MF: see the changed files in their sections above
 
 ## Deviations from the plan
 
@@ -136,5 +211,5 @@ All of the following ran on Linux x86_64 with no nanograph present.
 
 ## Consequences flagged, not acted on
 
-- MB and MF wait for Sergio's dispatch. MD and ME wait for the review of MB and MC.
+- MD and ME wait for the review of MB and MC.
 - The 11 short-form links still need fixing in one small PR per store (M21). That is separate from the product packets.

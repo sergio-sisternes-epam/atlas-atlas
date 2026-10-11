@@ -1,6 +1,6 @@
 # Autogenesis plans
 
-- [2026-10-10-atlas-mesh-level-index](2026-10-10-atlas-mesh-level-index.md) — implementing MA and MC (atlas PRs #63, #64); approved MA, MB, MC, MF (MD, ME after review); mesh graph and federated RRF recall across mounted Atlases
+- [2026-10-10-atlas-mesh-level-index](2026-10-10-atlas-mesh-level-index.md) — implementing MA, MB, MC, MF (atlas PRs #63, #65, #64, #66); approved MA, MB, MC, MF (MD, ME after review); mesh graph and federated RRF recall across mounted Atlases
 - [2026-10-09-atlas-graph-query-nanograph](2026-10-09-atlas-graph-query-nanograph.md) — approved (revision 1), implemented in atlas PR #61; graph queries and nanograph versus BM25
 - [2026-09-18-index-md-semantic-memory](2026-09-18-index-md-semantic-memory.md) — approved; folder index.md as STM, two-layer query
 - [2026-09-10-atlas-store-modes](2026-09-10-atlas-store-modes.md) — implemented (#20)
