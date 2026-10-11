@@ -186,6 +186,46 @@ All of the following ran on Linux x86_64 with no nanograph present.
   - `contributor/mesh-bench/queries.json`, `bench.py`, `MAC-HARNESS.md`, `README.md`, `test_bench.py` (new)
   - `references/scenarios/mesh-index-adversarial-v1.yaml`, `CHANGELOG.md`
 
+## MA rebase, reviews R2 to R4, and merge (2026-10-11 night)
+
+At 02:46 BST Sergio asked for #63 to be merged. By then #63 conflicted with `main`, because #62 (the `index show` fix, squash `7e84953`) had landed after #61.
+- **Rebase:** a fresh Copilot session rebased MA onto `7e84953`, at 43.96 credits.
+  - The only conflict was `CHANGELOG.md`, and both sets of entries were kept.
+  - The goldens were regenerated on a clean `7e84953` checkout. Six index show/status cases changed, all because of #62's `store_required` and `current_store` changes.
+  - The new heads were `5d3c7af` and `3f8b8b9`. They were force-pushed with a lease at 02:59 BST.
+- **Review rounds:** each push drew new automatic-review threads, and each round was fixed in a fresh session:
+  - **R2 `aaea773`** (148.19 credits):
+    - Blocker: mesh rows whose `path`/`subpath` is absolute, contains `..` or escapes through a symlink are `invalid` with reason `outside_project`. This is checked before any file access, with a containment helper shared with `resolve.py`.
+    - Recommended: fragments are dropped on every canonical target.
+  - **R3 `fc3d708`** (66.76 credits): Blocker. Node ids percent-encode `%`, `#`, `?`, whitespace and non-printable characters through `encode_path`/`decode_path`, so `notes/a#b.md` round-trips.
+  - **R4 `ac2331a`** (148.35 credits): two Blockers.
+    - Ids with an empty host (such as `/acme/repo`) are `invalid` members with reason `invalid_atlas_id`. The invariant now holds: every `ok` member's id round-trips and resolves as `atlas_uri`.
+    - Members load through their pinned mesh location (`index_location.pinned()`), so `subpath` and pathless rows use their row-id index and run no git subprocess.
+- **Evidence:** `run_tests.py` reached 47 entrypoints, and every round passed `release_readiness --commit <full sha>`, `apm audit` and the diff scan. Every thread was replied to and resolved.
+- **Final state:** the automatic review of `ac2331a` at 04:12 BST added no threads. CI was 6/6 and the PR was CLEAN, with 0 unresolved threads out of 6.
+- **Merged:** squash-merged with `--match-head-commit` at 04:16 BST as **`1c40aa7`** on `main`.
+- **Not acted on:** global `atlas-mesh.json` validation still accepts empty-host ids. Mesh scope treats them as invalid. Tightening global validation would change single-store behaviour, so it is left for Sergio to decide.
+
+## Rebasing MB, MC and MF onto merged MA (2026-10-11, 04:15 to 04:48 BST)
+
+- **MC (#64):** a fresh session (107.86 credits) ran `git rebase --onto origin/main 5263b87`, which gave `02b404c`. Only `CHANGELOG.md` conflicted. The session then added **`6b1bc15`**, "adapt MC to the merged MA contract":
+  - members are searched through their pinned mesh location (a `subpath` member had been getting a `local/...` id);
+  - `invalid` members are reported with their reason;
+  - hit ids are the encoded `node_id`;
+  - regression checks were added for invalid members, `#` in paths and the pinned location.
+
+  `run_tests.py` passed all 49 entrypoints, and `release_readiness`, `apm audit` and the diff scan passed. Force-pushed with a lease at 04:32 BST, and the base changed to `main`.
+- **MB (#65):** a fresh session (193.87 credits) produced `ecdc064`. The conflicts were `CHANGELOG.md`, `SKILL.md` (the `index show [--store <id> | --mesh]` line) and `commands/index.py` (#62's error count kept, then the mesh block). It then added **`430a311`**, "adapt MB to the merged MA contract":
+  - `invalid` members are never read and are reported in the digest, the pointer, the export receipt and status/show;
+  - hydration goes through `load_member`;
+  - `root_not_found` is kept on the `--mesh` verbs.
+
+  49 entrypoints passed and the gates passed. Force-pushed with a lease at 04:36 BST, and the base changed to `main`.
+- **MF (#66):** `git rebase --onto origin/feat/mesh-federated-recall-mc 28af545` conflicted only on `CHANGELOG.md`, which a fresh session (19.23 credits) resolved, giving **`06060b0`**. No adaptation was needed, and the benchmark table is unchanged. 50 entrypoints passed. Force-pushed with a lease at 04:48 BST; the base stays the MC branch.
+- **CI:** one #64 run failed `APM package integrity` with a GitHub 403 rate limit. Its failed jobs were re-run through the GitHub connector and turned green. #64 and #65 are each 6/6 green and CLEAN.
+- **Test isolation flake:** one local MF run failed three `test_drivers.py` nanograph checks. Stray `/tmp/nanograph.toml` and `/tmp/.env.nano` files had been written at 04:33:38 BST, while two suites ran at the same time. The fake nanograph `init` treats `/tmp` as its project directory. After the stray files were removed, the full suite passed. A test still leaks scaffolding into `/tmp` when suites run in parallel; this is flagged for a follow-up.
+- **Automatic review:** none had appeared on #64, #65 or #66 by 04:48 BST. Further checks are at about +30 and +60 minutes.
+
 ## Changed files
 
 - `scripts/atlas_cli/core/mesh_scope.py` (new)
@@ -194,7 +234,8 @@ All of the following ran on Linux x86_64 with no nanograph present.
 - `scripts/atlas_cli/core/engine_preference.py`
 - `scripts/atlas_cli/core/identity.py` (R1: `fold_host`)
 - `scripts/atlas_cli/schemas/atlas-mesh.schema.json`
-- `scripts/test_mesh_resolver.py`, `scripts/test_mesh_members.py`, `scripts/test_mesh_config.py`, `scripts/test_mesh_scope_default.py`, `scripts/test_mesh_review_r1.py` (new)
+- `scripts/test_mesh_resolver.py`, `scripts/test_mesh_members.py`, `scripts/test_mesh_config.py`, `scripts/test_mesh_scope_default.py`, `scripts/test_mesh_review_r1.py`, `test_mesh_review_r2.py`, `test_mesh_review_r3.py`, `test_mesh_review_r4.py` (new)
+- `scripts/atlas_cli/core/paths.py`, `scripts/atlas_cli/commands/resolve.py`, `scripts/atlas_cli/core/graph.py` (R2 to R4)
 - `fixtures/mesh-default/goldens.json` (new)
 - `references/scenarios/mesh-index-adversarial-v1.yaml` (new)
 - `CHANGELOG.md` (`## Unreleased (targets 0.14.0)`)
