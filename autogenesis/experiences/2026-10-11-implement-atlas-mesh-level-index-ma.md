@@ -5,7 +5,7 @@ created: 2026-10-11
 work_id: 2026-10-10-atlas-mesh-level-index
 implements: 2026-10-10-atlas-mesh-level-index
 closes: []
-status: implementing
+status: done
 kva: alive
 description: "Packet MA of the approved mesh-level index plan was built by one fresh Copilot CLI session, with one more for a review Blocker, on atlas branch feat/mesh-core-ma (PR #63, head 5263b87), then packet MC by one more fresh session on feat/mesh-federated-recall-mc stacked on it (PR #64, head 28af545: recall run --scope mesh with tiered RRF and a restricted pre-filter), then MB (PR #65, head 0ace304: graph --scope mesh and the structure-only _mesh graph index) and MF (PR #66, head fe1b5ab: fixtures/mesh and the contributor-only mesh-bench kit), each by one fresh session. MA adds the library-only core/mesh_scope.py (members, atlas:// node ids, restricted pages withheld, a strict resolver with six unresolved reasons), the inert mesh config keys and index_location.mesh_index_dir. Output without the new keys is byte-identical to PR #61. Not merged."
 origin: derived
@@ -135,7 +135,7 @@ All of the following ran on Linux x86_64 with no nanograph present.
   - `release_readiness --commit 0ace304…`: pass;
   - `apm audit`: clean;
   - diff scan: clean.
-- **CI on PR #65:** all six checks green.
+- **CI on PR #65 at `0ace304`:** all six checks green on the first run.
 - **Automatic review:** at 01:50 BST, about 11 minutes after the push, there was no automatic review and there were 0 threads.
 - **MB deviations:**
   - The `index status` mesh block appears only when a mesh scope is configured or a mesh index exists, to keep M15.
@@ -179,6 +179,7 @@ All of the following ran on Linux x86_64 with no nanograph present.
   - `release_readiness --commit fe1b5ab…`: pass;
   - `apm audit`: clean;
   - diff scan: clean.
+- **CI on PR #66 at `fe1b5ab`:** all six checks green on the first run. At 02:04 BST, 10 minutes after the last push, there was no automatic review on #64, #65 or #66, and there were 0 threads. The reviewer appears to run only on PRs into `main`, so the stacked PRs should be re-checked after they are retargeted. #63 has 1 thread, resolved.
 - **MF deviation:** `MAC-HARNESS.md` defines the question format and the pre-run rules, but not the 40 Mac questions. They must be written from the real Mac corpus, which is not reachable here and must not go into the public repo.
 - **MF changed files:**
   - `fixtures/mesh/**` (new, 57 files)
