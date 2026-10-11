@@ -96,6 +96,7 @@ All of the following ran on Linux x86_64 with no nanograph present.
   - `release_readiness.py --commit 28af5456971e368f3f10defc4e179a00e4089878`: pass;
   - `apm audit --no-drift`: clean;
   - diff scan of `feat/mesh-core-ma..HEAD`: clean.
+- **CI on PR #64 at `28af545`:** the first run failed `APM package integrity` with a GitHub API 403 (rate limit while registering the marketplace), and so `Release readiness decision` was blocked. Rerunning the failed jobs at 01:00 BST turned all six checks green. At 01:05 BST, 10 minutes after the push, there were no automatic review and no threads. The automatic reviewer may only run on PRs into `main`.
 - **MC deviations:**
   - `--allow-partial` with mesh scope exits 2, because it is per store.
   - With an explicit `--engine`, a member whose recall profile is enabled is reported as `error`, because P23 already rejects `--engine` with an enabled profile.
