@@ -54,7 +54,7 @@ Start condition M23 was met when atlas PR #61 merged as squash `7af5805` on `mai
 - **Byte-identical default (M15):** `scripts/test_mesh_scope_default.py` compares 45 commands with goldens.
   - The goldens were captured with `ATLAS_UPDATE_GOLDEN=1` on the unmodified tree before any product edit.
   - Separately, the test and its goldens were copied onto a clean `7af5805` checkout, and the test passed there. So the goldens really are PR #61's output.
-- **Author:** Copilot committed `a059de6` as itself. Hand amended only the author metadata to the branch's usual author, with no content change.
+- **Author:** Copilot committed `a059de6` as itself. The author metadata was amended only to the branch's usual author, with no content change.
 
 ## Evaluation evidence
 

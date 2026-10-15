@@ -23,9 +23,9 @@ Run Autogenesis formal design (design operation only) for mesh-level indexing in
 ## What was done
 
 - Entered root Autogenesis, operation design, with supports workflow-discipline, think-challenge and patterns. Change-class new-surface. work_id `2026-10-10-atlas-mesh-level-index`.
-- Cloned the atlas repo at PR #61's head into `/workspace/atlas-mesh-index-design`. Mounted and resolved `github.com/sergio-sisternes-epam/atlas-atlas` (explicit id, as the mesh lists two stores), and mounted atlas-cartograph-atlas for the probe. Branched the store from the PR #27 branch (`244de59`).
+- Cloned the atlas repo at PR #61's head into a scratch directory. Mounted and resolved `github.com/sergio-sisternes-epam/atlas-atlas` (explicit id, as the mesh lists two stores), and mounted atlas-cartograph-atlas for the probe. Branched the store from the PR #27 branch (`244de59`).
 - Read PR #61's index location, owner-token lock, driver overlay, graph, recall and mesh-file code, and the settled git-mesh decisions on `atlas://`, aliases and unresolved ids.
-- Ran a scratch probe (`/workspace/atlas-mesh-index-probe/`): merged both stores' projections (502 nodes, 2,195 edges, 5 ms), counted cross-store links (11, all short-form, 0 resolvable under the canonical grammar), timed fingerprints (2–32 ms per store), and fused real `--engine bm25` results with plain RRF k = 60 (rank interleave; any-word noise at ranks 2, 4 and 6 on one query).
+- Ran a scratch probe (scratch directory): merged both stores' projections (502 nodes, 2,195 edges, 5 ms), counted cross-store links (11, all short-form, 0 resolvable under the canonical grammar), timed fingerprints (2–32 ms per store), and fused real `--engine bm25` results with plain RRF k = 60 (rank interleave; any-word noise at ranks 2, 4 and 6 on one query).
 - Search-grounded challenge: RRF on disjoint lists, cross-index BM25 statistics, index leakage of restricted content (CWE-612), budgeted agentic search. Pinned M1–M19.
 - Persisted the plan, work hub and this record; compile green.
 

@@ -80,7 +80,7 @@ Two more Recommended threads followed. **R6 `ec68f0c`** fixed them:
 - the nanograph neighbours caps now bound the subprocess calls, not just the output;
 - lock release is serialised under the takeover guard.
 
-The first R6 attempt could not start. The box had run out of inotify instances (1,024), held by about 1,300 orphaned `dbus-daemon` processes that keyring-using `gh` calls had auto-launched outside a desktop. Hand cleared them. Fleet rule since then: run `gh`, test suites and Copilot sessions with `DBUS_SESSION_BUS_ADDRESS=disabled:` (or with `DISPLAY` unset).
+The first R6 attempt could not start. The headless test host had run out of inotify instances: orphaned keyring daemons (`dbus-daemon`) auto-launched by `gh` calls outside a desktop can exhaust them. Once they were cleared, the run proceeded. On headless hosts, run `gh`, test suites and agent sessions with `DBUS_SESSION_BUS_ADDRESS=disabled:` (or with `DISPLAY` unset).
 
 The next automatic review posted 4 Blockers. **R7 `37ef957`** fixed them:
 - the nanograph pointer, the FTS5 pointer and the mesh write now publish inside an owner-checked critical section that holds the takeover guard;
@@ -132,5 +132,5 @@ The lesson: the first report called the PR green on CI alone. The review threads
 
 ## Consequences flagged, not acted on
 
-- Releasing 0.14.0 belongs to Master of Packages.
-- nanograph is an optional binary that users install themselves on macOS. It adds no box-restore or Grand Maester dependency.
+- Releasing 0.14.0 belongs to the release owner.
+- nanograph is an optional binary that users install themselves on macOS. It adds no required install step on any host.

@@ -62,7 +62,7 @@ The original design text below is kept as written. Where it conflicts with this 
 
 ## The request
 
-Sergio asked on 2026-10-10 for mesh-level indexing. Today every Atlas gets its own index, and `recall run` and `atlas graph` take one `--root`, so there is no search or graph across Atlases. The shape agreed in discussion, and the "MESH GRAPH + federated RRF" advice already given to Grand Maester, is:
+Sergio asked on 2026-10-10 for mesh-level indexing. Today every Atlas gets its own index, and `recall run` and `atlas graph` take one `--root`, so there is no search or graph across Atlases. The shape agreed in discussion, and the "MESH GRAPH + federated RRF" advice already given, is:
 
 1. **Mesh graph.** One graph index per mesh (a project with `atlas-mesh.json`) covering every mounted store, so traversal can cross Atlas boundaries. Refreshed when any member changes. Native graph everywhere; nanograph where supported. Node ids namespaced by atlas id. Cross-Atlas edges resolve to real nodes or are reported unresolved.
 2. **Federated search.** Keep per-store search indexes. Add a mesh-wide `recall run` that queries each member's own index and merges with Reciprocal Rank Fusion (k = 60 by default, configurable). Every hit carries its atlas id. Respect store privacy; never copy store content into a shared index.
@@ -74,7 +74,7 @@ The broader recall token-economy plan (packets D/E: golden queries, gist-first p
 ## Store resolution and recorded contradictions
 
 - `atlas-mesh.json` in the atlas repo lists **two** stores (atlas-atlas and atlas-cartograph-atlas). Autogenesis treats that as ambiguous unless the id is explicit. This Run used the explicit id `github.com/sergio-sisternes-epam/atlas-atlas`: it is the store the Atlas skill's own card declares as its default, and the brief names it. That matches the 2026-10-09 Run.
-- The mesh row pins `ref: docs/skill-help-pilot`. `atlas mount ... --ref main` (in a fresh clone of PR #61 at `/workspace/atlas-mesh-index-design`) rewrote the scratch mesh row to `main`, but left the superproject's gitlink commit `6c4ba92` checked out, which lives on `docs/skill-help-pilot`, not `main` (`e79aef0`). The atlas repo change was scratch only and is not committed.
+- The mesh row pins `ref: docs/skill-help-pilot`. `atlas mount ... --ref main` (in a fresh clone of PR #61) rewrote the scratch mesh row to `main`, but left the superproject's gitlink commit `6c4ba92` checked out, which lives on `docs/skill-help-pilot`, not `main` (`e79aef0`). The atlas repo change was scratch only and is not committed.
 - This page is written on a branch created from the PR #27 branch, because it `follows` the 2026-10-09 plan, which exists only there. Its PR targets the PR #27 branch, so it can be reviewed alone and retargets to `main` when #27 merges.
 
 ## Evidence
@@ -91,7 +91,7 @@ The broader recall token-economy plan (packets D/E: golden queries, gist-first p
 | An id not in the local mesh is a known absence: no auto-mount on query | `autogenesis/discuss/git-mesh/decision-unresolved-id.md` |
 | Relative `relates_to` paths are store-relative; compile treats a path that does not exist inside the store as broken | `commands/validate.py` (`relates_to broken path`) |
 
-### What the real mesh contains (scratch probe, `/workspace/atlas-mesh-index-probe/`)
+### What the real mesh contains (scratch probe)
 
 The probe mounted both rows of the atlas repo mesh and merged their projections with PR #61's own code. Scratch only; no product code.
 
@@ -137,7 +137,7 @@ Numbering continues from the 2026-10-09 plan's P1–P27 with an `M` prefix.
 | M8 | **Digest and freshness.** `mesh_digest` = sha256 of canonical JSON holding the index format, resolver version, privacy policy version, and for each included member (sorted by id) its id, mesh `path`, `subpath` and `corpus_digest`, plus the sorted excluded ids. The pointer also records each member's `cheap_fingerprint`. On a mesh read, compute every included member's fingerprint (2–32 ms each in the probe). If all match, the index is fresh. Otherwise recompute the changed members' corpus digests, and if `mesh_digest` changed, rebuild before answering, as in P24. A membership or config change changes the digest. A nanograph mesh index also keys on the binary version. |
 | M9 | **Refresh and locking.** Reuse PR #61's `owned_lock.OwnedLock` through `index_publish.BuildLock` and `locked_build` on the `_mesh` parent directory: build in a temporary sibling, rename into place, replace the pointer inside `owned_critical_section`, keep the pointer's generation plus one, 10-minute stale timeout. A reader that finds the lock held waits up to 5 s, then answers from an in-memory merge with `driver_note: mesh_index_busy`. **Lock order:** the mesh lock is never held while a member lock is taken. The mesh build reads member pages and generations read-only and takes no member lock. A member whose own preferred index is stale is not rebuilt by a mesh read. |
 | M10 | **Refresh triggers.** No daemon and no watcher. (a) Any `--scope mesh` graph read; (b) `atlas index build --mesh [--force]`; (c) `atlas compile` (not `--dry-run`) on a member store refreshes the mesh graph **only if a mesh index already exists** for that project. A failed refresh is a warning and never changes compile's exit code. |
-| M11 | **Federated recall.** `recall run --scope mesh` runs, for each included member in mesh row order, that member's effective engine (P23 precedence unchanged; an explicit `--engine` applies to every member), in process, asking for `2 × limit` hits. Fusion: **tier first**, where hits from a list the member produced with all-words matching, or by grep or nanograph, are tier 1 and hits from an any-word retry (`match: any`) are tier 2. Then RRF score `Σ 1/(k + rank)` with 1-based member rank, then mesh row order, then path. The result is truncated to `limit`. k defaults to 60 and is set by `--rrf-k N` (1–1000) or top-level `recall.rrf_k`. Because page ids are disjoint across stores, v1 RRF ranks like an interleave within each tier. The formula is kept so that later per-member lists (title match, graph proximity: the Master of New RRF research) can join without a contract change. |
+| M11 | **Federated recall.** `recall run --scope mesh` runs, for each included member in mesh row order, that member's effective engine (P23 precedence unchanged; an explicit `--engine` applies to every member), in process, asking for `2 × limit` hits. Fusion: **tier first**, where hits from a list the member produced with all-words matching, or by grep or nanograph, are tier 1 and hits from an any-word retry (`match: any`) are tier 2. Then RRF score `Σ 1/(k + rank)` with 1-based member rank, then mesh row order, then path. The result is truncated to `limit`. k defaults to 60 and is set by `--rrf-k N` (1–1000) or top-level `recall.rrf_k`. Because page ids are disjoint across stores, v1 RRF ranks like an interleave within each tier. The formula is kept so that later per-member lists (title match, graph proximity: related in-store fusion research) can join without a contract change. |
 | M12 | **Federated payload and exit codes.** `scope: mesh`, `rrf_k`, `complete`; `hits[]` with `atlas_id`, `path`, `uri`, `title`, `member_rank`, `tier`, `rrf_score` and `engine_used`; `members[]` with `atlas_id`, `status` (`ok`, `excluded`, `unmounted` or `error`), `engine_requested`, `engine_used`, `driver_note`, `match` and `hits`. Exit 0 when every included member answered; exit 1 when at least one included member failed but others answered (`complete: false`); exit 2 for invalid input: `--profile` with `--scope mesh` (profiles are per store), no mesh found, or k out of range. |
 | M13 | **CLI.** `--scope store\|mesh` on `recall run` and on `graph nodes\|edges\|neighbours\|export`. No separate `--mesh` alias on these, so there is one switch. In mesh scope a page argument is a canonical `atlas://` URI or a path in the `--root` store; `nodes` and `edges` add `--store <atlas-id>` (repeatable). `neighbours --driver native\|nanograph` works as today. `atlas index build --mesh [--force]` (combinable with `--all`). `index status` gains a `mesh` block: members and their status, excluded ids, effective scopes with their source, and per driver the index path, generation, freshness and unresolved counts by reason. `index show --mesh` prints that block alone. Config writers: `atlas index scope <store\|mesh> [--recall\|--graph]` and `atlas index member <atlas-id> --exclude\|--include`, written atomically through `meshfile` with P27's rules. |
 | M14 | **Config and precedence.** `atlas-mesh.json` schema additions: top-level `recall.scope` (`store`/`mesh`) and `recall.rrf_k` (integer 1–1000); a new top-level `graph` object with `scope` (`store`/`mesh`) and `driver` (`native`/`nanograph`); a row-level `mesh_member` boolean (default true). Scope is a mesh-level choice, so `scope` on a row's `recall` block is a validation error naming the row. Precedence: flag > top-level config > built-in `store`. No environment variable in v1; benchmarks pass the flag. |
@@ -168,7 +168,7 @@ Dispatch description sketch (Atlas SKILL.md CLI surface; no new path module, bec
 - A graph query language, or hops beyond 3 (P3, P6 unchanged).
 - Search or traversal across projects (meshes); one mesh per project.
 - Editing store pages. Fixing the 11 existing short-form links is a separate store change (open question 2).
-- Releasing or tagging; that belongs to Master of Packages.
+- Releasing or tagging; that belongs to the release owner.
 
 ### Component diagram
 
@@ -328,7 +328,7 @@ This design stops here. Implementation needs Sergio's explicit approval of this 
 
 ## Behavioural contract (agent-spec)
 
-Deferred: agent-spec is still not in this harness's skill catalogue (`/home/box/agent-data/workflows` has no agent-spec package), so `specify` cannot run. Implement must run `specify` before packet MC merges, or record a new deferral. Protecting scenarios to name there: `@critical` "with no flag and no config, single-store output is unchanged"; `@forbidden` "text from a restricted page or an excluded store appears in any `_mesh` index file or federated hit"; `@forbidden` "a mesh read takes a member lock while holding the mesh lock"; `@critical` "an unresolved cross-store link is returned with a reason, never dropped".
+Deferred: agent-spec is still not in this harness's skill catalogue (no agent-spec package is installed), so `specify` cannot run. Implement must run `specify` before packet MC merges, or record a new deferral. Protecting scenarios to name there: `@critical` "with no flag and no config, single-store output is unchanged"; `@forbidden` "text from a restricted page or an excluded store appears in any `_mesh` index file or federated hit"; `@forbidden` "a mesh read takes a member lock while holding the mesh lock"; `@critical` "an unresolved cross-store link is returned with a reason, never dropped".
 
 ## Evaluation plan
 
@@ -347,7 +347,7 @@ Deferred: agent-spec is still not in this harness's skill catalogue (`/home/box/
 | No dependency | `scripts/requirements.txt` unchanged; `python3 scripts/run_tests.py` green |
 | Store compile | `atlas compile --root <store>` exit 0 on atlas-atlas after the change |
 
-### Retrieval quality (box, deterministic, packet MF)
+### Retrieval quality (test host, deterministic, packet MF)
 
 - A labelled set of at least 30 queries over a scratch mesh of atlas-atlas, atlas-cartograph-atlas and one more mounted store. Each query is labelled with the relevant pages, and at least half need pages from two stores.
 - Arms: best single store (oracle choice), plain RRF, tiered RRF (k = 10, 60, 100), raw-BM25-score merge, and a scratch-only single FTS5 index over all stores. The last one is a measuring stick for counter C2 and is never shipped.
@@ -434,15 +434,15 @@ Total: about 2,050 code and 1,750 test lines across six PRs. MA, MB and MC toget
 ## Consequences outside the atlas repo
 
 - **Stores.** The 11 short-form links (7 in atlas-atlas on `docs/skill-help-pilot`, 4 in atlas-cartograph-atlas) need canonical targets (`atlas://` plus the full `github.com/sergio-sisternes-epam/...` id and the page path) before the mesh graph can cross them. That is a separate store PR each (open question 2).
-- **Master of New.** Its RRF research task ("Explore hybrid retrieval with Reciprocal Rank Fusion for Atlas recall") is the natural home for multi-retriever fusion inside one store. M11 keeps the fusion input open for it; nothing here pre-empts that research.
-- **Grand Maester.** No new system tools. nanograph on the Mac is unchanged from PR #61.
-- **Master of Packages.** Release of the packets as one minor version once MA–MC have merged.
+- **Related research.** Separate work on hybrid retrieval with Reciprocal Rank Fusion inside one store is the natural home for multi-retriever fusion inside one store. M11 keeps the fusion input open for it; nothing here pre-empts that research.
+- **Host maintainer.** No new system tools. nanograph on the Mac is unchanged from PR #61.
+- **Release owner.** Release of the packets as one minor version once MA–MC have merged.
 - **Benchmark (Sergio's Mac).** The harness at `~/scratch/atlas-answer-bench` needs the new corpus, question set and arms. Only Sergio's Mac can run it.
 
 ## Follow-ups (parked, not authorised)
 
 - D/E: golden queries, gist-first payloads, stemming and aliases (on hold since 2026-10-09). Golden queries would reuse MF's labelled set.
-- Multi-retriever RRF inside one store (title match, graph proximity), per the Master of New research.
+- Multi-retriever RRF inside one store (title match, graph proximity), per the related fusion research.
 - Per-member weights in fusion, only if the benchmark shows one store systematically drowning others.
 - A compile check that warns on short-form `atlas://` with a canonical suggestion, sharing M4's resolver.
 

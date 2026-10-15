@@ -25,14 +25,14 @@ Run Autogenesis formal design on Atlas: should nanograph replace or join the BM2
 - Entered root Autogenesis, operation design, with supports workflow-discipline, think-challenge and patterns. Change-class new-surface.
 - Mounted and resolved `github.com/sergio-sisternes-epam/atlas-atlas` from a fresh clone of the atlas repo at `b0b1012` (v0.13.0). Branched the store from `origin/main`.
 - Read the recall code. `--engine bm25` is a stub that always falls back to grep. Real BM25 is the `atlas:ranked` FTS5 profile. Graph neighbourhoods already exist in `core/retrieve.py`.
-- Checked nanograph v1.3.0: MIT; macOS-only release binaries; no release since 2026-05-16; source build needs Rust 1.94.1 and protoc (box: 1.85.1, none).
-- Ran the Atlas half of the fail-fast probe in scratch (`/workspace/nanograph-probe/`): exports to nanograph schema and seed, engine timings, a formula replica of nanograph BM25 (top-10 overlap with `atlas:ranked` 0.76 on atlas-atlas, 0.83 on waza-apm), and graph questions in milliseconds.
+- Checked nanograph v1.3.0: MIT; macOS-only release binaries; no release since 2026-05-16; source build needs Rust 1.94.1 and protoc (test host: 1.85.1, none).
+- Ran the Atlas half of the fail-fast probe in a scratch directory: exports to nanograph schema and seed, engine timings, a formula replica of nanograph BM25 (top-10 overlap with `atlas:ranked` 0.76 on atlas-atlas, 0.83 on waza-apm), and graph questions in milliseconds.
 - Search-grounded challenge: KuzuDB abandonment, SQLite-is-enough at this scale, GraphRAG gains on multi-hop only.
 - Persisted the plan and this record; compile green.
 
 ## Deferred
 
-- Live nanograph probe: no Linux binary; source build needs Grand Maester tools.
+- Live nanograph probe: no Linux binary; source build needs new system tools (newer Rust, protoc).
 - agent-spec `specify`: not in this harness's catalogue; deferred in the plan.
 
 ## Contradictions recorded
