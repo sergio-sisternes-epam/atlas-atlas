@@ -1,11 +1,12 @@
 # Work
 
+- [Graph queries for Atlas, and whether nanograph replaces BM25](2026-10-09-atlas-graph-query-nanograph.md) — **implemented (atlas PR #61, in review; Mac live check pending)**
 - [Design index.md as short-term memory](2026-09-18-index-md-semantic-memory.md) — **approved** (#36)
 - [Pin atlas-marketplace catalog refs to cloneable release tags](2026-09-14-copilot-sha-ref-install.md) — **done** ([issue 33](https://github.com/sergio-sisternes-epam/atlas-marketplace/issues/33), [PR 34](https://github.com/sergio-sisternes-epam/atlas-marketplace/pull/34))
 - [Atlas marketplace rename and catalog republish](2026-09-10-atlas-marketplace-rename.md) — **done**
 - [Two Atlas store modes — shared branch and dedicated repo](2026-09-10-atlas-store-modes.md) — **done** (#20)
 - [Configurable Semantic Memory Recall with skill-owned organisation](2026-09-09-atlas-smr-configurable-recall.md) - **implemented** (0.10.0)
-- [Skill Atlas write-home is the active git repo](2026-09-03-skill-mount-home.md) — **implementing**
+- [Skill Atlas write-home is the active git repo](2026-09-03-skill-mount-home.md) — **implemented (atlas PR #61, in review; Mac live check pending)**
 - [Import human-memory findings into Atlas write policy](2026-09-03-human-memory-model.md) — **done**
 - [Atlas path ci — canonical CI/CD for SCHEMA.json mounts](2026-09-03-atlas-ci-activation-path.md) — **done** (0.8.13)
 - [Grep search + query path + B17 card](2026-08-27-atlas-search-nav-signals.md) — **done** (0.7.8)
