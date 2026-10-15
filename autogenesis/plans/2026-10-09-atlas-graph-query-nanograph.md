@@ -146,9 +146,9 @@ So the design question is now two questions. Should nanograph replace or join SQ
 | Query language | Typed Datalog with GraphQL-shaped syntax. Conjunctive `match`, `not {}`, bounded hops `{1,3}`, aggregates. **No OR, no optional match, no recursion.** Traversal cannot bind edge properties, so each relation kind must be its own edge type. Edge endpoints are fixed to one source and one target node type | `docs/user/queries.md`, `docs/user/schema.md`, `query.pest` |
 | Lineage and CDC | `NamespaceLineage` keeps a change ledger and time travel. Redundant here, because git already holds history and the index is rebuildable | Docs |
 
-### Fail-fast probe (scratch, `/workspace/nanograph-probe/`)
+### Fail-fast probe (scratch)
 
-**The live nanograph half is deferred**, for the platform reasons above. The binary cannot be obtained for Linux, and a source build needs a newer Rust and `protoc`, which belong to Grand Maester. The Atlas half ran in full on copies of two stores:
+**The live nanograph half is deferred**, for the platform reasons above. The binary cannot be obtained for Linux, and a source build needs a newer Rust and `protoc`, which would be new system tools on the test host. The Atlas half ran in full on copies of two stores:
 
 | Measure | atlas-atlas (470 pages) | waza-apm (36 pages) |
 |---|---|---|
@@ -196,7 +196,7 @@ discuss `lint.py` on atlas-atlas reported real findings: one L4, three L2 (`kva:
 | P8 | `atlas graph export --format nanograph --out <dir>` writes `schema.pg` and `seed.jsonl` in pure Python. Mapping: one `Page` node type, `@key slug` = store-relative path, OKF `type` as a property (OKF types are open, and nanograph edge endpoints are fixed per type, so subtypes would multiply edge declarations). Scalar frontmatter becomes nullable properties; `text` = title, description and body. One edge type per relation kind actually present, plus any declared in the effective schema, named in PascalCase (`kva_terminate` becomes `KvaTerminate`, queried as `kvaTerminate`). `atlas://` targets become `External` nodes. No `Vector` fields. `--format json` writes the same graph as plain JSON for other tools. |
 | P9 | Compile and any index build make sure `.atlas-index/` is ignored: they add it to the store's `.git/info/exclude` when the store is a git checkout and the pattern is missing, and report that they did. They never edit a committed `.gitignore` without the path that owns it. |
 | P10 (superseded by P15–P19) | A `nanograph` driver (Rank stage, plus a graph backend for `neighbours`) is **gated**. It is admitted only through a new design amendment after gate G-N passes. Its shape is fixed now so the gate has something to test: argv subprocess only; pinned version and SHA-256; capability probe; database at `.atlas-index/nanograph/<generation>/`; rebuilt with `init` and `load --mode overwrite` from the P8 export when a generation is published; no `.env.nano`; no embeddings; fail closed with `unsupported_capability: nanograph_binary_missing`; never a default; never a server. |
-| P11 (dropped in revision 1) | Gate G-N, all required: (1) official Linux x86_64 and arm64 binaries with published checksums, or a box-restore entry approved by Grand Maester; (2) an upstream release within the last 90 days, or a named maintained fork; (3) the live probe on atlas-atlas: top-10 overlap with `atlas:ranked` of at least 0.7 on the evaluation query set, graph answers identical to `atlas graph` on the fixed graph cases, two runs give identical order, and it runs with networking blocked; (4) the result shows something native Atlas cannot do at Atlas sizes. |
+| P11 (dropped in revision 1) | Gate G-N, all required: (1) official Linux x86_64 and arm64 binaries with published checksums, or a maintainer-approved install path for the binary on supported hosts; (2) an upstream release within the last 90 days, or a named maintained fork; (3) the live probe on atlas-atlas: top-10 overlap with `atlas:ranked` of at least 0.7 on the evaluation query set, graph answers identical to `atlas graph` on the fixed graph cases, two runs give identical order, and it runs with networking blocked; (4) the result shows something native Atlas cannot do at Atlas sizes. |
 | P12 | Python reaches nanograph only through the CLI. No TypeScript or Swift bridge. |
 | P13 | Discuss changes are not made here. They need their own Autogenesis design with discuss as subject, after this plan ships. This plan lists what discuss would use. |
 | P15 | **Driver overlay.** A documented driver interface: `id`, `capabilities` (subset of `bm25_search`, `graph_traversal`), `platforms` (supported `sys.platform`/machine pairs), and lifecycle methods `detect()` (returns available or an unavailable reason), `build(export_dir, index_dir)`, `query(...)` per capability, and `health()`. A registry lists drivers and a platform-support matrix. Built-ins `sqlite-fts5` (BM25) and `native-graph` (Python) are always registered, always available and the default. |
@@ -227,7 +227,7 @@ Dispatch description sketch (Atlas SKILL.md CLI surface; no new path module, bec
 - Committing any index, `.nano` folder or seed into a store.
 - Encoding discuss's rules (L1 to L6, stance kinds, KVA meanings) in Atlas.
 - Closing or absorbing the okf-wiki migration half of `atlas-bm25-and-live-migration-v1`.
-- Releasing, tagging or publishing; that belongs to Master of Packages.
+- Releasing, tagging or publishing; that belongs to the release owner.
 
 ### Component diagram
 
@@ -308,7 +308,7 @@ How discuss would call it:
 - Runtime cost: none new for packets A and B. Standard library only; projection is about 0.12 s on 470 pages.
 - Token cost: graph verbs return compact JSON (path, type, a few fields) so agents stop opening pages to discover structure. The recall path's 1-to-3 page reads remain the main cost.
 - Maintenance cost: one command module plus tests. The nanograph export is a small pure-Python writer whose risk is drift in nanograph's schema grammar. It is pinned to the v1.3.0 grammar and tested by golden files.
-- Gated packet C: 60 MB-plus binary per platform, a box-restore entry, upstream risk (see challenge), and a second BM25 implementation to keep in step.
+- Gated packet C: 60 MB-plus binary per platform, a maintained install path, upstream risk (see challenge), and a second BM25 implementation to keep in step.
 - Implementation cost: Copilot CLI (`claude-opus-5.5`), about three packets.
 
 ### Acceptance
@@ -346,7 +346,7 @@ This design stops here. Implementation needs Sergio's explicit approval of this 
 
 ## Behavioural contract (agent-spec)
 
-Deferred: agent-spec is not in this harness's skill catalogue (`/home/box/agent-data/workflows` has no agent-spec package), so `specify` cannot run. Implement must run `specify` before packet B merges, or record a new deferral. Protecting scenarios to name there: `@critical` "`--engine bm25` never reports grep while FTS5 is available"; `@forbidden` "graph or export writes inside the store outside `.atlas-index/`"; `@forbidden` "any network call from graph, export or the nanograph driver".
+Deferred: agent-spec is not in this harness's skill catalogue (no agent-spec package is installed), so `specify` cannot run. Implement must run `specify` before packet B merges, or record a new deferral. Protecting scenarios to name there: `@critical` "`--engine bm25` never reports grep while FTS5 is available"; `@forbidden` "graph or export writes inside the store outside `.atlas-index/`"; `@forbidden` "any network call from graph, export or the nanograph driver".
 
 ## Evaluation plan
 
@@ -368,7 +368,7 @@ Deterministic smokes (primary):
 
 Agent evaluations (secondary): a recall-path trajectory check that an agent asking "what forming ideas came from X" uses `atlas graph neighbours` rather than a tree grep. Never the only evidence.
 
-Gate G-N evaluation (packet C only, later): live probe script from `/workspace/nanograph-probe/bin/` against the binary, using `export/atlas.gq`.
+Gate G-N evaluation (packet C only, later): the scratch live probe script against the binary, using `export/atlas.gq`.
 
 ## Adversarial scenario draft
 
@@ -429,14 +429,14 @@ All packets: Copilot CLI only, `env -u GH_TOKEN copilot -p "<packet prompt>" --m
 | E | Revision 3: preferred engine (P23–P26): mesh/env config, auto-create, digest refresh, atomic publish and lock, fallback chain, profile-store rule, tests | D |
 | F | Revision 4: `atlas index set\|unset\|show\|status\|build` (P27), safe atomic mesh writes, `recall index build` deprecated alias, tests | E |
 
-Release of A and B belongs to Master of Packages.
+Release of A and B belongs to the release owner.
 
 ## Consequences outside Atlas
 
 - **discuss** (separate Autogenesis design, subject discuss): switch `lint.py` input to `atlas graph export --format json` and drop its regex frontmatter parser; fix L1 so a protostar's `implements` edge to its work hub is not a shortcut (it contradicts sprout rule 5 today); correct SKILL.md to `kva:forming` and point protostar search at `atlas graph nodes`; let consolidate and constellation use `neighbours`. Discuss would need a minimum Atlas version.
-- **Master of Packages**: releases for packets A and B (minor bump; `--engine bm25` behaviour change goes in CHANGELOG).
-- **Grand Maester**: only if gate G-N is pursued. Rust 1.94.1 and `protoc`, or a nanograph Linux binary, would be new system tools.
-- **box-restore**: a nanograph binary on the shared box would need a box-restore entry. Nothing is added now.
+- **Release owner**: releases for packets A and B (minor bump; `--engine bm25` behaviour change goes in CHANGELOG).
+- **Host maintainer**: only if gate G-N is pursued. Rust 1.94.1 and `protoc`, or a nanograph Linux binary, would be new system tools.
+- **Host install**: a nanograph binary on a shared test host would need a maintained install path. Nothing is added now.
 
 ## Challenge and dispositions
 
@@ -469,7 +469,7 @@ Named-theory smokes added: Hyrum's law (users may depend on `--engine bm25` retu
 
 1. **Approve packets A and B now and park C?** Recommendation: yes. A and B carry all the value discuss needs, with no dependency.
 2. **Should FTS5 fall back to OR when AND finds nothing?** `memory layers gist` returns nothing today. Recommendation: yes, as a small addition to packet A, marked in output as `match: any`; keep AND first for precision.
-3. **Should the live nanograph probe be built from source in a container** (podman, Rust 1.94.1 plus protoc, two compile jobs, scratch only)? Recommendation: not now. The box has about 4 GB free memory and the result cannot change P1. Ask Grand Maester only if Sergio wants gate G-N pursued.
+3. **Should the live nanograph probe be built from source in a container** (podman, Rust 1.94.1 plus protoc, two compile jobs, scratch only)? Recommendation: not now. The result cannot change P1. Ask the host maintainer only if Sergio wants gate G-N pursued.
 4. **Ask upstream for Linux binaries?** Recommendation: optional. A GitHub issue on nanograph asking for Linux release assets is cheap, but it is an external post and needs Sergio's go-ahead.
 5. **Should the atlas-atlas move to the `atlas` branch happen before packet A?** Recommendation: no dependency either way; do the move when planned and carry this page with the squash.
 6. **Should `atlas graph` also be offered as a recall Retrieve driver (replacing `pages-graph` internals)?** Recommendation: no. Share the code, keep the surfaces separate.
